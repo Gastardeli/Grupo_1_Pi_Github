@@ -1,57 +1,110 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Calculadora de Perdas</title>
+    <link rel="stylesheet" , href="style.css">
 </head>
+
 <body>
     <h2>Calculadora de Perdas por Erro de Inventário</h2>
-
-    Digite o faturamento anual da sua loja:
-    <input type="number" id="input_faturamento">
-    <br>
-    <button onclick="calcular()">Calcular</button>
-
-    <div id="div_resultado"></div>
-
-    <script>
-        function calcular() {
-            // Pega o valor do input diretamente pelo id
-            var faturamento = (Number(input_faturamento.value)).toFixed(2);
-            
-            // Dados baseados na pesquisa ABRAPPE  (9,46% por erros de inventário em cima de 1,57% perdas totais )
-            var perdas_inventario_ano = (faturamento * 0.0157 * 0.0946).toFixed(2);
-            
-            // Projeção em 5 anos
-            var perdas_5_anos = (perdas_inventario_ano * 5).toFixed(2);
-            
-            // Quanto precisa vender a mais para compensar (margem de 3%)
-            var vendas_extras = (perdas_inventario_ano / 0.03).toFixed(2);
-            
-            // REDUÇÃO DE 30% COM NOSSO SISTEMA
-            var reducao = 0.30; // 30% de redução
-            //var economia_ano = (perdas_inventario_ano * reducao).toFixed(2);
-            var economia_ano = (faturamento * (reducao * 0.0157 * 0.0946)).toFixed(2)
-            var economia_5_anos = (economia_ano * 5).toFixed(2);
-            
-            
-            // Monta o resultado
-            var texto = "<h3>Resultado:</h3>";
-            texto += "<p>Perdas anuais por erros de inventário: <b>R$ " + perdas_inventario_ano + "</b></p>";
-            texto += "<p>Em 5 anos: <b>R$ " + perdas_5_anos + "</b> em perdas evitáveis</p>";
-            texto += "<p>Para compensar essas perdas, você precisaria vender mais <b>R$ " + vendas_extras + "/ano</b></p>";
-            texto += "<p style='color: red;'><b>Para cada R$ 1 perdido, precisa vender R$ 17 extras só para empatar!</b></p>";
-            
-            // SEÇÃO DA OPORTUNIDADE COM 30% DE REDUÇÃO
-            texto += "<h3 style='color: green;'>Oportunidade com Nosso Sistema:</h3>";
-            texto += "<p>Com redução estimada de 30% nos erros de inventário:</p>";
-            texto += "<p>Economia anual: <b style='color: green;'>R$ " + economia_ano + "</b></p>";
-            texto += "<p>Economia em 5 anos: <b style='color: green;'>R$ " + economia_5_anos + "</b></p>";
-
-            
-            div_resultado.innerHTML = texto;
-        }
-    </script>
+    <b>Selecione a quantidade de Atacadistas</b> <br> <br>
+    <select id="select_numeroLojas">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">Mais de três Lojas</option>
+        <option disabled selected value="">Selecione uma Opção</option>
+    </select> <br> <br>
+    <button onclick="input_lojas()">Número de Lojas</button>
+    <div id="calculadora_html"></div>
 </body>
+
+<script>
+    function input_lojas() {
+        var select_lojas = select_numeroLojas.value
+
+        if (select_lojas == '') {
+            alert(`Por favor, insira um valor valido.`)
+            calculadora_html.innerHTML = ``
+        } else if (select_lojas == 1) {
+            calculadora_html.innerHTML = `<br> <span><b>Digite o faturamento anual de sua loja</b></span> <br> <br>
+    <input type="number" id="input_faturamento">
+    <br> <br> <button onclick="calcular()">Calcular</button>
+    <div id="div_resultado"></div>`
+        } else if (select_lojas == 2 || select_lojas == 3) {
+            calculadora_html.innerHTML = `<br> <span><b>Digite o faturamento anual de suas lojas</b></span> <br> <br>
+    <input type="number" id="input_faturamento">
+    <br> <br>`
+
+            if (select_lojas == 2) {
+                calculadora_html.innerHTML += `<br> <input type="number" id="input_faturamento1">
+    <br> <br>`}
+            if (select_lojas == 3) {
+                calculadora_html.innerHTML += `<br> <input type="number" id="input_faturamento1">
+    <br> <br> <br> <input type="number" id="input_faturamento2">
+    <br> <br>`}
+
+            calculadora_html.innerHTML += ` <button onclick="calcular()">Calcular</button>
+    <div id="div_resultado"></div>`
+        } else if (select_lojas == 4) {
+            calculadora_html.innerHTML = `<br> <span><b>Digite o faturamento anual de todas as suas lojas</b></span> <br> <br>
+    <input type="number" id="input_faturamento">
+    <br> <br> <button onclick="calcular()">Calcular</button>
+    <div id="div_resultado"></div>`
+        }
+
+    }
+
+    function calcular() {
+        // Pega o valor do input diretamente pelo id
+        var faturamento = 0;
+        if (input_faturamento.value != '') {
+            faturamento = input_faturamento.value
+        } if (input_faturamento1.value != '') {
+            faturamento += input_faturamento.value
+        } if (input_faturamento2.value != '') {
+            faturamento += input_faturamento.value
+        }
+
+
+
+        // Dados baseados na pesquisa ABRAPPE  (9,46% por erros de inventário em cima de 1,57% perdas totais )
+        var perdas_inventario_ano = (faturamento * 0.0157 * 0.0946).toFixed(2);
+
+        // Projeção em 5 anos
+        var perdas_5_anos = (perdas_inventario_ano * 5).toFixed(2);
+
+        // Quanto precisa vender a mais para compensar (margem de 3%)
+        var vendas_extras = (perdas_inventario_ano / 0.03).toFixed(2);
+
+        // REDUÇÃO DE 30% COM NOSSO SISTEMA
+        var reducao = 0.30; // 30% de redução
+        //var economia_ano = (perdas_inventario_ano * reducao).toFixed(2);
+        var economia_ano = (faturamento * (reducao * 0.0157 * 0.0946)).toFixed(2)
+        var economia_5_anos = (economia_ano * 5).toFixed(2);
+
+
+        // Monta o resultado
+        var texto = "<h3>Resultado:</h3>";
+        texto += "<p>Perdas anuais por erros de inventário: <b>R$ " + perdas_inventario_ano + "</b></p>";
+        texto += "<p>Em 5 anos: <b>R$ " + perdas_5_anos + "</b> em perdas evitáveis</p>";
+        texto += "<p>Para compensar essas perdas, você precisaria vender mais <b>R$ " + vendas_extras + "/ano</b></p>";
+        texto += "<p style='color: red;'><b>Para cada R$ 1 perdido, precisa vender R$ 17 extras só para empatar!</b></p>";
+
+        // SEÇÃO DA OPORTUNIDADE COM 30% DE REDUÇÃO
+        texto += "<h3 style='color: green;'>Oportunidade com Nosso Sistema:</h3>";
+        texto += "<p>Com redução estimada de 30% nos erros de inventário:</p>";
+        texto += "<p>Economia anual: <b style='color: green;'>R$ " + economia_ano + "</b></p>";
+        texto += "<p>Economia em 5 anos: <b style='color: green;'>R$ " + economia_5_anos + "</b></p>";
+
+
+        div_resultado.innerHTML = texto;
+    }
+
+</script>
+
+
+
 </html>
