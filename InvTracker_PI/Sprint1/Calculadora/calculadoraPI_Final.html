@@ -27,45 +27,35 @@
         var select_lojas = select_numeroLojas.value
         var input = calculadora_html.innerHTML = `
     <input type="number" id="input_faturamento">
-    <br> <br> <button onclick="calcular()">Calcular</button>
-    <div id="div_resultado"></div>`;
+    <br> `;
+        var input1 = `<br> <input type="number" id="input_faturamento1"> <br>`
+        var input2 = `<br> <input type="number" id="input_faturamento2"> <br>`
 
         if (select_lojas == '') {
             alert(`Por favor, insira um valor valido.`)
             calculadora_html.innerHTML = ``
         } else if (select_lojas == 1) {
-            calculadora_html.innerHTML = `<br> <span><b>Digite o faturamento anual de sua loja</b></span> <br> <br>` + input
-
-            faturamento += Number(input_faturamento.value);
-        } else if (select_lojas == 2 || select_lojas == 3) {
-            calculadora_html.innerHTML = `<br> <span><b>Digite o faturamento anual de suas lojas</b></span> <br> <br>
-    <input type="number" id="input_faturamento1">
-    <br> <br>`
-            faturamento += Number(input_faturamento1.value);
-            if (select_lojas == 2) {
-                calculadora_html.innerHTML += `<br> <input type="number" id="input_faturamento2">
-    <br> <br>`
-                faturamento += Number(input_faturamento2.value);
-            }
-            if (select_lojas == 3) {
-                calculadora_html.innerHTML += `<br> <input type="number" id="input_faturamento3">
-    <br> <br> <br> <input type="number" id="input_faturamento4">
-    <br> <br>`
-                faturamento += Number(input_faturamento3.value) + Number(input_faturamento4.value)
-            }
-
-            calculadora_html.innerHTML += ` <button onclick="calcular()">Calcular</button>
-    <div id="div_resultado"></div>`
+            calculadora_html.innerHTML = `Digite o faturamento anual de sua loja <br> <br>` + input
+        } else if (select_lojas == 2) {
+            calculadora_html.innerHTML = `Digite o faturamento anual de suas lojas <br> <br>` + input + input1
+        } else if (select_lojas == 3) {
+            calculadora_html.innerHTML = `Digite o faturamento anual de suas lojas <br> <br>` + input + input1 + input2
         } else if (select_lojas == 4) {
-            calculadora_html.innerHTML = `<br> <span><b>Digite o faturamento anual de todas as suas lojas</b></span> <br> <br>` + input
-
-            faturamento += input_faturamento.value
+            calculadora_html.innerHTML = `Digite o faturamento anual de todas suas lojas <br> <br>` + input
         }
+
+        calculadora_html.innerHTML += `<br> <button onclick="calcular()">Calcular</button> <div id="div_resultado"></div>`
     }
 
     function calcular() {
         // Pega o valor do input diretamente pelo id
-
+        if (input_faturamento > 0) {
+            faturamento += input_faturamento.value
+        } if (input_faturamento1 > 0) {
+            faturamento += input_faturamento.value
+        } if (input_faturamento2 > 0) {
+            faturamento += input_faturamento.value
+        }
 
 
         // Dados baseados na pesquisa ABRAPPE  (9,46% por erros de inventário em cima de 1,57% perdas totais )
