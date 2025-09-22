@@ -49,14 +49,13 @@
 
     function calcular() {
         // Pega o valor do input diretamente pelo id
-        if (input_faturamento > 0) {
+        if (input_faturamento.value > 0) {
             faturamento += input_faturamento.value
-        } if (input_faturamento1 > 0) {
+        } else if (input_faturamento1 > 0) {
             faturamento += input_faturamento.value
-        } if (input_faturamento2 > 0) {
+        } else if (input_faturamento2 > 0) {
             faturamento += input_faturamento.value
         }
-
 
         // Dados baseados na pesquisa ABRAPPE  (9,46% por erros de inventário em cima de 1,57% perdas totais )
         var perdas_inventario_ano = (faturamento * 0.0157 * 0.0946).toFixed(2);
