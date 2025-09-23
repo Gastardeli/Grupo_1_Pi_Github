@@ -23,27 +23,30 @@
 <script>
     
     var faturamento = 0;
+    var input1 = `<br> <input type="number" id="input_faturamento1"> <br>`
+    var input2 = `<br> <input type="number" id="input_faturamento2"> <br>`
+    var input = `<input type="number" id="input_faturamento">
+    <br> `;
 
     function input_lojas() {
         faturamento = 0;
         var select_lojas = select_numeroLojas.value
-        var input = calculadora_html.innerHTML = `
-    <input type="number" id="input_faturamento">
-    <br> `;
-        var input1 = `<br> <input type="number" id="input_faturamento1"> <br>`
-        var input2 = `<br> <input type="number" id="input_faturamento2"> <br>`
 
         if (select_lojas == '') {
             alert(`Por favor, insira um valor valido.`)
             calculadora_html.innerHTML = ``
         } else if (select_lojas == 1) {
             calculadora_html.innerHTML = `Digite o faturamento anual de sua loja <br> <br>` + input
+
         } else if (select_lojas == 2) {
             calculadora_html.innerHTML = `Digite o faturamento anual de suas lojas <br> <br>` + input + input1
+
         } else if (select_lojas == 3) {
             calculadora_html.innerHTML = `Digite o faturamento anual de suas lojas <br> <br>` + input + input1 + input2
+
         } else if (select_lojas == 4) {
             calculadora_html.innerHTML = `Digite o faturamento anual de todas suas lojas <br> <br>` + input
+ 
         }
 
         calculadora_html.innerHTML += `<br> <button onclick="calcular()">Calcular</button> <div id="div_resultado"></div>`
@@ -56,14 +59,15 @@
 
         if (input_faturamento) {
             faturamento = faturamento + + Number(input_faturamento.value).toFixed(2)
-            if (input_faturamento1) {
-                faturamento = faturamento + + Number(input_faturamento.value).toFixed(2)
-                if (input_faturamento2) {
-                    alert(``)
-                    faturamento = faturamento + + Number(input_faturamento.value).toFixed(2)
+            if (typeof input_faturamento1 != 'undefined') {
+                faturamento = faturamento + + Number(input_faturamento1.value).toFixed(2)
+                if (typeof input_faturamento2 != 'undefined') {
+                    faturamento = faturamento + + Number(input_faturamento2.value).toFixed(2)
                 }
             }
         }
+
+        
 
         // Dados baseados na pesquisa ABRAPPE  (9,46% por erros de inventário em cima de 1,57% perdas totais )
         var perdas_inventario_ano = (faturamento * 0.0157 * 0.0946).toFixed(2);
@@ -93,6 +97,7 @@
         texto += "<p>Com redução estimada de 30% nos erros de inventário:</p>";
         texto += "<p>Economia anual: <b style='color: green;'>R$ " + economia_ano + "</b></p>";
         texto += "<p>Economia em 5 anos: <b style='color: green;'>R$ " + economia_5_anos + "</b></p>";
+
 
         div_resultado.innerHTML = texto;
     }
