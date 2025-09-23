@@ -8,20 +8,22 @@
 </head>
 
 <body>
-    <h2>Calculadora de Perdas por Erro de Inventário</h2>
-    <b>Selecione a quantidade de Atacadistas</b> <br> <br>
-    <select onchange="input_lojas()" id="select_numeroLojas">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">Mais de três Lojas</option>
-        <option disabled selected value="">Selecione uma Opção</option>
-    </select> <br> <br>
-    <div id="calculadora_html"></div>
+    <Div class="margin" id="pagina1_html">
+        <h2>Calculadora de Perdas por Erro de Inventário</h2>
+        <b>Selecione a quantia de Unidades</b> <br> <br>
+        <select onchange="input_lojas()" id="select_numeroLojas">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">Mais de três Lojas</option>
+            <option disabled selected value="">Selecione uma Opção</option>
+        </select> <br> <br>
+        <div id="calculadora_html"></div> <br> <br>
+    </Div>
 </body>
 
 <script>
-    
+    var pagina1 = "";
     var faturamento = 0;
     var input1 = `<br> <input type="number" id="input_faturamento1"> <br>`
     var input2 = `<br> <input type="number" id="input_faturamento2"> <br>`
@@ -45,14 +47,15 @@
             calculadora_html.innerHTML = `Digite o faturamento anual de suas lojas <br> <br>` + input + input1 + input2
 
         } else if (select_lojas == 4) {
-            calculadora_html.innerHTML = `Digite o faturamento anual de todas suas lojas <br> <br>` + input
- 
+            calculadora_html.innerHTML = `Digite o faturamento anual total de suas lojas <br> <br>` + input
+
         }
 
         calculadora_html.innerHTML += `<br> <button onclick="calcular()">Calcular</button> <div id="div_resultado"></div>`
     }
 
     function calcular() {
+
         // Pega o valor do input diretamente pelo id
 
         faturamento = 0;
@@ -67,7 +70,7 @@
             }
         }
 
-        
+
 
         // Dados baseados na pesquisa ABRAPPE  (9,46% por erros de inventário em cima de 1,57% perdas totais )
         var perdas_inventario_ano = (faturamento * 0.0157 * 0.0946).toFixed(2);
@@ -84,24 +87,63 @@
         var economia_ano = (faturamento * (reducao * 0.0157 * 0.0946)).toFixed(2)
         var economia_5_anos = (economia_ano * 5).toFixed(2);
 
+        if (faturamento != '') {
+            // Monta o resultado
+            var texto = "<h3>Resultado:</h3>";
+            texto += "<p>Perdas anuais estimadas com base em erros de inventário: <b style='color: red;'>R$ " + perdas_inventario_ano + "</b></p>";
+            texto += "<p>Em 5 anos: <b style='color: red;'>R$ " + perdas_5_anos + "</b> em perdas evitáveis</p>";
 
-        // Monta o resultado
-        var texto = "<h3>Resultado:</h3>";
-        texto += "<p>Perdas anuais por erros de inventário: <b>R$ " + perdas_inventario_ano + "</b></p>";
-        texto += "<p>Em 5 anos: <b>R$ " + perdas_5_anos + "</b> em perdas evitáveis</p>";
-        texto += "<p>Para compensar essas perdas, você precisaria vender mais <b>R$ " + vendas_extras + "/ano</b></p>";
-        texto += "<p style='color: red;'><b>Para cada R$ 1 perdido, precisa vender R$ 17 extras só para empatar!</b></p>";
-
-        // SEÇÃO DA OPORTUNIDADE COM 30% DE REDUÇÃO
-        texto += "<h3 style='color: green;'>Oportunidade com Nosso Sistema:</h3>";
-        texto += "<p>Com redução estimada de 30% nos erros de inventário:</p>";
-        texto += "<p>Economia anual: <b style='color: green;'>R$ " + economia_ano + "</b></p>";
-        texto += "<p>Economia em 5 anos: <b style='color: green;'>R$ " + economia_5_anos + "</b></p>";
+            // SEÇÃO DA OPORTUNIDADE COM 30% DE REDUÇÃO
+            texto += "<h3 style='color: green;'>Oportunidades com Nosso Sistema</h3>";
+            texto += "<p>Com redução estimada de <b style='color: green;'>30% nos erros de inventário: </b></p>";
+            texto += "<p>Economia anual: <b style='color: green;'>R$ " + economia_ano + "</b></p>";
+            texto += "<p>Economia em 5 anos: <b style='color: green;'>R$ " + economia_5_anos + "</b></p>";
 
 
-        div_resultado.innerHTML = texto;
+            div_resultado.innerHTML = texto;
+
+            div_resultado.innerHTML += `<br> <button onclick="calculos()">Saber Mais</button>`
+        } else {
+            div_resultado.innerHTML = `<br> Por favor, insira um valor <b style="color:green;">válido</b>`
+        }
+
+
     }
+    function calculos() {
+        if (pagina1 == "") {
+            pagina1 = pagina1_html.innerHTML;
+        }
 
+        pagina1_html.innerHTML = `<div id="pagina2_html">
+            <h2>Explicação Detalhada</h2>
+            
+            <h3>Perdas Anuais Estimadas</h3>
+            <p>
+                De acordo com a pesquisa da <b>ABRAPPE</b>, em média
+                <b>1,57% do faturamento das empresas</b> é perdido em razão de
+                quebras, furtos e erros de inventário.
+            </p>
+            <p>
+                Aproximadamente <b>9,46%</b> das perdas estão
+                diretamente ligadas a <b>erros de inventário</b>, ou seja,
+                diferenças entre o estoque físico e o registrado no sistema.
+            </p>
+            <p>
+                Esse percentual pode parecer pequeno, mas em grandes volumes de
+                faturamento representa <b>valores significativos</b> que afetam
+                diretamente a lucratividade.
+            </p>
+            <h4>Economia Anual Estimada</h4>
+            <p>
+                Ao adotar o nosso sistema de monitoramento e controle, estima-se uma
+                <b>redução de até 30%</b> nas perdas causadas por erros de inventário. <br> <br>
+            <button onclick="voltar()">Voltar</button>
+        </div>`
+
+    }
+    function voltar() {
+        pagina1_html.innerHTML = pagina1
+    }
 </script>
 
 
