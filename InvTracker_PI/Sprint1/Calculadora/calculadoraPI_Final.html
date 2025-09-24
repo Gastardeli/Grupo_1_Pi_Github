@@ -25,10 +25,13 @@
 <script>
     var pagina1 = "";
     var faturamento = 0;
-    var input1 = `<br> <input type="number" id="input_faturamento1"> <br>`
-    var input2 = `<br> <input type="number" id="input_faturamento2"> <br>`
-    var input = `<input type="number" id="input_faturamento">
+    var input = `<input type="number" id="input_faturamento" placeholder="Unidade 01: ex.R$1.000">
     <br> `;
+    var input1 = `<br> <input type="number" id="input_faturamento1" placeholder="Unidade 02: Ex.R$3.500"> <br>`
+    var input2 = `<br> <input type="number" id="input_faturamento2" placeholder="Unidade 03: Ex.R$2.300"> <br>`
+    var input_varias = `<input type="number" id="input_faturamento" placeholder="Soma das unidades">
+    <br> `;
+    
 
     function input_lojas() {
         faturamento = 0;
@@ -47,7 +50,7 @@
             calculadora_html.innerHTML = `Digite o faturamento anual de suas lojas <br> <br>` + input + input1 + input2
 
         } else if (select_lojas == 4) {
-            calculadora_html.innerHTML = `Digite o faturamento anual total de suas lojas <br> <br>` + input
+            calculadora_html.innerHTML = `Digite o faturamento anual total de suas lojas <br> <br>` + input_varias
 
         }
 
