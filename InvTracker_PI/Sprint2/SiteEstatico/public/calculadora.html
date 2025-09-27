@@ -22,19 +22,43 @@
                 <a href="login.html">Login </a>
                 <a href="cadastro.html">Cadastro </a>
             </div>
+            <div class="container">
+                <h1 class="titulo">InvTech</h1>
+                <ul class="navbar">
+                <li class="agora">
+                    <a href="#">Inicial</a>
+                </li>
+                <li>
+                    <a href="simulador.html">Simulador</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+                <li>
+                    <a href="cadastro.html">Cadastro</a>
+                </li>
+                </ul>
+            </div>
+            </div>
         </div>
     </div>
 
 
-
     <!--Insira todo o Conteúdo da Página aqui!-->
     <div class="apagar" id="temporaria">
-        <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium delectus rerum amet, omnis labore
-            debitis
-            accusantium asperiores porro aliquam deserunt dolorem voluptate, iure alias officia distinctio obcaecati
-            velit,
-            et libero.</span> <br>
-
+        <Div class="margin" id="pagina1_html">
+                <h2>Calculadora de Perdas por Erro de Inventário</h2>
+                <b>Selecione a quantia de Unidades</b> <br> <br>
+                <select onchange="input_lojas()" id="select_numeroLojas">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">Mais de três Lojas</option>
+                    <option disabled selected value="">Selecione uma Opção</option>
+                </select> <br> <br>
+                <div class="calc_html" id="calculadora_html"></div> <br> <br>
+        </Div>
     </div>
 
 
@@ -61,3 +85,130 @@
 </body>
 
 </html>
+
+<script>
+    var pagina1 = "";
+    var faturamento = 0;
+    var input = `<input type="number" id="input_faturamento" placeholder="Unidade 01: ex.R$1.000">
+    <br> `;
+    var input1 = `<br> <input type="number" id="input_faturamento1" placeholder="Unidade 02: Ex.R$3.500"> <br>`
+    var input2 = `<br> <input type="number" id="input_faturamento2" placeholder="Unidade 03: Ex.R$2.300"> <br>`
+    var input_varias = `<input type="number" id="input_faturamento" placeholder="Soma das unidades">
+    <br> `;
+    
+
+    function input_lojas() {
+        faturamento = 0;
+        var select_lojas = select_numeroLojas.value
+
+        if (select_lojas == '') {
+            alert(`Por favor, insira um valor valido.`)
+            calculadora_html.innerHTML = ``
+        } else if (select_lojas == 1) {
+            calculadora_html.innerHTML = `Digite o faturamento anual de sua loja <br> <br>` + input
+
+        } else if (select_lojas == 2) {
+            calculadora_html.innerHTML = `Digite o faturamento anual de suas lojas <br> <br>` + input + input1
+
+        } else if (select_lojas == 3) {
+            calculadora_html.innerHTML = `Digite o faturamento anual de suas lojas <br> <br>` + input + input1 + input2
+
+        } else if (select_lojas == 4) {
+            calculadora_html.innerHTML = `Digite o faturamento anual total de suas lojas <br> <br>` + input_varias
+
+        }
+
+        calculadora_html.innerHTML += `<br> <button onclick="calcular()">Calcular</button> <div id="div_resultado"></div>`
+    }
+
+    function calcular() {
+
+        // Pega o valor do input diretamente pelo id
+
+        faturamento = 0;
+
+        if (input_faturamento) {
+            faturamento = faturamento + + Number(input_faturamento.value).toFixed(2)
+            if (typeof input_faturamento1 != 'undefined') {
+                faturamento = faturamento + + Number(input_faturamento1.value).toFixed(2)
+                if (typeof input_faturamento2 != 'undefined') {
+                    faturamento = faturamento + + Number(input_faturamento2.value).toFixed(2)
+                }
+            }
+        }
+
+
+
+        // Dados baseados na pesquisa ABRAPPE  (9,46% por erros de inventário em cima de 1,57% perdas totais )
+        var perdas_inventario_ano = (faturamento * 0.0157 * 0.0946).toFixed(2);
+
+        // Projeção em 5 anos
+        var perdas_5_anos = (perdas_inventario_ano * 5).toFixed(2);
+
+        // Quanto precisa vender a mais para compensar (margem de 3%)
+        var vendas_extras = (perdas_inventario_ano / 0.03).toFixed(2);
+
+        // REDUÇÃO DE 30% COM NOSSO SISTEMA
+        var reducao = 0.30; // 30% de redução
+        //var economia_ano = (perdas_inventario_ano * reducao).toFixed(2);
+        var economia_ano = (faturamento * (reducao * 0.0157 * 0.0946)).toFixed(2)
+        var economia_5_anos = (economia_ano * 5).toFixed(2);
+
+        if (faturamento != '') {
+            // Monta o resultado
+            var texto = "<h3>Resultado:</h3>";
+            texto += "<p>Perdas anuais estimadas com base em erros de inventário: <b style='color: red;'>R$ " + perdas_inventario_ano + "</b></p>";
+            texto += "<p>Em 5 anos: <b style='color: red;'>R$ " + perdas_5_anos + "</b> em perdas evitáveis</p>";
+
+            // SEÇÃO DA OPORTUNIDADE COM 30% DE REDUÇÃO
+            texto += "<h3 style='color: green;'>Oportunidades com Nosso Sistema</h3>";
+            texto += "<p>Com redução estimada de <b style='color: green;'>30% nos erros de inventário: </b></p>";
+            texto += "<p>Economia anual: <b style='color: green;'>R$ " + economia_ano + "</b></p>";
+            texto += "<p>Economia em 5 anos: <b style='color: green;'>R$ " + economia_5_anos + "</b></p>";
+
+
+            div_resultado.innerHTML = texto;
+
+            div_resultado.innerHTML += `<br> <button onclick="calculos()">Saber Mais</button>`
+        } else {
+            div_resultado.innerHTML = `<br> Por favor, insira um valor <b style="color:green;">válido</b>`
+        }
+
+
+    }
+    function calculos() {
+        if (pagina1 == "") {
+            pagina1 = pagina1_html.innerHTML;
+        }
+
+        pagina1_html.innerHTML = `<div id="pagina2_html">
+            <h2>Explicação Detalhada</h2>
+            
+            <h3>Perdas Anuais Estimadas</h3>
+            <p>
+                De acordo com a pesquisa da <b>ABRAPPE</b>, em média
+                <b>1,57% do faturamento das empresas</b> é perdido em razão de
+                quebras, furtos e erros de inventário.
+            </p>
+            <p>
+                Aproximadamente <b>9,46%</b> das perdas estão
+                diretamente ligadas a <b>erros de inventário</b>, ou seja,
+                diferenças entre o estoque físico e o registrado no sistema.
+            </p>
+            <p>
+                Esse percentual pode parecer pequeno, mas em grandes volumes de
+                faturamento representa <b>valores significativos</b> que afetam
+                diretamente a lucratividade.
+            </p>
+            <h4>Economia Anual Estimada</h4>
+            <p>
+                Ao adotar o nosso sistema de monitoramento e controle, estima-se uma
+                <b>redução de até 30%</b> nas perdas causadas por erros de inventário. <br> <br>
+            <button onclick="voltar()">Voltar</button>
+        </div>`
+
+    }
+    function voltar() {
+        pagina1_html.innerHTML = pagina1
+    }
+</script>

@@ -14,9 +14,8 @@ body {
 
 .header .container {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-
 }
 
 .header .container img {
@@ -28,16 +27,31 @@ body {
     font-size: 20px;
 }
 
-.navbar {
+.header .container .navbar {
     display: flex;
-    width: 50%;
-    justify-content: space-around;
+    width: 80%;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.header .container .container {
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .navbar a {
     outline: none;
     text-decoration: none;
     color: black;
+    marker: none;
 }
 
 .now {
@@ -66,6 +80,7 @@ body {
     align-items: center;
 
 }
+
 
 .box {
     width: 300px;
@@ -99,4 +114,9 @@ body {
     text-align: center;
     justify-content: center;
     align-items: center;
+}
+
+.apagar .margin {
+    border: solid  orange;
+    width: 70%;
 }
