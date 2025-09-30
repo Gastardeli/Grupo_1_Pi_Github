@@ -118,6 +118,7 @@ body {
 
 .apagar .margin {
     border: solid orange;
+    border-radius: 10px;
     width: 70%;
 }
 
@@ -238,4 +239,57 @@ main .sobre .container .porcentagens .perc{
 main .sobre .container .porcentagens .perc .titulo{
     font-size: 40px;
     margin: 0;
+}
+
+
+.margin select {
+    text-align: center;
+    height: 30px;
+    width: 170px;
+    border:0px;
+    background-color: rgb(231, 231, 231);
+    border-radius: 5px;
+
+}
+
+.resultado button {
+   align-items: center;
+   justify-content: center; 
+}
+
+.calc_html button {
+    height: 35px;
+    width: 100px;
+    border: 0px;
+    background-color: orange;
+    color: white;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+
+.calc_html input{
+    height: 35px;
+    width: 200px;
+    border: 0px;
+    background-color: rgb(231, 231, 231);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.calc_html input::placeholder{
+    text-align: center;
+    color: black
+}
+
+.resultado {
+    display: flex;
+    margin: 10px;
+    background-color: rgb(231, 231, 231);
+    border-radius: 10px;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+
 }
