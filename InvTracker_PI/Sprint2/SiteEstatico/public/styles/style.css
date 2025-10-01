@@ -415,9 +415,10 @@ main .sobre .container .porcentagens .perc .titulo{
 }
 
 
-/* Kadooca */
+/* Kadooca 
 
-/* CALCULADORA */
+CALCULADORA
+
 .resultado button {
     align-items: center;
     justify-content: center;
@@ -460,7 +461,7 @@ main .sobre .container .porcentagens .perc .titulo{
     padding: 20px;
 
 }
-
+*/
 /* SOLUÇÃO */
 .solucao {
     background-color: #f9f9f9;
