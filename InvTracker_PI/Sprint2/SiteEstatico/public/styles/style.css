@@ -242,7 +242,6 @@ main .sobre .container .porcentagens .perc .titulo{
 }
 
 
-<<<<<<< HEAD
 
 /*login*/
 .login-container {
@@ -362,7 +361,7 @@ main .sobre .container .porcentagens .perc .titulo{
     font-size: 14px;
 }
 
-=======
+
 .margin select {
     text-align: center;
     height: 30px;
@@ -414,4 +413,185 @@ main .sobre .container .porcentagens .perc .titulo{
     align-self: center;
 
 }
->>>>>>> b7a52f41d39c6b33c3c780ae29f0fa712735e5fb
+
+
+/* Kadooca */
+
+/* CALCULADORA */
+.resultado button {
+    align-items: center;
+    justify-content: center;
+}
+
+.calc_html button {
+    height: 35px;
+    width: 100px;
+    border: 0px;
+    background-color: orange;
+    color: white;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+
+.calc_html input {
+    height: 35px;
+    width: 200px;
+    border: 0px;
+    background-color: rgb(231, 231, 231);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.calc_html input::placeholder {
+    text-align: center;
+    color: black
+}
+
+.resultado {
+    display: flex;
+    margin: 10px;
+    background-color: rgb(231, 231, 231);
+    border-radius: 10px;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    padding: 20px;
+
+}
+
+/* SOLUÇÃO */
+.solucao {
+    background-color: #f9f9f9;
+    padding: 50px;
+    text-align: center;
+}
+
+.solucao h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.solucao .subtitulo {
+    color: orange;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.solucao .conteudo {
+    max-width: 700px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.solucao button {
+    background-color: orange;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+/* DIFERENCIAIS */
+.diferenciais {
+    padding: 50px;
+    text-align: center;
+}
+
+.diferenciais h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.diferenciais .cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.diferenciais .card {
+    width: 200px;
+    background: #f2f2f2;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 10px;
+}
+
+.diferenciais .card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* SIMULADOR */
+.calc-container {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.calc-container .calc_html {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    gap: 10px;
+}
+
+.calc-container .resultado {
+    width: 45%;
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* INFORMAÇÕES EXTRAS */
+.info-extra {
+    text-align: center;
+    padding: 20px 50px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.info-extra #p_info {
+    margin: 10px 0;
+    color: orange;
+}
+
+/* CONTATO */
+.contato-container {
+    width: 40%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #00004d;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contato-container h3 {
+    text-align: center;
+    font-size: 22px;
+}
+
+.contato-container input,
+.contato-container textarea {
+    padding: 10px;
+    border: 0;
+    border-radius: 5px;
+}
+
+.contato-container button {
+    padding: 10px;
+    border: 0;
+    border-radius: 5px;
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
