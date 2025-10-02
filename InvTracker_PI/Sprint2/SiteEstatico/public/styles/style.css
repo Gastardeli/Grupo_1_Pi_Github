@@ -596,3 +596,194 @@ CALCULADORA
     font-weight: bold;
     cursor: pointer;
 }
+
+/*Pagina de Cadastro*/
+/*Começo*/
+
+
+
+
+.body-cadastrar {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    background-image: url(../assets/imgs/paginaFundoLogin&Cadastro.png); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    height: 100%;
+    
+}
+
+/* Cabeçalho */
+header .container_header { /*cabeçalho inteiro*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 5px solid orange;
+    padding: 0 40px;
+}
+
+.nav {  /*classe da lista ul */
+    color: black;
+    font-weight: bold;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+}
+
+
+.nav a{ /*classe da letra dentro da lista */
+ color: black;
+ outline: none;
+ text-decoration: none;
+ justify-content: space-between;
+ font-size: 20px;
+}
+
+
+
+header .login {  /*classe do botão*/
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    width: 100px;
+    cursor: pointer;
+}
+
+
+
+header .logo_container{ /*div que tem dentro a classe logo img*/
+justify-items: flex-start;
+justify-content: flex-start;
+
+
+
+}
+
+header .logo{ /*logo da empresa DENTRO DA CLASSE DIV-LOGO_CONTAINER*/
+display: flex;
+padding: 5px 10px;
+width: 200px;
+
+   
+
+}
+
+.container_header .login{
+    width: 150px;
+    padding: 15px;
+    background-color: #E67C1C;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 18px;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: large;
+
+}
+
+/* Formulário */
+.card-endereco {
+    width: 500px;
+    padding: 10px;
+    background-color: #bababa;
+    border: none;
+    border-radius: 5px;
+   background-color: rgba(128, 128, 128, 0.4);
+   color: white;
+   justify-content: flex-end;
+
+}
+
+
+
+.card-Cadastro{
+    width: 500px;
+    padding: 10px;
+    color: white;
+    justify-content: flex-start;
+
+}
+
+.cad_pai{
+    display: flex;
+    justify-content: center;  
+    align-items: flex-end;  
+    gap: 100px;                 
+    max-width: 1200px;
+    margin: 40px auto;
+    flex-direction: column;
+}
+
+.formulario h3 {
+    text-align: center;
+    color: orange;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cad-input-cadastro{
+    width: 95%;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    background-color: #bababa;
+}
+
+
+.cad-input-endereco {
+    width: 95%;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    background-color: #bababa;
+}
+
+
+
+.button_cadastrar{
+    background-color: orange;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: bold;
+    height: 50px ;
+    align-items: center;
+    margin-top: 20px;
+    width: 200px;
+    padding: 14px ;
+    justify-content: flex-end;
+    text-align: center;
+}
+
+.button_cadastrar:hover {
+    background-color: darkorange;
+}
+
+.cad_campos{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+
+}
+
+.campoEndereco{
+display: flex;
+flex-direction: column;
+align-items: center;
+
+
+
+}
+
+/*Fim da pagina cadastro*/

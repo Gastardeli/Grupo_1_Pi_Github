@@ -9,7 +9,7 @@
     <link rel="icon" href="assets/icon/icon.png" />
 </head>
 
-<body>
+<body class="body-cadastrar">
     <div class="header">
         <div class="container">
            <img src="assets/imgs/logo.png">
@@ -24,14 +24,63 @@
     </div>
 
 
+    <!--Pagina de cadastro (começo)!-->
+     <div class="cad_pai">
+        <div class="cad_campos">
+            <div class="card-Cadastro">
 
-    <!--Insira todo o Conteúdo da Página aqui!-->
-    <div class="apagar" id="temporaria">
-        <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium delectus rerum amet, omnis labore
-            debitis
-            accusantium asperiores porro aliquam deserunt dolorem voluptate, iure alias officia distinctio obcaecati
-            velit,
-            et libero.</span> <br>
+                <span>Nome da Empresa</span>
+                <input class="cad-input-cadastro" type="text" placeholder="Insira o nome da empresa"><br><br>
+
+                <span>Email</span>
+                <input class="cad-input-cadastro" type="email" placeholder="Insira seu e-mail"><br><br>
+
+                <span>Senha</span>
+                <input class="cad-input-cadastro" type="password" placeholder="Insira sua senha"><br><br>
+
+                <span>Confirme sua Senha</span>
+                <input class="cad-input-cadastro" type="password" placeholder="Confirme sua senha"><br><br>
+
+                <span>CNPJ</span>
+                <input class="cad-input-cadastro" type="text" placeholder="Insira o CNPJ"><br><br>
+
+                <span>Telefone</span>
+                <input class="cad-input-cadastro" type="text" placeholder="(11) 99999-9999"><br><br>
+            </div>
+            <div class="campoEndereco">
+                <div class="card-endereco">
+                    <!-- Endereço -->
+                    <h3>Endereço</h3>
+
+                    <span>CEP</span>
+                    <input class="cad-input-endereco" type="text" placeholder="00000-000">
+
+                    <span>Estado</span>
+                    <input class="cad-input-endereco" type="text" placeholder="SP"><br><br>
+
+                    <span>Rua</span><br>
+                    <input class="cad-input-endereco" type="text" placeholder="Nome da rua"><br><br>
+
+                    <span>Número</span><br>
+                    <input class="cad-input-endereco" type="text" placeholder="000"><br><br>
+
+                    <span>Complemento</span><br>
+                    <input class="cad-input-endereco" type="text" placeholder="Apto, Bloco"><br><br>
+
+                    <span>Bairro</span><br>
+                    <input class="cad-input-endereco" type="text" placeholder="Nome do bairro"><br><br>
+
+                    <span>Cidade</span><br>
+                    <input class="cad-input-endereco" type="text" placeholder="São Paulo"><br><br>
+
+                    <!-- Botão -->
+
+                </div>
+                <div class="buttonCadastrar">
+                    <button onclick="enviarFormulario()" class="button_cadastrar">Cadastrar-se</button>
+                </div>
+            </div>
+        </div>
 
     </div>
 
@@ -59,3 +108,17 @@
 </body>
 
 </html>
+<script>
+
+function enviarFormulario(){
+    
+  alert("Formulario enviado com sucesso")
+
+
+}
+
+
+
+
+
+</script>
