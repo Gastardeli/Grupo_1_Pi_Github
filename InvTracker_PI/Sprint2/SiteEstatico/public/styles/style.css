@@ -260,7 +260,7 @@ main .sobre .container .porcentagens .perc .titulo{
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../imgs/fundoIndex.png'); /* imagem temporaria*/
+    background-image: url('../assets/imgs/fundoindex.png'); /* imagem temporaria*/
     background-size: cover;
     background-position: center;
     filter: brightness(0.6); 
