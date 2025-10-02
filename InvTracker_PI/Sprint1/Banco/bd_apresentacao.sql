@@ -30,9 +30,12 @@ CREATE TABLE produto (
 CREATE TABLE sensor (
 	id_sensor INT PRIMARY KEY AUTO_INCREMENT,
     nSerie VARCHAR(40),
-    status_sensor VARCHAR(15)
-		CONSTRAINT chkStatus CHECK (status_sensor IN ('Ativo', 'Inativo', 'Manutenção'))
+    statusSensor VARCHAR(15), CONSTRAINT
+    checkStatus
+    CHECK(statusSensor IN ('Ativo', 'Desativado'))
 );
+
+use grupo1;
 
 -- Criar a tabela registro
 CREATE TABLE registro (
@@ -205,8 +208,3 @@ WHERE status_sensor = 'Manutenção';
 
 -- Nível de estoque e data do registro
 SELECT dtRegistro AS Dia, status_alerta AS 'Nível de Estoque' FROM registro;
-
-
-
-
-
