@@ -10,7 +10,7 @@ CREATE TABLE cadastro (
     nome VARCHAR(50) NOT NULL,
     razao VARCHAR(70),
     cnpj CHAR(14) UNIQUE NOT NULL, -- Considerar apenas os números do CNPJ
-    email VARCHAR(70) UNIQUE NOT NULL
+    email VARCHAR(70) UNIQUE NOT NULL,
 		CONSTRAINT chkEmail CHECK (email LIKE '%@%'),
     telefone VARCHAR(15) NOT NULL,
     senha_hash VARCHAR(255) NOT NULL,
@@ -41,7 +41,7 @@ use grupo1;
 CREATE TABLE registro (
 	id_registro INT PRIMARY KEY AUTO_INCREMENT,
     distancia DECIMAL(3,2), 
-    status_alerta VARCHAR(8)
+    status_alerta VARCHAR(8),
 		CONSTRAINT chkAlerta CHECK (status_alerta IN ('Alto', 'Moderado', 'Baixo')),
     dtRegistro DATETIME DEFAULT current_timestamp
 );
@@ -67,7 +67,7 @@ CREATE TABLE lote (
 -- Criar tabela cliente
 CREATE TABLE cliente (
 	id_cliente INT PRIMARY KEY AUTO_INCREMENT,
-    status_cliente VARCHAR(8)
+    status_cliente VARCHAR(8),
 		CONSTRAINT chkCliente CHECK (status_cliente IN('Ativo', 'Inativo'))
 );
 
@@ -76,13 +76,13 @@ CREATE TABLE pagamento (
 	id_pagamento INT PRIMARY KEY AUTO_INCREMENT,
 	moeda VARCHAR(30) DEFAULT 'BRL',
     preco DECIMAL(10,2),
-    metodo VARCHAR(30)
+    metodo VARCHAR(30),
 		CONSTRAINT chkMetodo CHECK(metodo IN ('Pix', 'Boleto', 'Débito', 'Crédito')),
 	quantidadeParcela INT DEFAULT 1,
     dtContratacao DATETIME DEFAULT current_timestamp, -- Data de registro de quando o serviço foi contratado.
 	dtPagamento DATE,
 	dtVencimento DATE,
-    status_pagamento VARCHAR(25) DEFAULT 'Pendente'
+    status_pagamento VARCHAR(25) DEFAULT 'Pendente',
 		CONSTRAINT chkPagamento CHECK( status_pagamento IN ('Inadimplente', 'Pago', 'Cancelado', 'Pendente'))
 );
 
