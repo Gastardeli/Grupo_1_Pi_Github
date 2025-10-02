@@ -136,7 +136,7 @@ main .introducao {
 }
 
 main .introducao .container {
-    background-image: url('../imgs/fundoIndex.png');
+    background-image: url('../assets/imgs/fundoindex.png');
     /* IMAGEM TEMPORÁRIA */
     width: 100%;
     height: 500px;
