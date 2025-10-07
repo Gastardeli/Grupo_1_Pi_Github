@@ -231,33 +231,29 @@ main .sobre .container .porcentagens {
     justify-content: space-around;
     display: flex;
 }
-main .sobre .container .porcentagens .perc{
+
+main .sobre .container .porcentagens .perc {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   
+
     width: 100%;
 }
-main .sobre .container .porcentagens .perc .titulo{
+
+main .sobre .container .porcentagens .perc .titulo {
     font-size: 40px;
     margin: 0;
 }
-main .sobre .container .porcentagens .perc .texto{
-   
-
-}
-
-
 
 /*login*/
 .login-container {
-    height: 90vh; 
+    height: 90vh;
     display: flex;
-    justify-content: flex-end; 
+    justify-content: flex-end;
     align-items: center;
     position: relative;
-    overflow: hidden; 
+    overflow: hidden;
     padding: 0 5%;
 }
 
@@ -267,26 +263,27 @@ main .sobre .container .porcentagens .perc .texto{
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../assets/imgs/fundoindex.png'); /* imagem temporaria*/
+    background-image: url('../assets/imgs/paginaFundoLogin&Cadastro.png');
+    /* imagem temporaria*/
     background-size: cover;
     background-position: center;
-    filter: brightness(0.6); 
+    filter: brightness(0.6);
     z-index: 1;
 }
 
 
 .form-wrapper {
-    z-index: 5; 
+    z-index: 5;
     width: 90%;
     max-width: 350px;
     padding: 30px;
-    background-color: rgba(0, 0, 0, 0.85); 
+    background-color: rgba(0, 0, 0, 0.85);
     border-radius: 8px;
     color: #ffffff;
 }
 
 #loginForm h2 {
-    color: #ff8c00; 
+    color: #ff8c00;
     text-align: center;
     margin-bottom: 25px;
     font-size: 24px;
@@ -373,15 +370,15 @@ main .sobre .container .porcentagens .perc .texto{
     text-align: center;
     height: 30px;
     width: 170px;
-    border:0px;
+    border: 0px;
     background-color: rgb(231, 231, 231);
     border-radius: 5px;
 
 }
 
 .resultado button {
-   align-items: center;
-   justify-content: center; 
+    align-items: center;
+    justify-content: center;
 }
 
 .calc_html button {
@@ -394,7 +391,7 @@ main .sobre .container .porcentagens .perc .texto{
     font-weight: bolder;
 }
 
-.calc_html input{
+.calc_html input {
     height: 35px;
     width: 200px;
     border: 0px;
@@ -403,7 +400,7 @@ main .sobre .container .porcentagens .perc .texto{
     text-align: center;
 }
 
-.calc_html input::placeholder{
+.calc_html input::placeholder {
     text-align: center;
     color: black
 }
@@ -611,20 +608,21 @@ CALCULADORA
 
 
 .body-cadastrar {
+    display: flex;
+    height: 100vh;
     margin: 0;
     padding: 0;
     font-family: sans-serif;
     background-color: #f4f4f4;
-    background-image: url(../assets/imgs/paginaFundoLogin&Cadastro.png); 
-    background-size: cover; 
-    background-position: center; 
+    background-image: url(../assets/imgs/paginaFundoLogin&Cadastro.png);
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    height: 100%;
-    
 }
 
 /* Cabeçalho */
-header .container_header { /*cabeçalho inteiro*/
+header .container_header {
+    /*cabeçalho inteiro*/
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -633,7 +631,8 @@ header .container_header { /*cabeçalho inteiro*/
     padding: 0 40px;
 }
 
-.nav {  /*classe da lista ul */
+.nav {
+    /*classe da lista ul */
     color: black;
     font-weight: bold;
     display: flex;
@@ -644,17 +643,19 @@ header .container_header { /*cabeçalho inteiro*/
 }
 
 
-.nav a{ /*classe da letra dentro da lista */
- color: black;
- outline: none;
- text-decoration: none;
- justify-content: space-between;
- font-size: 20px;
+.nav a {
+    /*classe da letra dentro da lista */
+    color: black;
+    outline: none;
+    text-decoration: none;
+    justify-content: space-between;
+    font-size: 20px;
 }
 
 
 
-header .login {  /*classe do botão*/
+header .login {
+    /*classe do botão*/
     background-color: orange;
     color: white;
     border: none;
@@ -665,24 +666,26 @@ header .login {  /*classe do botão*/
 
 
 
-header .logo_container{ /*div que tem dentro a classe logo img*/
-justify-items: flex-start;
-justify-content: flex-start;
+header .logo_container {
+    /*div que tem dentro a classe logo img*/
+    justify-items: flex-start;
+    justify-content: flex-start;
 
 
 
 }
 
-header .logo{ /*logo da empresa DENTRO DA CLASSE DIV-LOGO_CONTAINER*/
-display: flex;
-padding: 5px 10px;
-width: 200px;
+header .logo {
+    /*logo da empresa DENTRO DA CLASSE DIV-LOGO_CONTAINER*/
+    display: flex;
+    padding: 5px 10px;
+    width: 200px;
 
-   
+
 
 }
 
-.container_header .login{
+.container_header .login {
     width: 150px;
     padding: 15px;
     background-color: #E67C1C;
@@ -703,15 +706,15 @@ width: 200px;
     background-color: #bababa;
     border: none;
     border-radius: 5px;
-   background-color: rgba(128, 128, 128, 0.4);
-   color: white;
-   justify-content: flex-end;
+    background-color: rgba(128, 128, 128, 0.4);
+    color: white;
+    justify-content: flex-end;
 
 }
 
 
 
-.card-Cadastro{
+.card-Cadastro {
     width: 500px;
     padding: 10px;
     color: white;
@@ -719,11 +722,11 @@ width: 200px;
 
 }
 
-.cad_pai{
+.cad_pai {
     display: flex;
-    justify-content: center;  
-    align-items: flex-end;  
-    gap: 100px;                 
+    justify-content: center;
+    align-items: flex-end;
+    gap: 100px;
     max-width: 1200px;
     margin: 40px auto;
     flex-direction: column;
@@ -737,7 +740,7 @@ width: 200px;
     justify-content: space-between;
 }
 
-.cad-input-cadastro{
+.cad-input-cadastro {
     width: 95%;
     padding: 8px;
     border: none;
@@ -756,18 +759,18 @@ width: 200px;
 
 
 
-.button_cadastrar{
+.button_cadastrar {
     background-color: orange;
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 3px;
     font-weight: bold;
-    height: 50px ;
+    height: 50px;
     align-items: center;
     margin-top: 20px;
     width: 200px;
-    padding: 14px ;
+    padding: 14px;
     justify-content: flex-end;
     text-align: center;
 }
@@ -776,7 +779,7 @@ width: 200px;
     background-color: darkorange;
 }
 
-.cad_campos{
+.cad_campos {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -784,10 +787,10 @@ width: 200px;
 
 }
 
-.campoEndereco{
-display: flex;
-flex-direction: column;
-align-items: center;
+.campoEndereco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 
 
