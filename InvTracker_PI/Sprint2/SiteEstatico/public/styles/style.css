@@ -233,12 +233,19 @@ main .sobre .container .porcentagens {
 }
 main .sobre .container .porcentagens .perc{
     display: flex;
-    align-items: center;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+    width: 100%;
 }
 main .sobre .container .porcentagens .perc .titulo{
     font-size: 40px;
     margin: 0;
+}
+main .sobre .container .porcentagens .perc .texto{
+   
+
 }
 
 

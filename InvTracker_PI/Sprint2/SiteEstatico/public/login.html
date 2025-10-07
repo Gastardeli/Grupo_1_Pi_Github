@@ -19,6 +19,7 @@
                 <a href="calculadora.html">Aplicações </a>
                 <a class="now" href="#">Login </a>
                 <a href="cadastro.html">Cadastro </a>
+                <a href="dashboard.html" style="display: none;" id="dashHeader">Dashboard</a>
             </div>
         </div>
     </div>
@@ -47,7 +48,7 @@
                 <a href="#" class="forgot-password">Esqueci minha senha</a>
                 <span id="mensagemErro" class="erro-mensagem"></span>
 
-                <button type="submit" class="login-button" id="btnLogin">LOGIN</button>
+                <button type="button" class="login-button" id="btnLogin" onclick="verificarlogin()">LOGIN</button>
 
                 <p class="signup-prompt">
                     Não possui uma conta?
@@ -78,6 +79,8 @@
             </div>
         </div>
     </div>
+
+    <script src="script/scriptLogin.js"></script>
 </body>
 
 </html>
