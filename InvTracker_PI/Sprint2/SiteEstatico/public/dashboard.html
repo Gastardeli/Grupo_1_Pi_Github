@@ -7,28 +7,31 @@
     <title>InvTracker | Página Inicial</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="icon" href="assets/icon/icon.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 </head>
 
 <body>
     <div class="header">
         <div class="container">
-            <img src="assets/imgs/logo.png">
-            <h1 class="title">InvTracker</h1>
-            <div class="navbar">
-                <a href="index.html">Inicio </a>
-                <a href="calculadora.html">Aplicações </a>
-                <a href="login.html">Login </a>
-                <a href="cadastro.html">Cadastro </a>
-                <a href="#" class="now" style="display: none;" id="dashHeader">Dashboard</a>
+            <div class="dashNav">
+                <img src="assets/imgs/logo.png">
+                <h1 class="title">
+                    <a href="index.html">
+                        InvTracker
+                    </a>
+                </h1>
             </div>
         </div>
     </div>
+    </div>
 
-<main>
-    nada 
-</main>
+    <main>
+        <div class="dashboard">
+            <canvas id="dashboard"></canvas>
+        </div>
+    </main>
 
-  
+
     <div class="footer">
         <div class="container">
             <div class="boxes">
@@ -48,7 +51,36 @@
             </div>
         </div>
     </div>
-     <script src="script/scriptLogin.js"></script>
+    <script src="script/scriptLogin.js"></script>
 </body>
 
 </html>
+
+<script>
+    const dashboard = document.getElementById('dashboard');
+
+    new Chart(dashboard, {
+        type: 'line',
+        data: {
+            datasets: [{
+                label: 'Centimetros',
+                borderColor: '#000000',
+                backgroundColor: '#ff8c00',
+            }]
+        },
+        options: {
+            scales: {
+                x: {
+                    beginAtZero: true
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: '(0-1)'
+                    },
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>

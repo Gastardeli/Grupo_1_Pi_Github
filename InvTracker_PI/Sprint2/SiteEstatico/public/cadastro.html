@@ -35,13 +35,15 @@
                     <input class="cad-input-cadastro" type="text" placeholder="Insira o nome da empresa"><br><br>
 
                     <span>Email</span>
-                    <input class="cad-input-cadastro" type="email" placeholder="Insira seu e-mail"><br><br>
+                    <input class="cad-input-cadastro" type="email" id="email" placeholder="Insira seu e-mail"><br><br>
 
                     <span>Senha</span>
-                    <input class="cad-input-cadastro" type="password" placeholder="Insira sua senha"><br><br>
+                    <input class="cad-input-cadastro" type="password" id="password"
+                        placeholder="Insira sua senha"><br><br>
 
                     <span>Confirme sua Senha</span>
-                    <input class="cad-input-cadastro" type="password" placeholder="Confirme sua senha"><br><br>
+                    <input class="cad-input-cadastro" type="password" id="passCheck"
+                        placeholder="Confirme sua senha"><br><br>
 
                     <span>CNPJ</span>
                     <input class="cad-input-cadastro" type="text" placeholder="Insira o CNPJ"><br><br>
@@ -79,7 +81,7 @@
 
                     </div>
                     <div class="buttonCadastrar">
-                        <button onclick="enviarFormulario()" class="button_cadastrar">Cadastrar-se</button>
+                        <button onclick="cadastro()" class="button_cadastrar">Cadastrar-se</button>
                     </div>
                 </div>
             </div>
@@ -108,21 +110,7 @@
             </div>
         </div>
     </div>
+    <script src="script/scriptLogin.js"></script>
 </body>
-<script src="script/scriptLogin.js"></script>
 
 </html>
-<script>
-
-    function enviarFormulario() {
-
-        alert("Formulario enviado com sucesso")
-
-
-    }
-
-
-
-
-
-</script>
