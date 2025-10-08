@@ -6,9 +6,9 @@ USE grupo1;
 
 -- Criar tabela cliente
 CREATE TABLE cliente (
-	id_cliente INT PRIMARY KEY AUTO_INCREMENT,
-    status_cliente VARCHAR(8),
-		CONSTRAINT chkCliente CHECK (status_cliente IN('Ativo', 'Inativo'))
+	idCliente INT PRIMARY KEY AUTO_INCREMENT,
+    statusCliente VARCHAR(8),
+		CONSTRAINT chkCliente CHECK (statusCliente IN('Ativo', 'Inativo'))
 );
 
 -- Criar a tabela cadastro
@@ -44,8 +44,8 @@ CREATE TABLE pagamento (
     dtContratacao DATETIME DEFAULT current_timestamp, -- Data de registro de quando o serviço foi contratado.
 	dtPagamento DATE,
 	dtVencimento DATE,
-    status_pagamento VARCHAR(25) DEFAULT 'Pendente',
-		CONSTRAINT chkPagamento CHECK( status_pagamento IN ('Inadimplente', 'Pago', 'Cancelado', 'Pendente'))
+    statusPagamento VARCHAR(25) DEFAULT 'Pendente',
+		CONSTRAINT chkPagamento CHECK( statusPagamento IN ('Inadimplente', 'Pago', 'Cancelado', 'Pendente'))
 );
 
 -- Criar a tabela estoque
@@ -86,8 +86,8 @@ CREATE TABLE registro (
 		FOREIGN KEY (fkRegistroSensor)
 			REFERENCES sensor(idSensor),
     distancia DECIMAL(3,2), 
-    status_alerta VARCHAR(8),
-		CONSTRAINT chkAlerta CHECK (status_alerta IN ('Alto', 'Moderado', 'Baixo')),
+    statusAlerta VARCHAR(8),
+		CONSTRAINT chkAlerta CHECK (statusAlerta IN ('Alto', 'Moderado', 'Baixo')),
     dtRegistro DATETIME DEFAULT current_timestamp
 );
 
