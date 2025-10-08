@@ -81,7 +81,7 @@ CREATE TABLE sensor (
 -- Criar a tabela registro
 CREATE TABLE registro (
 	idRegistro INT AUTO_INCREMENT,
-    fkRegistroSensor INT AUTO_INCREMENT,
+    fkRegistroSensor INT,
 		PRIMARY KEY (idRegistro, fkRegistroSensor),
 		FOREIGN KEY (fkRegistroSensor)
 			REFERENCES sensor(idSensor),
