@@ -30,7 +30,12 @@ CREATE TABLE cadastro (
 
 -- Criar tabela pagamento
 CREATE TABLE pagamento (
-	idPagamento INT PRIMARY KEY AUTO_INCREMENT,
+	idPagamento INT AUTO_INCREMENT,
+    fkClientePagto INT,
+		PRIMARY KEY (idPagamento, fkClientePagto),
+		CONSTRAINT fk_pagtoCliente
+			FOREIGN KEY (fkClientePagto)
+			REFERENCES cliente(idCliente),
 	moeda VARCHAR(30) DEFAULT 'BRL',
     preco DECIMAL(10,2),
     metodo VARCHAR(30),
@@ -40,11 +45,7 @@ CREATE TABLE pagamento (
 	dtPagamento DATE,
 	dtVencimento DATE,
     status_pagamento VARCHAR(25) DEFAULT 'Pendente',
-		CONSTRAINT chkPagamento CHECK( status_pagamento IN ('Inadimplente', 'Pago', 'Cancelado', 'Pendente')),
-	fkClientePagto INT,
-		CONSTRAINT fk_pagtoCliente
-        FOREIGN KEY (fkClientePagto)
-        REFERENCES cliente(idCliente)
+		CONSTRAINT chkPagamento CHECK( status_pagamento IN ('Inadimplente', 'Pago', 'Cancelado', 'Pendente'))
 );
 
 -- Criar a tabela estoque
@@ -79,7 +80,11 @@ CREATE TABLE sensor (
 
 -- Criar a tabela registro
 CREATE TABLE registro (
-	idRegistro INT PRIMARY KEY AUTO_INCREMENT,
+	idRegistro INT AUTO_INCREMENT,
+    fkRegistroSensor INT AUTO_INCREMENT,
+		PRIMARY KEY (idRegistro, fkRegistroSensor),
+		FOREIGN KEY (fkRegistroSensor)
+			REFERENCES sensor(idSensor),
     distancia DECIMAL(3,2), 
     status_alerta VARCHAR(8),
 		CONSTRAINT chkAlerta CHECK (status_alerta IN ('Alto', 'Moderado', 'Baixo')),
