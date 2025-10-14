@@ -9,7 +9,7 @@
     <link rel="icon" href="assets/icon/icon.png" />
 </head>
 
-<body>
+<body style="background-color: orange;" >
     <div class="header">
         <div class="container">
             <img src="assets/imgs/logo.png">
@@ -26,8 +26,8 @@
 
 
     <!--Insira todo o Conteúdo da Página aqui!-->
-    <div class="apagar" id="temporaria">
-        <Div class="margin" id="pagina1_html">
+    <div class="apagar" id="temporaria" >
+        <Div class="margin" id="pagina1_html" style="background-color: white;">
                 <h2>Calculadora de Perdas por Erro de Inventário</h2>
                 <b>Selecione a quantia de Unidades</b> <br> <br>
                 <select onchange="input_lojas()" id="select_numeroLojas">
@@ -119,7 +119,7 @@
 
 
 
-        // Dados baseados na pesquisa ABRAPPE  (9,46% por erros de inventário em cima de 1,57% perdas totais)
+        // Dados baseados na pesquisa ABRAPPE  (9,46% por erros de inventário em cima de 1,57% perdas totais )
         var perdas_inventario_ano = (faturamento * 0.0157 * 0.0946).toFixed(2);
 
         // Projeção em 5 anos
@@ -131,7 +131,7 @@
         // REDUÇÃO DE 30% COM NOSSO SISTEMA
         var reducao = 0.30; // 30% de redução
         //var economia_ano = (perdas_inventario_ano * reducao).toFixed(2);
-        var economia_ano = ((faturamento * (reducao * 0.0157 * 0.0946)).toFixed(2));
+        var economia_ano = (faturamento * (reducao * 0.0157 * 0.0946)).toFixed(2)
         var economia_5_anos = (economia_ano * 5).toFixed(2);
 
         if (faturamento != '') {
@@ -144,7 +144,6 @@
             texto += "<h3 style='color: green;'>Oportunidades com Nosso Sistema</h3>";
             texto += "<p>Com redução estimada de <b style='color: green;'>30% nos erros de inventário: </b></p>";
             texto += "<p>Economia anual: <b style='color: green;'>R$ " + economia_ano + "</b></p>";
-            texto += "<p>Aumento de <b style='color: green;'>2x</b> na lucratividade</p>";
             texto += "<p>Economia em 5 anos: <b style='color: green;'>R$ " + economia_5_anos + "</b></p>";
 
 
@@ -184,10 +183,7 @@
             <h4>Economia Anual Estimada</h4>
             <p>
                 Ao adotar o nosso sistema de monitoramento e controle, estima-se uma
-                <b>redução de até 30%</b> nas perdas causadas por erros de inventário. <br><br>
-                De acordo com o Diário do Comércio, ao reduzir as perdas pela metade, pode-se alcançar o <b>triplo de lucro</b>, então com uma redução de 30% nas perdas de inventário será possível alcançar, em média, um aumento no <b>dobro</b> da lucratividade.
-            </p>    
-            <br> <br>
+                <b>redução de até 30%</b> nas perdas causadas por erros de inventário. <br> <br>
             <button onclick="voltar()">Voltar</button>
         </div>`
 
