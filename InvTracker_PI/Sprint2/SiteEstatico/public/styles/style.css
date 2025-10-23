@@ -145,8 +145,8 @@ main .introducao .container {
     flex-direction: column;
     padding: 50px 100px;
     background-color: black;
-    
-   
+
+
 }
 
 main .introducao .container .titulo {
@@ -154,11 +154,11 @@ main .introducao .container .titulo {
     color: rgb(255, 255, 255);
     font-weight: 700;
     font-size: 40px;
-     
+
 }
 
 main .introducao .container .texto {
-     color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     font-weight: 300;
     font-size: 20px;
     width: 70%;
@@ -817,21 +817,26 @@ header .logo {
 
 .containerDashboard {
     display: flex;
-    height: 150vh;
+    padding-top: 6%;
+    padding-bottom: 6%;
     width: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #f7a8389d;
+}
+
+.containerDashboard b {
+    font-size: 25px;
 }
 
 .kpiBoxes {
     display: flex;
-    height: 350px;
-    flex-direction: column;
+    flex-direction: row;
     padding-bottom: 5px;
     justify-content: space-evenly;
     text-align: center;
-
+    margin-top: 30px;
 
 }
 
@@ -840,6 +845,32 @@ header .logo {
     flex-direction: column;
     border: solid grey 2px;
     border-radius: 10px;
+    margin: 5px;
+    background-color: white;
+}
+
+.kpiBoxes .kpiBox p {
+    font-size: 20px;
+}
+
+.graficosDashboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.graficosDashboard .boxEstoque {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.graficosDashboard .boxLotes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
 }
 
 .dashboardEstoque {
@@ -849,7 +880,7 @@ header .logo {
 .conteinerBoxes {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr); 
+    grid-template-rows: repeat(2, 1fr);
     gap: 10px;
     height: 500px;
     width: 1000px;
@@ -865,6 +896,7 @@ header .logo {
     border-radius: 10px;
     align-items: center;
     justify-content: center;
+    background-color: white;
 }
 
 .dashboard {
@@ -896,7 +928,7 @@ header .logo {
 
 /* Responsividade básica */
 @media screen and (max-width: 1000px) {
-  
+
 
     main .sobre .container .porcentagens .todasaspercs {
         display: flex;
@@ -906,6 +938,22 @@ header .logo {
 
     }
 
-   
+    .graficosDashboard {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .conteinerBoxes {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .kpiBoxes {
+        display: flex;
+        flex-direction: column;
+    }
+
+
 
 }

@@ -2,113 +2,134 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InvTracker | Página Inicial</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="icon" href="assets/icon/icon.png" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InvTracker | Página Inicial</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="icon" href="assets/icon/icon.png" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1"></script>
 </head>
 
 <body>
-    <div class="header">
-        <div class="container">
-            <div class="dashNav">
-                <img src="assets/imgs/logo.png">
-                <h1 class="title">
-                    <a href="index.html">
-                        InvTracker
-                    </a>
-                </h1>
-            </div>
-        </div>
+  <div class="header">
+    <div class="container">
+      <div class="dashNav">
+        <img src="assets/imgs/logo.png">
+        <h1 class="title">
+          <a href="index.html">
+            InvTracker
+          </a>
+        </h1>
+      </div>
     </div>
-    </div>
+  </div>
+  </div>
 
-    <main>
+  <main>
 
 
-        <div class="containerDashboard">
-            <b>Selectione seu estoque</b> <br>
-            <select style="border-radius: 10px; text-align: center;">
-                <option value="" disabled>Selecione uma opção</option>
-                <option value="estoque1" selected>Estoque 1</option>
-
-            </select>
-            <div class="kpiBoxes">
-                <div class="kpiBox">
-                    <p class="titulo">Qual Produto está com maior movimentação: <span style="color: red">Traquinas</span></p>
-                </div>
-                <div class="kpiBox">
-                    <p class="titulo">Estado do lote (volume): <span style="color: red">Vazio</span></p>
-                </div>
-                <div class="kpiBox">
-                    <p class="titulo">Último produto movimentado <span style="color: red">Pasta de dente Colgate</span></p>
-                </div>
-                <div class="kpiBox">
-                    <p class="titulo">Quais lotes precisam de reabastecimento <span style="color: red">Lacta Branco</span></p>
-                </div>
-                <div class="kpiBox">
-                    <p class="titulo">Quantos lotes precisam de reabastecimento <span style="color: red">50</span></p>   
-                </div>
-            </div>
-            <br>
-            <div class="title"> <h3>Estoque</h3> </div>
-            <div class="dashboardEstoque">
-                <div class="dashBox">
-                    <div class="dashboard">
-                        <canvas id="dashboardEstoque"></canvas>
-                    </div>
-                </div>
-            </div>
-            <div class="title"><h3>Lote</h3></div>
-            <div class="conteinerBoxes">
-                <div class="dashBox">
-                    <div class="dashboard">
-                        <canvas id="dashboard1"></canvas>
-                    </div>
-                </div>
-                <div class="dashBox">
-                    <div class="dashboard">
-                        <canvas id="dashboard2"></canvas>
-                    </div>
-                </div>
-                <div class="dashBox">
-                    <div class="dashboard">
-                        <canvas id="dashboard3"></canvas>
-                    </div>
-                </div>
-                <div class="dashBox">
-                    <div class="dashboard">
-                        <canvas id="dashboard4"></canvas>
-                    </div>
-                </div>
-            </div>
+    <div class="containerDashboard">
+      <b>Selecione seu estoque</b> <br>
+      <select style="border-radius: 10px; text-align: center;">
+        <option value="" disabled>Selecione uma opção</option>
+        <option value="estoque1" selected>Estoque 1</option>
+      </select>
+      <div class="kpiBoxes">
+        <div class="kpiBox">
+          <p class="titulo">Qual Produto está com maior movimentação:
+          <p style="color: red">Traquinas</p>
+          </p>
         </div>
-    </main>
-
-
-    <div class="footer">
-        <div class="container">
-            <div class="boxes">
-                <div class="box">
-                    <img src="assets/imgs/logo.png">
-                    <h4>InvTracker</h4>
-                    <span>Todos os direitos reservados a InvTracker 2025</span>
-                </div>
-                <div class="box">
-                    <h4>Recursos</h4>
-                    <span>Soluções IoT, dashboard web, relatórios de desempenho</span>
-                </div>
-                <div class="box">
-                    <h4>Dev´s</h4>
-                    <span>Equipe dedicada em engenharia de software e banco de dados.</span>
-                </div>
-            </div>
+        <div class="kpiBox">
+          <p class="titulo">Estado do lote (volume):
+          <p style="color: red">Vazio</p>
+          </p>
         </div>
+        <div class="kpiBox">
+          <p class="titulo">Último produto movimentado
+          <p style="color: red">Pasta de dente Colgate</p>
+          </p>
+        </div>
+        <div class="kpiBox">
+          <p class="titulo">Quais lotes precisam de reabastecimento
+          <p style="color: red">Lacta Branco</p>
+          </p>
+        </div>
+        <div class="kpiBox">
+          <p class="titulo">Quantos lotes precisam de reabastecimento
+          <p style="color: red">50</p>
+          </p>
+        </div>
+      </div>
+      <br>
+
+      <div class="graficosDashboard">
+        <div class="boxEstoque">
+          <div class="title">
+            <h3>Estoque</h3>
+          </div>
+          <div class="dashboardEstoque">
+            <div class="dashBox">
+              <div class="dashboard">
+                <canvas id="dashboardEstoque"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="boxLotes">
+          <div class="title">
+            <h3>Lote</h3>
+          </div>
+          <div class="conteinerBoxes">
+            <div class="dashBox">
+              <div class="dashboard">
+                <canvas id="dashboard1"></canvas>
+              </div>
+            </div>
+            <div class="dashBox">
+              <div class="dashboard">
+                <canvas id="dashboard2"></canvas>
+              </div>
+            </div>
+            <div class="dashBox">
+              <div class="dashboard">
+                <canvas id="dashboard3"></canvas>
+              </div>
+            </div>
+            <div class="dashBox">
+              <div class="dashboard">
+                <canvas id="dashboard4"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="script/scriptLogin.js"></script>
+    
+  </main>
+
+
+  <div class="footer">
+    <div class="container">
+      <div class="boxes">
+        <div class="box">
+          <img src="assets/imgs/logo.png">
+          <h4>InvTracker</h4>
+          <span>Todos os direitos reservados a InvTracker 2025</span>
+        </div>
+        <div class="box">
+          <h4>Recursos</h4>
+          <span>Soluções IoT, dashboard web, relatórios de desempenho</span>
+        </div>
+        <div class="box">
+          <h4>Dev´s</h4>
+          <span>Equipe dedicada em engenharia de software e banco de dados.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script/scriptLogin.js"></script>
 </body>
 
 </html>
@@ -129,316 +150,316 @@
   new Chart(dashboardLote1, {
     type: 'bar',
     data: {
-      labels: ['5:00', '5:10', '5:20', '5:30', '5:40', '5:50', '6:00', '6:10','6:20','6:30','6:40','6:50','7:00','7:10','7:20','7:30','7:40','7:50','8:00','8:10','8:20','8:30','8:40','8:50','9:00','9:10','9:20','9:30','9:40','9:50','10:00'
-],
+      labels: ['5:00', '5:10', '5:20', '5:30', '5:40', '5:50', '6:00', '6:10', '6:20', '6:30', '6:40', '6:50', '7:00', '7:10', '7:20', '7:30', '7:40', '7:50', '8:00', '8:10', '8:20', '8:30', '8:40', '8:50', '9:00', '9:10', '9:20', '9:30', '9:40', '9:50', '10:00'
+      ],
       datasets: [{
         label: 'Horário',
         backgroundColor: 'rgb(0,0,0)',
         borderColor: 'rgb(0,0,0)',
-        data: ['5:00', '5:10', '5:20', '5:30', '5:40', '5:50', '6:00', '6:10','6:20','6:30','6:40','6:50','7:00','7:10','7:20','7:30','7:40','7:50','8:00','8:10','8:20','8:30','8:40','8:50','9:00','9:10','9:20','9:30','9:40','9:50','10:00'
-],
+        data: ['5:00', '5:10', '5:20', '5:30', '5:40', '5:50', '6:00', '6:10', '6:20', '6:30', '6:40', '6:50', '7:00', '7:10', '7:20', '7:30', '7:40', '7:50', '8:00', '8:10', '8:20', '8:30', '8:40', '8:50', '9:00', '9:10', '9:20', '9:30', '9:40', '9:50', '10:00'
+        ],
         borderWidth: 1
       },
       {
         label: 'Ocupação (em porcentagem)',
         backgroundColor: 'orange',
         borderColor: 'orange',
-        data: [5, 5, 5, 5, 10, 15, 15, 15,30,45,45,45,60,60,60,75,30,15,5,5,5,5,100,100,100,100,100,100,60,60,60
-],
+        data: [5, 5, 5, 5, 10, 15, 15, 15, 30, 45, 45, 45, 60, 60, 60, 75, 30, 15, 5, 5, 5, 5, 100, 100, 100, 100, 100, 100, 60, 60, 60
+        ],
         borderWidth: 1
       }]
     },
     options: {
-    plugins: {
-      annotation: {
-        annotations: {
-          linhaHorizontal: {
-            type: 'line',
-            yMin: 20,   // valor Y onde a linha ficará
-            yMax: 20,   // mesmo valor para ficar reta
-            borderColor: 'red',
-            borderWidth: 2,
-            borderDash: [5, 5], // tracejada opcional
-            label: {
-              display: true,
-              content: 'ZONA DE RISCO',
-              position: 'start'
-            }
-          },
-          linhaHorizonta2: {
-            type: 'line',
-            yMin: 99,   // valor Y onde a linha ficará
-            yMax: 99,   // mesmo valor para ficar reta
-            borderColor: 'green',
-            borderWidth: 2,
-            borderDash: [5, 5], // tracejada opcional
-            label: {
-              display: true,
-              content: 'LOTE CHEIO',
-              position: 'start'
+      plugins: {
+        annotation: {
+          annotations: {
+            linhaHorizontal: {
+              type: 'line',
+              yMin: 20,   // valor Y onde a linha ficará
+              yMax: 20,   // mesmo valor para ficar reta
+              borderColor: 'red',
+              borderWidth: 2,
+              borderDash: [5, 5], // tracejada opcional
+              label: {
+                display: true,
+                content: 'ZONA DE RISCO',
+                position: 'start'
+              }
+            },
+            linhaHorizonta2: {
+              type: 'line',
+              yMin: 99,   // valor Y onde a linha ficará
+              yMax: 99,   // mesmo valor para ficar reta
+              borderColor: 'green',
+              borderWidth: 2,
+              borderDash: [5, 5], // tracejada opcional
+              label: {
+                display: true,
+                content: 'LOTE CHEIO',
+                position: 'start'
+              }
             }
           }
         }
-      }
-    },
-    scales: {
+      },
+      scales: {
         y: {
-            beginAtZero: true
+          beginAtZero: true
         }
-        }
+      }
     }
-    });
+  });
 
   new Chart(dashboardLote2, {
     type: 'bar',
     data: {
-      labels: ['5:00', '5:10', '5:20', '5:30', '5:40', '5:50', '6:00', '6:10','6:20','6:30','6:40','6:50','7:00','7:10','7:20','7:30','7:40','7:50','8:00','8:10','8:20','8:30','8:40','8:50','9:00','9:10','9:20','9:30','9:40','9:50','10:00'
-],
+      labels: ['5:00', '5:10', '5:20', '5:30', '5:40', '5:50', '6:00', '6:10', '6:20', '6:30', '6:40', '6:50', '7:00', '7:10', '7:20', '7:30', '7:40', '7:50', '8:00', '8:10', '8:20', '8:30', '8:40', '8:50', '9:00', '9:10', '9:20', '9:30', '9:40', '9:50', '10:00'
+      ],
       datasets: [{
         label: 'Horário',
         backgroundColor: 'rgb(0,0,0)',
         borderColor: 'rgb(0,0,0)',
-        data: ['5:00', '5:10', '5:20', '5:30', '5:40', '5:50', '6:00', '6:10','6:20','6:30','6:40','6:50','7:00','7:10','7:20','7:30','7:40','7:50','8:00','8:10','8:20','8:30','8:40','8:50','9:00','9:10','9:20','9:30','9:40','9:50','10:00'
-],
+        data: ['5:00', '5:10', '5:20', '5:30', '5:40', '5:50', '6:00', '6:10', '6:20', '6:30', '6:40', '6:50', '7:00', '7:10', '7:20', '7:30', '7:40', '7:50', '8:00', '8:10', '8:20', '8:30', '8:40', '8:50', '9:00', '9:10', '9:20', '9:30', '9:40', '9:50', '10:00'
+        ],
         borderWidth: 1
       },
       {
         label: 'Ocupação (em porcentagem)',
         backgroundColor: 'orange',
         borderColor: 'orange',
-        data: [5, 5, 5, 5, 10, 15, 15, 15,30,45,45,45,60,60,60,75,30,15,5,5,5,5,100,100,100,100,100,100,60,60,60
-],
+        data: [5, 5, 5, 5, 10, 15, 15, 15, 30, 45, 45, 45, 60, 60, 60, 75, 30, 15, 5, 5, 5, 5, 100, 100, 100, 100, 100, 100, 60, 60, 60
+        ],
         borderWidth: 1
       }]
     },
     options: {
-    plugins: {
-      annotation: {
-        annotations: {
-          linhaHorizontal: {
-            type: 'line',
-            yMin: 20,   // valor Y onde a linha ficará
-            yMax: 20,   // mesmo valor para ficar reta
-            borderColor: 'red',
-            borderWidth: 2,
-            borderDash: [5, 5], // tracejada opcional
-            label: {
-              display: true,
-              content: 'ZONA DE RISCO',
-              position: 'start'
-            }
-          },
-          linhaHorizonta2: {
-            type: 'line',
-            yMin: 99,   // valor Y onde a linha ficará
-            yMax: 99,   // mesmo valor para ficar reta
-            borderColor: 'green',
-            borderWidth: 2,
-            borderDash: [5, 5], // tracejada opcional
-            label: {
-              display: true,
-              content: 'LOTE CHEIO',
-              position: 'start'
+      plugins: {
+        annotation: {
+          annotations: {
+            linhaHorizontal: {
+              type: 'line',
+              yMin: 20,   // valor Y onde a linha ficará
+              yMax: 20,   // mesmo valor para ficar reta
+              borderColor: 'red',
+              borderWidth: 2,
+              borderDash: [5, 5], // tracejada opcional
+              label: {
+                display: true,
+                content: 'ZONA DE RISCO',
+                position: 'start'
+              }
+            },
+            linhaHorizonta2: {
+              type: 'line',
+              yMin: 99,   // valor Y onde a linha ficará
+              yMax: 99,   // mesmo valor para ficar reta
+              borderColor: 'green',
+              borderWidth: 2,
+              borderDash: [5, 5], // tracejada opcional
+              label: {
+                display: true,
+                content: 'LOTE CHEIO',
+                position: 'start'
+              }
             }
           }
         }
-      }
-    },
-    scales: {
+      },
+      scales: {
         y: {
-            beginAtZero: true
+          beginAtZero: true
         }
-        }
+      }
     }
-    });
+  });
 
   new Chart(dashboardLote3, {
     type: 'bar',
     data: {
-      labels: ['5:00', '5:10', '5:20', '5:30', '5:40', '5:50', '6:00', '6:10','6:20','6:30','6:40','6:50','7:00','7:10','7:20','7:30','7:40','7:50','8:00','8:10','8:20','8:30','8:40','8:50','9:00','9:10','9:20','9:30','9:40','9:50','10:00'
-],
+      labels: ['5:00', '5:10', '5:20', '5:30', '5:40', '5:50', '6:00', '6:10', '6:20', '6:30', '6:40', '6:50', '7:00', '7:10', '7:20', '7:30', '7:40', '7:50', '8:00', '8:10', '8:20', '8:30', '8:40', '8:50', '9:00', '9:10', '9:20', '9:30', '9:40', '9:50', '10:00'
+      ],
       datasets: [{
         label: 'Horário',
         backgroundColor: 'rgb(0,0,0)',
         borderColor: 'rgb(0,0,0)',
-        data: ['5:00', '5:10', '5:20', '5:30', '5:40', '5:50', '6:00', '6:10','6:20','6:30','6:40','6:50','7:00','7:10','7:20','7:30','7:40','7:50','8:00','8:10','8:20','8:30','8:40','8:50','9:00','9:10','9:20','9:30','9:40','9:50','10:00'
-],
+        data: ['5:00', '5:10', '5:20', '5:30', '5:40', '5:50', '6:00', '6:10', '6:20', '6:30', '6:40', '6:50', '7:00', '7:10', '7:20', '7:30', '7:40', '7:50', '8:00', '8:10', '8:20', '8:30', '8:40', '8:50', '9:00', '9:10', '9:20', '9:30', '9:40', '9:50', '10:00'
+        ],
         borderWidth: 1
       },
       {
         label: 'Ocupação (em porcentagem)',
         backgroundColor: 'orange',
         borderColor: 'orange',
-        data: [5, 5, 5, 5, 10, 15, 15, 15,30,45,45,45,60,60,60,75,30,15,5,5,5,5,100,100,100,100,100,100,60,60,60
-],
+        data: [5, 5, 5, 5, 10, 15, 15, 15, 30, 45, 45, 45, 60, 60, 60, 75, 30, 15, 5, 5, 5, 5, 100, 100, 100, 100, 100, 100, 60, 60, 60
+        ],
         borderWidth: 1
       }]
     },
     options: {
-    plugins: {
-      annotation: {
-        annotations: {
-          linhaHorizontal: {
-            type: 'line',
-            yMin: 20,   // valor Y onde a linha ficará
-            yMax: 20,   // mesmo valor para ficar reta
-            borderColor: 'red',
-            borderWidth: 2,
-            borderDash: [5, 5], // tracejada opcional
-            label: {
-              display: true,
-              content: 'ZONA DE RISCO',
-              position: 'start'
-            }
-          },
-          linhaHorizonta2: {
-            type: 'line',
-            yMin: 99,   // valor Y onde a linha ficará
-            yMax: 99,   // mesmo valor para ficar reta
-            borderColor: 'green',
-            borderWidth: 2,
-            borderDash: [5, 5], // tracejada opcional
-            label: {
-              display: true,
-              content: 'LOTE CHEIO',
-              position: 'start'
+      plugins: {
+        annotation: {
+          annotations: {
+            linhaHorizontal: {
+              type: 'line',
+              yMin: 20,   // valor Y onde a linha ficará
+              yMax: 20,   // mesmo valor para ficar reta
+              borderColor: 'red',
+              borderWidth: 2,
+              borderDash: [5, 5], // tracejada opcional
+              label: {
+                display: true,
+                content: 'ZONA DE RISCO',
+                position: 'start'
+              }
+            },
+            linhaHorizonta2: {
+              type: 'line',
+              yMin: 99,   // valor Y onde a linha ficará
+              yMax: 99,   // mesmo valor para ficar reta
+              borderColor: 'green',
+              borderWidth: 2,
+              borderDash: [5, 5], // tracejada opcional
+              label: {
+                display: true,
+                content: 'LOTE CHEIO',
+                position: 'start'
+              }
             }
           }
         }
-      }
-    },
-    scales: {
+      },
+      scales: {
         y: {
-            beginAtZero: true
+          beginAtZero: true
         }
-        }
+      }
     }
-    });
+  });
 
   new Chart(dashboardLote4, {
     type: 'bar',
     data: {
-      labels: ['5:00', '5:10', '5:20', '5:30', '5:40', '5:50', '6:00', '6:10','6:20','6:30','6:40','6:50','7:00','7:10','7:20','7:30','7:40','7:50','8:00','8:10','8:20','8:30','8:40','8:50','9:00','9:10','9:20','9:30','9:40','9:50','10:00'
-],
+      labels: ['5:00', '5:10', '5:20', '5:30', '5:40', '5:50', '6:00', '6:10', '6:20', '6:30', '6:40', '6:50', '7:00', '7:10', '7:20', '7:30', '7:40', '7:50', '8:00', '8:10', '8:20', '8:30', '8:40', '8:50', '9:00', '9:10', '9:20', '9:30', '9:40', '9:50', '10:00'
+      ],
       datasets: [{
         label: 'Horário',
         backgroundColor: 'rgb(0,0,0)',
         borderColor: 'rgb(0,0,0)',
-        data: ['5:00', '5:10', '5:20', '5:30', '5:40', '5:50', '6:00', '6:10','6:20','6:30','6:40','6:50','7:00','7:10','7:20','7:30','7:40','7:50','8:00','8:10','8:20','8:30','8:40','8:50','9:00','9:10','9:20','9:30','9:40','9:50','10:00'
-],
+        data: ['5:00', '5:10', '5:20', '5:30', '5:40', '5:50', '6:00', '6:10', '6:20', '6:30', '6:40', '6:50', '7:00', '7:10', '7:20', '7:30', '7:40', '7:50', '8:00', '8:10', '8:20', '8:30', '8:40', '8:50', '9:00', '9:10', '9:20', '9:30', '9:40', '9:50', '10:00'
+        ],
         borderWidth: 1
       },
       {
         label: 'Ocupação (em porcentagem)',
         backgroundColor: 'orange',
         borderColor: 'orange',
-        data: [5, 5, 5, 5, 10, 15, 15, 15,30,45,45,45,60,60,60,75,30,15,5,5,5,5,100,100,100,100,100,100,60,60,60
-],
+        data: [5, 5, 5, 5, 10, 15, 15, 15, 30, 45, 45, 45, 60, 60, 60, 75, 30, 15, 5, 5, 5, 5, 100, 100, 100, 100, 100, 100, 60, 60, 60
+        ],
         borderWidth: 1
       }]
     },
     options: {
-    plugins: {
-      annotation: {
-        annotations: {
-          linhaHorizontal: {
-            type: 'line',
-            yMin: 20,   // valor Y onde a linha ficará
-            yMax: 20,   // mesmo valor para ficar reta
-            borderColor: 'red',
-            borderWidth: 2,
-            borderDash: [5, 5], // tracejada opcional
-            label: {
-              display: true,
-              content: 'ZONA DE RISCO',
-              position: 'start'
-            }
-          },
-          linhaHorizonta2: {
-            type: 'line',
-            yMin: 99,   // valor Y onde a linha ficará
-            yMax: 99,   // mesmo valor para ficar reta
-            borderColor: 'green',
-            borderWidth: 2,
-            borderDash: [5, 5], // tracejada opcional
-            label: {
-              display: true,
-              content: 'LOTE CHEIO',
-              position: 'start'
-            }
-          }
-        }
-      }
-    },
-    scales: {
-        y: {
-            beginAtZero: true
-        }
-        }
-    }
-    });
-
-  new Chart(dashboardEstoque, {
-        type: 'bar',
-        data: {
-        labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"
-    ],
-        datasets: [{
-            label: 'Lote',
-            backgroundColor: 'rgb(0,0,0)',
-            borderColor: 'rgb(0,0,0)',
-            data: [
-    ],
-            borderWidth: 1
-        },
-        {
-            label: 'Ocupação (em porcentagem)',
-            backgroundColor: 'orange',
-            borderColor: 'orange',
-            data: [80,60,40,90,75,64,83,73,28,69
-    ],
-            borderWidth: 1
-        }]
-        },
-        options: {
-        plugins: {
+      plugins: {
         annotation: {
-            annotations: {
+          annotations: {
             linhaHorizontal: {
-                type: 'line',
-                yMin: 20,   // valor Y onde a linha ficará
-                yMax: 20,   // mesmo valor para ficar reta
-                borderColor: 'red',
-                borderWidth: 2,
-                borderDash: [5, 5], // tracejada opcional
-                label: {
+              type: 'line',
+              yMin: 20,   // valor Y onde a linha ficará
+              yMax: 20,   // mesmo valor para ficar reta
+              borderColor: 'red',
+              borderWidth: 2,
+              borderDash: [5, 5], // tracejada opcional
+              label: {
                 display: true,
                 content: 'ZONA DE RISCO',
                 position: 'start'
-                }
+              }
             },
             linhaHorizonta2: {
-                type: 'line',
-                yMin: 99,   // valor Y onde a linha ficará
-                yMax: 99,   // mesmo valor para ficar reta
-                borderColor: 'green',
-                borderWidth: 2,
-                borderDash: [5, 5], // tracejada opcional
-                label: {
+              type: 'line',
+              yMin: 99,   // valor Y onde a linha ficará
+              yMax: 99,   // mesmo valor para ficar reta
+              borderColor: 'green',
+              borderWidth: 2,
+              borderDash: [5, 5], // tracejada opcional
+              label: {
                 display: true,
                 content: 'LOTE CHEIO',
                 position: 'start'
-                }
+              }
             }
-            }
+          }
         }
-        },
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-            }
+      },
+      scales: {
+        y: {
+          beginAtZero: true
         }
-        });
+      }
+    }
+  });
+
+  new Chart(dashboardEstoque, {
+    type: 'bar',
+    data: {
+      labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"
+      ],
+      datasets: [{
+        label: 'Lote',
+        backgroundColor: 'rgb(0,0,0)',
+        borderColor: 'rgb(0,0,0)',
+        data: [
+        ],
+        borderWidth: 1
+      },
+      {
+        label: 'Ocupação (em porcentagem)',
+        backgroundColor: 'orange',
+        borderColor: 'orange',
+        data: [80, 60, 40, 90, 75, 64, 83, 73, 28, 69
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      plugins: {
+        annotation: {
+          annotations: {
+            linhaHorizontal: {
+              type: 'line',
+              yMin: 20,   // valor Y onde a linha ficará
+              yMax: 20,   // mesmo valor para ficar reta
+              borderColor: 'red',
+              borderWidth: 2,
+              borderDash: [5, 5], // tracejada opcional
+              label: {
+                display: true,
+                content: 'ZONA DE RISCO',
+                position: 'start'
+              }
+            },
+            linhaHorizonta2: {
+              type: 'line',
+              yMin: 99,   // valor Y onde a linha ficará
+              yMax: 99,   // mesmo valor para ficar reta
+              borderColor: 'green',
+              borderWidth: 2,
+              borderDash: [5, 5], // tracejada opcional
+              label: {
+                display: true,
+                content: 'LOTE CHEIO',
+                position: 'start'
+              }
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
 
 </script>
