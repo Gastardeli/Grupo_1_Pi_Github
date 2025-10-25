@@ -110,18 +110,99 @@ body {
     margin: 0;
 }
 
-.apagar {
+/* COMEÇO DA ESTILIZAÇÃO DA CALCULADORA */
+
+.container_inputs {
+    width: 100%;
+    min-height: 1000px;
+    padding: 50px 0px;
     display: flex;
-    height: 1000px;
     text-align: center;
     justify-content: center;
     align-items: center;
+    background-image: url('../assets/imgs/close-up-warehouse-view.jpg');
+
+    /* imagem temporaria*/
+    background-size: cover;
+    background-position: center;
+
+    z-index: 1;
+}
+
+.container_modal_calculadora {
+    width: 100%;
+    min-height: 1000px;
+    height: 1452px;
+    background-color: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    padding-top: 300px;
+}
+
+.box_modal_calculadora {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+}
+
+.modal_calculadora {
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    background-color: white;
+    border-radius: 10px;
+    border: orange 8px solid;
+}
+
+.modal_calculadora button {
+    background-color: orange;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.container_filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container_filter button {
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.apagar {
+    display: flex;
+    justify-content: space-between;
 }
 
 .apagar .margin {
+
     border: solid orange;
+    width: 100%;
+    padding: 10px;
+    background-color: #bababa;
+    border: none;
     border-radius: 10px;
-    width: 70%;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    justify-content: flex-end;
+    margin-left: 10px;
 }
 
 
@@ -518,7 +599,7 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
 .resultado {
     display: flex;
     margin: 10px;
-    background-color: rgb(231, 231, 231);
+    background-color: rgb(41, 41, 41);
     border-radius: 10px;
     flex-direction: column;
     align-content: space-between;

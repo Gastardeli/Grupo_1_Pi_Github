@@ -9,7 +9,7 @@
     <link rel="icon" href="assets/icon/icon.png" />
 </head>
 
-<body style="background-color: orange;" >
+<body>
     <div class="header">
         <div class="container">
             <img src="assets/imgs/logo.png">
@@ -24,21 +24,75 @@
         </div>
     </div>
 
-
     <!--Insira todo o Conteúdo da Página aqui!-->
-    <div class="apagar" id="temporaria" >
-        <Div class="margin" id="pagina1_html" style="background-color: white;">
-                <h2>Calculadora de Perdas por Erro de Inventário</h2>
-                <b>Selecione a quantia de Unidades</b> <br> <br>
-                <select onchange="input_lojas()" id="select_numeroLojas">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">Mais de três Lojas</option>
-                    <option disabled selected value="">Selecione uma Opção</option>
-                </select> <br> <br>
-                <div class="calc_html" id="calculadora_html"></div> <br> <br>
-        </Div>
+    <div class="container_inputs">
+        <div class= "container_modal_calculadora" style="display: none;" id="modal_calculadora1">
+            <div class="box_modal_calculadora">
+                <div class="modal_calculadora">
+                    <div id="pagina2_html">
+                        <h2>Explicação Detalhada</h2>
+                        
+                        <h3>Perdas Anuais Estimadas</h3>
+                        <p>
+                            De acordo com a pesquisa da <b>ABRAPPE</b>, em média
+                            <b>1,57% do faturamento das empresas</b> é perdido em razão de
+                            quebras, furtos e erros de inventário.
+                        </p>
+                        <p>
+                            Aproximadamente <b>9,46%</b> das perdas estão
+                            diretamente ligadas a <b>erros de inventário</b>, ou seja,
+                            diferenças entre o estoque físico e o registrado no sistema.
+                        </p>
+                        <p>
+                            Esse percentual pode parecer pequeno, mas em grandes volumes de
+                            faturamento representa <b>valores significativos</b> que afetam
+                            diretamente a lucratividade.
+                        </p>
+                        <h4>Economia Anual Estimada</h4>
+                        <p>
+                            Ao adotar o nosso sistema de monitoramento e controle, estima-se uma
+                            <b>redução de até 60%</b> nas perdas causadas por erros de inventário. <br><br>
+                            De acordo com o Diário do Comércio, ao reduzir as perdas pela metade, pode-se alcançar o <b>triplo de lucro</b>, como indicado em nossa calculadora, através do informativo de "Possível lucratividade em vendas de estoques recuperados" 
+                        </p>    
+                        <br> <br>
+                        <button onclick="voltar()">Voltar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container_filter">
+            <div class="apagar" id="temporaria">
+                <Div class="margin" id="pagina1_html">
+                        <h2>Calculadora de Perdas por Erro de Inventário</h2>
+                        <b>Selecione a quantia de Unidades</b> <br> <br>
+                        <select onchange="input_lojas()" id="select_numeroLojas">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">Mais de três Lojas</option>
+                            <option disabled selected value="">Selecione uma Opção</option>
+                        </select> <br> <br>
+                        <div class="calc_html" id="calculadora_html"></div> <br> <br>
+                </Div>
+                <Div class="margin" id="pagina2_html">
+                    <h2>Calculadora Específica de Perdas por Erro de Inventário</h2>
+                    <b>Insira os dados abaixo</b> <br> <br>
+                    <div class="calc_html" id="calculadora_html1">
+                        <p>Nome do produto específico</p>
+                        <input type="text" id="input_nome" placeholder="ex. Lay's"><br>
+                        <p>Valor de compra do produto (unitário)</p>
+                        <input type="text" id="input_valor_compra" placeholder="ex. R$2.00"> <br>
+                        <p>Valor de venda do produto (unitário)</p>
+                        <input type="text" id="input_valor_venda" placeholder="ex. R$5.60"> <br>
+                        <p>Quantidade média do produto no estoque (unidades)</p>
+                        <input type="text" id="input_quantidade" placeholder="ex. 10000"> <br><br>
+                        <button onclick="input_calculo_especifico()">Calcular</button> <br><br>
+                        <div id="div_resultado1" class="resultado" placeholder="ex. Lay's"> </div>
+                    </div> <br> <br>
+                </Div>
+            </div>
+            <button onclick="calculos()" style="display: none;" id="botao_modal">Saiba Mais</button>
+        </div>
     </div>
 
 
@@ -62,6 +116,7 @@
             </div>
         </div>
     </div>
+
 </body>
  <script src="script/scriptLogin.js"></script>
 
@@ -73,9 +128,59 @@
     <br> `;
     var input1 = `<br> <input type="number" id="input_faturamento1" placeholder="Unidade 02: Ex.R$3.500"> <br>`
     var input2 = `<br> <input type="number" id="input_faturamento2" placeholder="Unidade 03: Ex.R$2.300"> <br>`
-    var input_varias = `<input type="number" id="input_faturamento" placeholder="Soma das unidades">
-    <br> `;
+    var input_varias = `<br> <input type="number" id="input_faturamento" placeholder="Soma das unidades">
+    <br> `
+    var input_custos = `<br> <input type="number" id="input_custos" placeholder="Unidade 1">
+    <br> `
+    var input_custos1 = `<br> <input type="number" id="input_custos1" placeholder="Unidade 2"> <br> `
+    var input_custos2 = `<br> <input type="number" id="input_custos2" placeholder="Unidade 3"> <br> `
+    var input_custos_varios = `<br> <input type="number" id="input_custos2" placeholder="Soma das unidades"> <br> `
+    ;
     
+    function input_calculo_especifico() {
+        botao_modal.style.display = "block";
+
+        var nome = input_nome.value;
+        var compra = Number(input_valor_compra.value);
+        var venda = Number(input_valor_venda.value);
+        var quantidade = Number(input_quantidade.value);
+        var lucro = venda - compra;
+        var faturamento = venda * quantidade
+
+        if (nome != `` && compra != `` && venda != `` && quantidade != ``) {
+
+            var perdas_inventario_ano = (faturamento * 0.0157 * 0.0946).toFixed(2);
+
+            // REDUÇÃO DE 50% COM NOSSO SISTEMA
+            var reducao = 0.50; // 50% de redução
+
+            // REDUÇÃO DE 60% COM NOSSO SISTEMA
+            var reducao2 = 0.60; // 60% de redução
+
+            //var economia_ano = (perdas_inventario_ano * reducao).toFixed(2);
+            var economia_ano = ((faturamento * (reducao * 0.0157 * 0.0946)).toFixed(2));
+
+            //var economia_ano = (perdas_inventario_ano * reducao).toFixed(2);
+            var economia_ano2 = ((faturamento * (reducao2 * 0.0157 * 0.0946)).toFixed(2));
+
+            // Quanto poderá ser comencializado a mais caso o estoque seja salvo com nosso sistema
+            var vendas_recuperadas = economia_ano * lucro;
+
+            var texto = "<h3>Resultado:</h3>";
+            
+            texto += `<h3 style='color: green;'>Oportunidade para ${nome}</h3>`;
+            texto += "<p>Com redução estimada de <b style='color: green;'>50% - 60% nos erros de inventário: </b></p>";
+            texto += `<p>Economia anual: <b style='color: green;'>R$${economia_ano} - R$${economia_ano2}</b></p>`;
+            texto += `<p>Possível lucratividade em vendas de estoques recuperados: <b style='color: green;'>R$${(vendas_recuperadas).toFixed(2)}</b></p>`;
+            texto += `<p>Economia total: <b style='color: green;'>R$${(vendas_recuperadas + Number(economia_ano)).toFixed(2)} - R$${(vendas_recuperadas + Number(economia_ano2)).toFixed(2)}</b></p>`;
+            
+            div_resultado1.innerHTML = texto;
+
+        } else {
+            div_resultado1.innerHTML = `<div class = "resultado"> Por favor, insira um valor <b style="color:green;">válido</b><div>`
+        }
+
+    }
 
     function input_lojas() {
         faturamento = 0;
@@ -105,21 +210,27 @@
 
         // Pega o valor do input diretamente pelo id
 
-        faturamento = 0;
+        botao_modal.style.display = "block";
+
+        var faturamento = 0;
+        var custos = 0;
 
         if (input_faturamento) {
-            faturamento = faturamento + + Number(input_faturamento.value).toFixed(2)
+            faturamento = faturamento + + Number(input_faturamento.value).toFixed(2);
+            custos = custos + + Number(input_custos.value).toFixed(2);
             if (typeof input_faturamento1 != 'undefined') {
                 faturamento = faturamento + + Number(input_faturamento1.value).toFixed(2)
+                custos = custos + + Number(input_custos1.value).toFixed(2);
                 if (typeof input_faturamento2 != 'undefined') {
                     faturamento = faturamento + + Number(input_faturamento2.value).toFixed(2)
+                    custos = custos + + Number(input_custos2.value).toFixed(2);
                 }
             }
         }
 
 
 
-        // Dados baseados na pesquisa ABRAPPE  (9,46% por erros de inventário em cima de 1,57% perdas totais )
+        // Dados baseados na pesquisa ABRAPPE  (9,46% por erros de inventário em cima de 1,57% perdas totais)
         var perdas_inventario_ano = (faturamento * 0.0157 * 0.0946).toFixed(2);
 
         // Projeção em 5 anos
@@ -128,67 +239,53 @@
         // Quanto precisa vender a mais para compensar (margem de 3%)
         var vendas_extras = (perdas_inventario_ano / 0.03).toFixed(2);
 
-        // REDUÇÃO DE 30% COM NOSSO SISTEMA
-        var reducao = 0.30; // 30% de redução
+        // REDUÇÃO DE 50% COM NOSSO SISTEMA
+        var reducao = 0.50; // 50% de redução
+
+        // REDUÇÃO DE 60% COM NOSSO SISTEMA
+        var reducao2 = 0.60; // 60% de redução
+
         //var economia_ano = (perdas_inventario_ano * reducao).toFixed(2);
-        var economia_ano = (faturamento * (reducao * 0.0157 * 0.0946)).toFixed(2)
+        var economia_ano = ((faturamento * (reducao * 0.0157 * 0.0946)).toFixed(2));
         var economia_5_anos = (economia_ano * 5).toFixed(2);
 
+        //var economia_ano = (perdas_inventario_ano * reducao).toFixed(2);
+        var economia_ano2 = ((faturamento * (reducao2 * 0.0157 * 0.0946)).toFixed(2));
+        var economia_5_anos2 = (economia_ano2 * 5).toFixed(2);
+
+        // Lucro anual
+        var lucro_anual = faturamento - custos
+
+        // Quanto poderá ser comencializado a mais caso o estoque seja salvo com nosso sistema
+        var vendas_recuperadas = economia_ano * 3
+        div_resultado.innerHTML = ``;
         if (faturamento != '') {
             // Monta o resultado
             var texto = "<h3>Resultado:</h3>";
             texto += "<p>Perdas anuais estimadas com base em erros de inventário: <b style='color: red;'>R$ " + perdas_inventario_ano + "</b></p>";
             texto += "<p>Em 5 anos: <b style='color: red;'>R$ " + perdas_5_anos + "</b> em perdas evitáveis</p>";
 
-            // SEÇÃO DA OPORTUNIDADE COM 30% DE REDUÇÃO
+            // SEÇÃO DA OPORTUNIDADE COM 50% - 60% DE REDUÇÃO
             texto += "<h3 style='color: green;'>Oportunidades com Nosso Sistema</h3>";
-            texto += "<p>Com redução estimada de <b style='color: green;'>30% nos erros de inventário: </b></p>";
-            texto += "<p>Economia anual: <b style='color: green;'>R$ " + economia_ano + "</b></p>";
-            texto += "<p>Economia em 5 anos: <b style='color: green;'>R$ " + economia_5_anos + "</b></p>";
+            texto += "<p>Com redução estimada de <b style='color: green;'>50% - 60% nos erros de inventário: </b></p>";
+            texto += `<p>Economia anual: <b style='color: green;'>R$${economia_ano} - R$${economia_ano2}</b></p>`;
+            texto += `<p>Economia em 5 anos: <b style='color: green;'>R$${economia_5_anos} - R$${economia_5_anos2}</b></p>`;
+            texto += `<p>Possível lucratividade em vendas de estoques recuperados: <b style='color: green;'>R$${(vendas_recuperadas).toFixed(2)}</b></p>`;
+            texto += `<p>Economia total: <b style='color: green;'>R$${vendas_recuperadas + Number(economia_ano)} - R$${vendas_recuperadas + Number(economia_ano2)}</b></p>`;
 
 
             div_resultado.innerHTML = texto;
-
-            div_resultado.innerHTML += `<br> <button onclick="calculos()">Saber Mais</button>`
         } else {
-            div_resultado.innerHTML = `<br> Por favor, insira um valor <b style="color:green;">válido</b>`
+            div_resultado.innerHTML = `Por favor, insira um valor <b style="color:green;">válido</b>`
         }
 
 
     }
     function calculos() {
-        if (pagina1 == "") {
-            pagina1 = pagina1_html.innerHTML;
-        }
-
-        pagina1_html.innerHTML = `<div id="pagina2_html">
-            <h2>Explicação Detalhada</h2>
-            
-            <h3>Perdas Anuais Estimadas</h3>
-            <p>
-                De acordo com a pesquisa da <b>ABRAPPE</b>, em média
-                <b>1,57% do faturamento das empresas</b> é perdido em razão de
-                quebras, furtos e erros de inventário.
-            </p>
-            <p>
-                Aproximadamente <b>9,46%</b> das perdas estão
-                diretamente ligadas a <b>erros de inventário</b>, ou seja,
-                diferenças entre o estoque físico e o registrado no sistema.
-            </p>
-            <p>
-                Esse percentual pode parecer pequeno, mas em grandes volumes de
-                faturamento representa <b>valores significativos</b> que afetam
-                diretamente a lucratividade.
-            </p>
-            <h4>Economia Anual Estimada</h4>
-            <p>
-                Ao adotar o nosso sistema de monitoramento e controle, estima-se uma
-                <b>redução de até 30%</b> nas perdas causadas por erros de inventário. <br> <br>
-            <button onclick="voltar()">Voltar</button>
-        </div>`
-
+        modal_calculadora1.style.display = 'block';
     }
     function voltar() {
-        pagina1_html.innerHTML = pagina1
+        modal_calculadora1.style.display = 'none'
+        
     }
 </script>
