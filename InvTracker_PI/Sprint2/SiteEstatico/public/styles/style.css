@@ -1,10 +1,12 @@
+
 * {
     box-sizing: border-box;
+    
 }
 
 body {
     margin: 0;
-    font-family: Arial;
+    font-family: "Poppins", sans-serif;
 }
 
 .header {
@@ -145,8 +147,6 @@ main .introducao .container {
     flex-direction: column;
     padding: 50px 100px;
     background-color: black;
-
-
 }
 
 main .introducao .container .titulo {
@@ -154,7 +154,6 @@ main .introducao .container .titulo {
     color: rgb(255, 255, 255);
     font-weight: 700;
     font-size: 40px;
-
 }
 
 main .introducao .container .texto {
@@ -192,8 +191,6 @@ main .sobre .container .parte1 .titulo {
 main .sobre .container .parte1 .texto {
     font-size: 20px;
     text-align: justify;
-
-
 }
 
 main .sobre .container .box {
@@ -239,7 +236,6 @@ main .sobre .container .porcentagens .todasaspercs {
     display: flex;
     width: 100%;
     justify-content: space-between;
-
 }
 
 main .sobre .container .porcentagens .todasaspercs .perc {
@@ -247,7 +243,6 @@ main .sobre .container .porcentagens .todasaspercs .perc {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 main .sobre .container .porcentagens .todasaspercs .perc .titulo {
@@ -687,9 +682,6 @@ header .logo_container {
     /*div que tem dentro a classe logo img*/
     justify-items: flex-start;
     justify-content: flex-start;
-
-
-
 }
 
 header .logo {
@@ -697,9 +689,6 @@ header .logo {
     display: flex;
     padding: 5px 10px;
     width: 200px;
-
-
-
 }
 
 .container_header .login {
@@ -713,7 +702,6 @@ header .logo {
     font-weight: bold;
     font-family: sans-serif;
     font-size: large;
-
 }
 
 /* Formulário */
@@ -722,13 +710,22 @@ header .logo {
     padding: 10px;
     background-color: #bababa;
     border: none;
-    border-radius: 5px;
-    background-color: rgba(128, 128, 128, 0.4);
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
     justify-content: flex-end;
-
+    margin-left: 10px;
 }
 
+.card-endereco input {
+    margin-top: 10px;
+}
+
+.card-endereco p {
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+}
 
 
 .card-Cadastro {
@@ -736,16 +733,26 @@ header .logo {
     padding: 10px;
     color: white;
     justify-content: flex-start;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    margin-right: 10px;
+}
 
+.card-Cadastro p {
+    margin: 10px 0 0 0;
+
+}
+
+.card-Cadastro input {
+    margin-top: 10px;
 }
 
 .cad_pai {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    gap: 100px;
+    align-items: center;
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 20px auto;
     flex-direction: column;
 }
 
@@ -777,7 +784,7 @@ header .logo {
 
 
 .button_cadastrar {
-    background-color: orange;
+    background-color: #DF8533;
     color: white;
     border: none;
     cursor: pointer;
@@ -785,11 +792,10 @@ header .logo {
     font-weight: bold;
     height: 50px;
     align-items: center;
-    margin-top: 20px;
     width: 200px;
     padding: 14px;
-    justify-content: flex-end;
     text-align: center;
+    margin-top: 30px;
 }
 
 .button_cadastrar:hover {
@@ -800,17 +806,12 @@ header .logo {
     display: flex;
     justify-content: space-between;
     width: 100%;
-
-
 }
 
 .campoEndereco {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-
-
 }
 
 /*Dashboard*/
@@ -951,6 +952,31 @@ header .logo {
 
     .kpiBoxes {
         display: flex;
+        flex-direction: column;
+    }
+
+    .cad_campos {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-endereco {
+        margin-left: 0px;
+        margin-top: 30px;
+    }
+
+    .card-Cadastro {
+        margin-right: 0px;
+        margin-top: -350px;
+    }
+
+    .body-cadastrar {
+        height: 200vh;
+    }
+
+    .cad_pai {
+        display: flex;
+        margin: 20px auto;
         flex-direction: column;
     }
 
