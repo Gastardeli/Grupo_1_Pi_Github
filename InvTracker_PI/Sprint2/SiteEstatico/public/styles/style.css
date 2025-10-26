@@ -1076,7 +1076,7 @@ header .logo {
 
 .dashBox {
     display: flex;
-    height: 240px;
+    height: 270px;
     width: 490px;
     border: solid grey 2px;
     border-radius: 10px;
