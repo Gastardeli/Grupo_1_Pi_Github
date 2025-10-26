@@ -30,19 +30,21 @@
 
 
     <div class="containerDashboard">
-      <b>Selecione seu estoque</b> <br>
-      <select style="border-radius: 10px; text-align: center;">
-        <option value="" disabled>Selecione uma opção</option>
-        <option value="estoque1" selected>Estoque 1</option>
-      </select>
+      <Div class="RandomBox">
+        <b>Selecione seu estoque</b> <br>
+        <select style="border-radius: 10px; text-align: center;">
+          <option value="" disabled>Selecione uma opção</option>
+          <option value="estoque1" selected>Estoque 1</option>
+        </select>
+      </Div>
       <div class="kpiBoxes">
         <div class="kpiBox">
-          <p class="titulo">Qual Produto está com maior movimentação:
+          <p class="titulo">Qual Produto está com maior movimentação
           <p style="color: red">Traquinas</p>
           </p>
         </div>
         <div class="kpiBox">
-          <p class="titulo">Estado do lote (volume):
+          <p class="titulo">Estado do lote (volume)
           <p style="color: red">Vazio</p>
           </p>
         </div>
@@ -66,9 +68,11 @@
 
       <div class="graficosDashboard">
         <div class="boxEstoque">
-          <div class="title">
-            <h3>Estoque</h3>
-          </div>
+          <Div class="EstBox">
+            <div class="title">
+              <h3>Estoques</h3>
+            </div>
+          </Div>
           <div class="dashboardEstoque">
             <div class="dashBox">
               <div class="dashboard">
@@ -79,10 +83,13 @@
         </div>
         <div class="boxLotes">
           <div class="title">
-            <h3>Lote</h3>
+            <div class="lotenBox">Lotes</div>
           </div>
           <div class="conteinerBoxes">
+
             <div class="dashBox">
+
+
               <div class="dashboard">
                 <canvas id="dashboard1"></canvas>
               </div>
@@ -106,7 +113,7 @@
         </div>
       </div>
     </div>
-    
+
   </main>
 
 

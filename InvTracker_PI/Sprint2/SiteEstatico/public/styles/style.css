@@ -911,11 +911,13 @@ header .logo {
 
 .modal-texto {
     background: #fff;
+    text-align: center;
     padding: 20px 25px;
     border-radius: 10px;
-    width: 350px;
+    width: 450px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     animation: aparecer 0.3s ease;
+    border: 5px solid orange;
 }
 
 @keyframes aparecer {
@@ -973,18 +975,57 @@ header .logo {
     font-size: 25px;
 }
 
+.RandomBox {
+    display: flex;
+    height: 100px;
+    width: 500px;
+    flex-direction: column;
+    border: solid grey 2px;
+    border-radius: 10px;
+    margin: 5px;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.EstBox {
+    display: flex;
+    height: 50px;
+    width: 500px;
+    flex-direction: column;
+    border: solid grey 2px;
+    border-radius: 10px;
+    margin: 5px;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.lotenBox {
+    display: flex;
+    height: 50px;
+    width: 300px;
+    flex-direction: column;
+    border: solid grey 2px;
+    border-radius: 10px;
+    margin: 5px;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}
+
 .kpiBoxes {
     display: flex;
     flex-direction: row;
     padding-bottom: 5px;
-    justify-content: space-evenly;
+    justify-content: center;
     text-align: center;
     margin-top: 30px;
-
 }
 
 .kpiBox {
     display: flex;
+    height: 150px;
     flex-direction: column;
     border: solid grey 2px;
     border-radius: 10px;
@@ -994,6 +1035,8 @@ header .logo {
 
 .kpiBoxes .kpiBox p {
     font-size: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .graficosDashboard {

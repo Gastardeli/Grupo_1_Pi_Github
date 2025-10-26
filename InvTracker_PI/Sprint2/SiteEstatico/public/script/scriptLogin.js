@@ -1,22 +1,22 @@
- document.addEventListener("DOMContentLoaded", function() {
-  const modal = document.getElementById("modalAviso");
-  const texto = document.getElementById("textoAviso");
+document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("modalAviso");
+    const texto = document.getElementById("textoAviso");
 
-  function mostrarAviso(mensagem) {
-    texto.innerHTML = mensagem;
-    modal.style.display = "flex";
-  }
+    function mostrarAviso(mensagem) {
+        texto.innerHTML = mensagem;
+        modal.style.display = "flex";
+    }
 
-  function fecharAviso() {
-    modal.style.display = "none";
-  }
+    function fecharAviso() {
+        modal.style.display = "none";
+    }
 
-  window.mostrarAviso = mostrarAviso;
-  window.fecharAviso = fecharAviso;
+    window.mostrarAviso = mostrarAviso;
+    window.fecharAviso = fecharAviso;
 });
 
 var login = "user@email.com";
-var senha = 123;
+var senha = 'SPtech#2025';
 
 
 function verificarlogin() {
@@ -27,11 +27,11 @@ function verificarlogin() {
     if (valorSenha1 == senha && valorEmail1 == login) {
         window.location.href = "dashboard.html";
     } else {
-        alerta += `As seguintes informações estão incorretas: <br>`
+        alerta += `As seguintes informações estão incorretas <br>`
         if (senha != valorSenha) {
-            alerta += `Senha <br>`
+            alerta += `<span style="color:red">Senha</span> <br>`
         } if (login != valorEmail) {
-            alerta += `Email <br>`
+            alerta += `<span style="color:red">Email</span> <br>`
         } alerta += 'Por favor, confira as informações e tente novamente.'
 
         mostrarAviso(alerta)
@@ -97,27 +97,27 @@ function cadastro() {
         }
 
         if (senhaForte > 3) {
-            mostrarAviso(`Informações Registradas com Sucesso!`)
+            mostrarAviso(`<span style="color:green">Informações Registradas com Sucesso!</span> <br> <br>`)
         } else {
-            alerta += `Sua senha está fraca! Checar os seguintes campos: <br>`
+            alerta += `Sua senha está fraca! Checar os seguintes parâmetros: <br> <br>`
 
             if (Repeticao < 0) {
-                alerta += `Muita repeticação de Letras <br>`
+                alerta += `Muitas letras <span style="color:red">seguidamente repetidas</span> <br>`
             } if (cEspecial == 0) {
-                alerta += `Sem Caracteres especiais <br>`
+                alerta += `Sem <span style="color:red">caracteres especiais</span> <br>`
             } if (Tamanho == 0) {
-                alerta += `Muito curta (- de 8 Caracteres) <br>`
+                alerta += `Menos de <span style="color:red">8 caracteres</span> <br>`
             } if (Masc == 0) {
-                alerta += `Letras Maisculas e Minusculas <br>`
+                alerta += `Necessario letras <span style="color:red">maisculas e minusculas</span> <br>`
             } if (LetraN == 0) {
-                alerta += `Apenas números ou letras <br>`
+                alerta += `Necessario ter <span style="color:red">letras e números</span> <br> <br>`
             }
 
-            alerta += `Por favor, corrija esses campos para seguir em frente.`
+            alerta += `Por favor, corrija esses requisitos para seguir em frente. <br> <br>`
 
             mostrarAviso(alerta)
         }
     } else {
-        mostrarAviso(`A senha não confirma!`)
+        mostrarAviso(`<span style="color:red">A senha não confirma!</span> <br> <br>`)
     }
 }

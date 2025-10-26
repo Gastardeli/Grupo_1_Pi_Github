@@ -28,30 +28,31 @@
     <!--Pagina de cadastro (começo)!-->
     <div class="body-cadastrar">
         <div class="cad_pai">
-        
+
             <div class="cad_campos">
                 <div class="card-Cadastro">
                     <h3>Informações</h3>
 
                     <p>Nome da Empresa:</p>
-                    <input class="cad-input-cadastro" type="text" placeholder="Insira o nome da empresa">
+                    <input value="Atacadão Feliz" class="cad-input-cadastro" type="text"
+                        placeholder="Insira o nome da empresa">
 
                     <p>Email:</p>
-                    <input class="cad-input-cadastro" type="email" id="email" placeholder="Insira seu e-mail">
+                    <input value="atacadofeliz@atacado.com" class="cad-input-cadastro" type="email" id="email"
+                        placeholder="Insira seu e-mail">
 
                     <p>Senha:</p>
-                    <input class="cad-input-cadastro" type="password" id="password"
-                        placeholder="Insira sua senha">
+                    <input class="cad-input-cadastro" type="password" id="password" placeholder="Insira sua senha">
 
                     <p>Confirme sua Senha:</p>
-                    <input class="cad-input-cadastro" type="password" id="passCheck"
-                        placeholder="Confirme sua senha">
+                    <input class="cad-input-cadastro" type="password" id="passCheck" placeholder="Confirme sua senha">
 
                     <p>CNPJ:</p>
-                    <input class="cad-input-cadastro" type="text" placeholder="Insira o CNPJ">
+                    <input value="83.903.30600/01-85" class="cad-input-cadastro" type="text"
+                        placeholder="Insira o CNPJ">
 
                     <p>Telefone:</p>
-                    <input class="cad-input-cadastro" type="text" placeholder="(11) 99999-9999">
+                    <input value="(11) 3769-3535" class="cad-input-cadastro" type="text" placeholder="(11) 99999-9999">
                 </div>
                 <div class="campoEndereco">
                     <div class="card-endereco">
@@ -59,25 +60,27 @@
                         <h3>Endereço</h3>
 
                         <p>CEP:</p>
-                        <input class="cad-input-endereco" type="text" placeholder="00000-000">
+                        <input value="04945-130" class="cad-input-endereco" type="text" placeholder="00000-000">
 
                         <p>Estado:</p>
-                        <input class="cad-input-endereco" type="text" placeholder="SP">
+                        <input value="SP" class="cad-input-endereco" type="text" placeholder="SP">
 
                         <p>Rua:</p>
-                        <input class="cad-input-endereco" type="text" placeholder="Nome da rua">
+                        <input value="Rua Coronel Floriano Álvaro" class="cad-input-endereco" type="text"
+                            placeholder="Nome da rua">
 
                         <p>Número:</p>
-                        <input class="cad-input-endereco" type="text" placeholder="000">
+                        <input value="300" class="cad-input-endereco" type="text" placeholder="000">
 
                         <p>Complemento:</p>
-                        <input class="cad-input-endereco" type="text" placeholder="Apto, Bloco">
+                        <input value="Bloco A" class="cad-input-endereco" type="text" placeholder="Apto, Bloco">
 
                         <p>Bairro:</p>
-                        <input class="cad-input-endereco" type="text" placeholder="Nome do bairro">
+                        <input value="Parque do Lago" class="cad-input-endereco" type="text"
+                            placeholder="Nome do bairro">
 
                         <p>Cidade:</p>
-                        <input class="cad-input-endereco" type="text" placeholder="São Paulo">
+                        <input value="São Paulo" class="cad-input-endereco" type="text" placeholder="São Paulo">
 
                         <!-- Botão -->
 
@@ -115,17 +118,17 @@
     </div>
     <script src="script/scriptLogin.js"></script>
 
-    
-  <button onclick="mostrarAviso('Você clicou no botão!')">Testar aviso</button>
 
-  <!-- Modal -->
-  <div id="modalAviso" class="modal">
-    <div class="modal-texto">
-      <h3>Aviso</h3>
-      <p id="textoAviso"></p>
-      <button class="btn-fechar" onclick="fecharAviso()">OK</button>
+    <button onclick="mostrarAviso('Você clicou no botão!')">Testar aviso</button>
+
+    <!-- Modal -->
+    <div id="modalAviso" class="modal">
+        <div class="modal-texto">
+            <h3>Aviso</h3>
+            <p id="textoAviso"></p>
+            <button class="btn-fechar" onclick="fecharAviso()">OK</button>
+        </div>
     </div>
-  </div>
 </body>
 
 </html>
