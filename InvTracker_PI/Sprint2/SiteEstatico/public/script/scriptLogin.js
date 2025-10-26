@@ -1,3 +1,20 @@
+ document.addEventListener("DOMContentLoaded", function() {
+  const modal = document.getElementById("modalAviso");
+  const texto = document.getElementById("textoAviso");
+
+  function mostrarAviso(mensagem) {
+    texto.innerHTML = mensagem;
+    modal.style.display = "flex";
+  }
+
+  function fecharAviso() {
+    modal.style.display = "none";
+  }
+
+  window.mostrarAviso = mostrarAviso;
+  window.fecharAviso = fecharAviso;
+});
+
 var login = "user@email.com";
 var senha = 123;
 
@@ -10,14 +27,14 @@ function verificarlogin() {
     if (valorSenha1 == senha && valorEmail1 == login) {
         window.location.href = "dashboard.html";
     } else {
-        alerta += `As seguintes informações estão incorretas: \n`
+        alerta += `As seguintes informações estão incorretas: <br>`
         if (senha != valorSenha) {
-            alerta += `Senha \n`
+            alerta += `Senha <br>`
         } if (login != valorEmail) {
-            alerta += `Email \n`
+            alerta += `Email <br>`
         } alerta += 'Por favor, confira as informações e tente novamente.'
 
-        alert(alerta)
+        mostrarAviso(alerta)
     }
 }
 
@@ -80,27 +97,27 @@ function cadastro() {
         }
 
         if (senhaForte > 3) {
-            alert(`Informações Registradas com Sucesso!`)
+            mostrarAviso(`Informações Registradas com Sucesso!`)
         } else {
-            alerta += `Sua senha está fraca! Checar os seguintes campos: \n`
+            alerta += `Sua senha está fraca! Checar os seguintes campos: <br>`
 
             if (Repeticao < 0) {
-                alerta += `Muita repeticação de Letras \n`
+                alerta += `Muita repeticação de Letras <br>`
             } if (cEspecial == 0) {
-                alerta += `Sem Caracteres especiais \n`
+                alerta += `Sem Caracteres especiais <br>`
             } if (Tamanho == 0) {
-                alerta += `Muito curta (- de 8 Caracteres) \n`
+                alerta += `Muito curta (- de 8 Caracteres) <br>`
             } if (Masc == 0) {
-                alerta += `Letras Maisculas e Minusculas \n`
+                alerta += `Letras Maisculas e Minusculas <br>`
             } if (LetraN == 0) {
-                alerta += `Apenas números ou letras \n`
+                alerta += `Apenas números ou letras <br>`
             }
 
             alerta += `Por favor, corrija esses campos para seguir em frente.`
 
-            alert(alerta)
+            mostrarAviso(alerta)
         }
     } else {
-        alert(`A senha não confirma!`)
+        mostrarAviso(`A senha não confirma!`)
     }
 }
