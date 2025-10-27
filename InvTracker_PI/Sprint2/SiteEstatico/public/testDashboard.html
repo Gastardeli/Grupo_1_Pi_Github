@@ -33,43 +33,32 @@
                 </div>
             </div>
         </aside>
-        <div class="container_direita">
-            <div id="dashboard_diaria">
-
-
-                <div class="kpi_dash1">
-                    <div class="box_kpi">
-                        <div class="kpi1">
-                            <p class="titulo">Qual Produto está com maior movimentação
-                            <p style="color: red">Traquinas</p>
-                            </p>
-                        </div>
-                        <div class="kpi2">
-                            <p class="titulo">Estado do lote (volume)
-                            <p style="color: red">Vazio</p>
-                            </p>
-                        </div>
+        <div class="container_direita2">
+            <div id="dashboard_estoque">
+                <div class="select_esquerda">
+                    <div class="titulo">
+                        <p>selecione seu estoque</p>
                     </div>
-
-                    <div class="dash1">
-                        <canvas id="dashboard1"></canvas>
+                    <select name="" id="">
+                        <option value="estoque1">estoque 1</option>
+                    </select>
+                    <div class="kpi">
+                        <p class="titulo">Qual Produto está com maior movimentação
+                        <p style="color: red">Traquinas</p>
+                        </p>
+                    </div>
+                    <div class="kpi">
+                        <p class="titulo">Qual Produto está com maior movimentação
+                        <p style="color: red">Traquinas</p>
+                        </p>
                     </div>
                 </div>
-                <div class="dash2_inferior">
+                <div class="dash_direita">
+                    <canvas id="dashboard1"></canvas>
                     <canvas id="dashboard2"></canvas>
                 </div>
             </div>
         </div>
-    </div>
-
-
-
-    <div class="container_main">
-
-        <div class="container_dashboards">
-
-        </div>
-    </div>
 </body>
 
 
@@ -89,8 +78,8 @@
     const dashboardLote4 = document.getElementById('dashboard4');
 
     new Chart(dashboardLote1, {
-        type: 'bar',
-        type: 'bar',
+        type: 'line',
+        type: 'line',
         data: {
             labels: ['5:00', '5:10', '5:20', '5:30', '5:40', '5:50', '6:00', '6:10', '6:20', '6:30', '6:40', '6:50', '7:00', '7:10', '7:20', '7:30', '7:40', '7:50', '8:00', '8:10', '8:20', '8:30', '8:40', '8:50', '9:00', '9:10', '9:20', '9:30', '9:40', '9:50', '10:00'],
             datasets: [{

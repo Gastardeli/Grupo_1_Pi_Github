@@ -227,8 +227,8 @@ main .introducao .container {
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    padding: 50px 100px;
-    background-color: black;
+    
+    background-color: rg;
 }
 
 main .introducao .container .titulo {
@@ -236,7 +236,13 @@ main .introducao .container .titulo {
     color: rgb(255, 255, 255);
     font-weight: 700;
     font-size: 40px;
-    animation: aparecer 1s ease;
+  
+}
+main .introducao  .container  .div_opacidade{
+    width: 100%;
+    height: 100%;
+    background-color: #000000b6;
+    padding: 50px 100px;
 }
 
 main .introducao .container .texto {
@@ -244,7 +250,7 @@ main .introducao .container .texto {
     font-weight: 300;
     font-size: 20px;
     width: 70%;
-    animation: aparecer 1s ease;
+    
 }
 
 /* Parte 2 */
@@ -284,8 +290,8 @@ main .sobre .container .box {
     text-align: justify;
     display: flex;
     width: 100%;
-    background-color: #f2f2f2;
-    color: blue;
+    background-color: rgba(128, 128, 128, 0.658);
+    color: #000;
     align-items: flex-end;
 }
 
@@ -294,8 +300,8 @@ main .sobre .container .box p {
 }
 
 main .sobre .container .box button {
-    background-color: #1E0473;
-    color: white;
+    background-color: #E67C1C;
+    color: #fff;
     padding: 10px 20px;
     border-radius: 20px;
     border: 0;
@@ -310,8 +316,8 @@ main .sobre .container .porcentagens {
     text-align: justify;
     display: flex;
     width: 80%;
-    background-color: #f2f2f2;
-    color: #1E0473;
+    background-color: #E67C1C;
+    color: #fff;
     justify-content: space-around;
     display: flex;
 }
@@ -435,10 +441,7 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
     line-height: 1.5;
 }
 
-.info-extra #p_info {
-    margin: 10px 0;
-    color: orange;
-}
+
 
 /*login*/
 .login-container {
@@ -1094,79 +1097,6 @@ header .logo {
 
 /*Fim da pagina cadastro*/
 
-/* Estilização da nova Dashboard */
-.container_main {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-}
-
-.container_main aside {
-    background-color: #E67C1C;
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.container_main aside header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 10px;
-}
-
-.container_main aside header .nome_user {
-    font-size: 30px;
-    color: white;
-}
-
-.container_main aside header img {
-    width: 100px;
-}
-
-.container_main aside .body {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.container_main aside .body p {
-    font-size: 30px;
-}
-
-.container_main aside .body a {
-    text-decoration: none;
-    color: white;
-}
-
-.container_main aside .body a:hover {
-    border-bottom: 2px solid white;
-}
-
-.container_main aside .body a .container_main aside .footer {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 50px;
-}
-
-.container_main aside .footer .logout button {
-    background-color: red;
-    border-radius: 10px;
-    width: 50px;
-    cursor: pointer;
-    color: white;
-    border: 0;
-    padding: 5px 10px;
-}
-
-.container_main .container_dashboards {
-    width: 75%;
-    background-color: #1E0473;
-}
-
 @keyframes aparecer {
     from {
         transform: scale(0.8);
@@ -1235,4 +1165,195 @@ header .logo {
 
 
 
+}
+
+/*dasboard2*/
+
+
+.container_main {
+    width: 100%;
+    display: flex;
+}
+
+.container_main aside {
+    background-color: #E67C1C;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+.container_main aside header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+.container_main aside header .nome_user {
+    font-size: 30px;
+    color: white;
+}
+
+.container_main aside header img {
+    width: 100px;
+}
+
+.container_main aside .body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container_main aside .body p {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.container_main aside .body a {
+    text-decoration: none;
+    color: white;
+}
+
+.container_main aside .body p:hover {
+    border-bottom: 2px solid white;
+}
+
+.container_main aside .body a .container_main aside .footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 50px;
+}
+
+.container_main aside .footer .logout button {
+    background-color: red;
+    border-radius: 10px;
+    width: 50px;
+    cursor: pointer;
+    color: white;
+    border: 0;
+    padding: 5px 10px;
+}
+
+.container_main .container_direita {
+    width: 75%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.container_main .container_direita .kpi_dash1 {
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.container_main .container_direita .kpi_dash1 .box_kpi {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container_main .container_direita .kpi_dash1 .box_kpi .kpi1 {
+    background-color: rgb(231, 231, 231);
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.container_main .container_direita .kpi_dash1 .box_kpi .kpi2 {
+    width: 100%;
+    background-color: rgb(231, 231, 231);
+    border-radius: 10px;
+}
+
+.container_main .container_direita .kpi_dash1 .dash1 {
+    width: 100%;
+    height: 350px;
+    display: flex;
+}
+
+.dash2_inferior {
+    margin-top: 80px;
+    height: 58%;
+    margin-left: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+}
+
+.dash2_inferior .dashboard2 {
+    padding-top: 50px;
+    display: flex;
+    width: 100px;
+}
+
+.container_direita #dashboard_estoque{
+    width: 100%;
+    display: flex;
+
+}
+.container_direita #dashboard_estoque .select_esquerda{
+    display: flex;
+    flex-direction: column ;
+
+}
+
+.container_direita #dashboard_estoque .select_direita{
+    display: flex;
+    flex-direction: column;
+}
+
+.container_main .container_direita2 {
+    width: 75%;
+    display: flex;
+}
+
+.container_main .container_direita2 #dashboard_estoque {
+    width: 100%;
+    height: 300px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.container_main .container_direita2 #dashboard_estoque .dash_direita {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.container_main .container_direita2 #dashboard_estoque .select_esquerda {
+    text-align: center;
+}
+
+.container_main .container_direita2 #dashboard_estoque .select_esquerda .kpi{
+    border: 2px solid;
+    background-color: rgb(231, 231, 231);
+    text-align: center;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+.container_main .container_direita2 #dashboard_estoque .select_esquerda select{
+    text-align: center;
+    height: 30px;
+    width: 170px;
+    border: 0px;
+    background-color: rgb(231, 231, 231);
+    border-radius: 5px;
+}
+
+.container_main .container_direita2 #dashboard_estoque .select_esquerda .titulo{
+    padding-top: 40px;
 }
