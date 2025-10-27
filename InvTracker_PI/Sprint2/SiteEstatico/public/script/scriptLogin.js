@@ -15,24 +15,24 @@ document.addEventListener("DOMContentLoaded", function () {
     window.fecharAviso = fecharAviso;
 });
 
-var login = "user@email.com";
-var senha = 'SPtech#2025';
-
-
 function verificarlogin() {
+    var login = "user@email.com";
+    var senha = 'SPtech#2025';
     var valorSenha1 = password.value
     var valorEmail1 = email.value
     var alerta = '';
 
+
+
     if (valorSenha1 == senha && valorEmail1 == login) {
         window.location.href = "dashboard.html";
     } else {
-        alerta += `As seguintes informações estão incorretas <br>`
-        if (senha != valorSenha) {
+        alerta += `As seguintes informações estão incorretas <br> <br>`
+        if (senha != valorSenha1) {
             alerta += `<span style="color:red">Senha</span> <br>`
-        } if (login != valorEmail) {
+        } if (login != valorEmail1) {
             alerta += `<span style="color:red">Email</span> <br>`
-        } alerta += 'Por favor, confira as informações e tente novamente.'
+        } alerta += '<br> Por favor, confira as informações e tente novamente. <br> <br>'
 
         mostrarAviso(alerta)
     }
@@ -110,10 +110,10 @@ function cadastro() {
             } if (Masc == 0) {
                 alerta += `Necessario letras <span style="color:red">maisculas e minusculas</span> <br>`
             } if (LetraN == 0) {
-                alerta += `Necessario ter <span style="color:red">letras e números</span> <br> <br>`
+                alerta += `Necessario ter <span style="color:red">letras e números</span> <br>`
             }
 
-            alerta += `Por favor, corrija esses requisitos para seguir em frente. <br> <br>`
+            alerta += `<br> Por favor, corrija esses requisitos para seguir em frente. <br> <br>`
 
             mostrarAviso(alerta)
         }

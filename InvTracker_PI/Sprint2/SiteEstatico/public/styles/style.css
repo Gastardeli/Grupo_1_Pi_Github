@@ -598,16 +598,19 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
 .resultado {
     display: flex;
     margin: 10px;
-    background-color: rgb(41, 41, 41);
+    background-color: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
     flex-direction: column;
     align-content: space-between;
     justify-content: center;
     align-items: center;
     align-self: center;
-
 }
 
+.resultado span {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 /* Kadooca 
 

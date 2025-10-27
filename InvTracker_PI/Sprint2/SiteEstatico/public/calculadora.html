@@ -16,7 +16,7 @@
             <h1 class="title">InvTracker</h1>
             <div class="navbar">
                 <a href="index.html">Inicio </a>
-                <a class="now "href="#">Aplicações </a>
+                <a class="now " href="#">Aplicações </a>
                 <a href="login.html">Login </a>
                 <a href="cadastro.html">Cadastro </a>
                 <a href="dashboard.html" style="display: none;" id="dashHeader">Dashboard</a>
@@ -26,12 +26,12 @@
 
     <!--Insira todo o Conteúdo da Página aqui!-->
     <div class="container_inputs">
-        <div class= "container_modal_calculadora" style="display: none;" id="modal_calculadora1">
+        <div class="container_modal_calculadora" style="display: none;" id="modal_calculadora1">
             <div class="box_modal_calculadora">
                 <div class="modal_calculadora">
                     <div id="pagina2_html">
                         <h2>Explicação Detalhada</h2>
-                        
+
                         <h3>Perdas Anuais Estimadas</h3>
                         <p>
                             De acordo com a pesquisa da <b>ABRAPPE</b>, em média
@@ -52,8 +52,10 @@
                         <p>
                             Ao adotar o nosso sistema de monitoramento e controle, estima-se uma
                             <b>redução de até 60%</b> nas perdas causadas por erros de inventário. <br><br>
-                            De acordo com o Diário do Comércio, ao reduzir as perdas pela metade, pode-se alcançar o <b>triplo de lucro</b>, como indicado em nossa calculadora, através do informativo de "Possível lucratividade em vendas de estoques recuperados" 
-                        </p>    
+                            De acordo com o Diário do Comércio, ao reduzir as perdas pela metade, pode-se alcançar o
+                            <b>triplo de lucro</b>, como indicado em nossa calculadora, através do informativo de
+                            "Possível lucratividade em vendas de estoques recuperados"
+                        </p>
                         <br> <br>
                         <button onclick="voltar()">Voltar</button>
                     </div>
@@ -63,16 +65,16 @@
         <div class="container_filter">
             <div class="apagar" id="temporaria">
                 <Div class="margin" id="pagina1_html">
-                        <h2>Calculadora de Perdas por Erro de Inventário</h2>
-                        <b>Selecione a quantia de Unidades</b> <br> <br>
-                        <select onchange="input_lojas()" id="select_numeroLojas">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">Mais de três Lojas</option>
-                            <option disabled selected value="">Selecione uma Opção</option>
-                        </select> <br> <br>
-                        <div class="calc_html" id="calculadora_html"></div> <br> <br>
+                    <h2>Calculadora de Perdas por Erro de Inventário</h2>
+                    <b>Selecione a quantia de Unidades</b> <br> <br>
+                    <select onchange="input_lojas()" id="select_numeroLojas">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">Mais de três Lojas</option>
+                        <option disabled selected value="">Selecione uma Opção</option>
+                    </select> <br> <br>
+                    <div class="calc_html" id="calculadora_html"></div> <br> <br>
                 </Div>
                 <Div class="margin" id="pagina2_html">
                     <h2>Calculadora Específica de Perdas por Erro de Inventário</h2>
@@ -118,16 +120,16 @@
     </div>
 
 </body>
- <script src="script/scriptLogin.js"></script>
+<script src="script/scriptLogin.js"></script>
 
 </html>
 <script>
     var pagina1 = "";
     var faturamento = 0;
-    var input = `<input type="number" id="input_faturamento" placeholder="Unidade 01: ex.R$1.000">
+    var input = `<input type="number" id="input_faturamento" placeholder="Unidade 01: ex.R$1.000.000">
     <br> `;
-    var input1 = `<br> <input type="number" id="input_faturamento1" placeholder="Unidade 02: Ex.R$3.500"> <br>`
-    var input2 = `<br> <input type="number" id="input_faturamento2" placeholder="Unidade 03: Ex.R$2.300"> <br>`
+    var input1 = `<br> <input type="number" id="input_faturamento1" placeholder="Unidade 02: Ex.R$3.500.000"> <br>`
+    var input2 = `<br> <input type="number" id="input_faturamento2" placeholder="Unidade 03: Ex.R$2.300.000"> <br>`
     var input_varias = `<br> <input type="number" id="input_faturamento" placeholder="Soma das unidades">
     <br> `
     var input_custos = `<br> <input type="number" id="input_custos" placeholder="Unidade 1">
@@ -135,11 +137,9 @@
     var input_custos1 = `<br> <input type="number" id="input_custos1" placeholder="Unidade 2"> <br> `
     var input_custos2 = `<br> <input type="number" id="input_custos2" placeholder="Unidade 3"> <br> `
     var input_custos_varios = `<br> <input type="number" id="input_custos2" placeholder="Soma das unidades"> <br> `
-    ;
-    
-    function input_calculo_especifico() {
-        botao_modal.style.display = "block";
+        ;
 
+    function input_calculo_especifico() {
         var nome = input_nome.value;
         var compra = Number(input_valor_compra.value);
         var venda = Number(input_valor_venda.value);
@@ -167,17 +167,19 @@
             var vendas_recuperadas = economia_ano * lucro;
 
             var texto = "<h3>Resultado:</h3>";
-            
+
             texto += `<h3 style='color: green;'>Oportunidade para ${nome}</h3>`;
             texto += "<p>Com redução estimada de <b style='color: green;'>50% - 60% nos erros de inventário: </b></p>";
             texto += `<p>Economia anual: <b style='color: green;'>R$${economia_ano} - R$${economia_ano2}</b></p>`;
             texto += `<p>Possível lucratividade em vendas de estoques recuperados: <b style='color: green;'>R$${(vendas_recuperadas).toFixed(2)}</b></p>`;
             texto += `<p>Economia total: <b style='color: green;'>R$${(vendas_recuperadas + Number(economia_ano)).toFixed(2)} - R$${(vendas_recuperadas + Number(economia_ano2)).toFixed(2)}</b></p>`;
-            
+
             div_resultado1.innerHTML = texto;
 
+            botao_modal.style.display = "block";
+
         } else {
-            div_resultado1.innerHTML = `<div class = "resultado"> Por favor, insira um valor <b style="color:green;">válido</b><div>`
+            div_resultado1.innerHTML = `<span>Por favor, insira um valor <b style="color:green;">válido</span><div>`
         }
 
     }
@@ -209,8 +211,6 @@
     function calcular() {
 
         // Pega o valor do input diretamente pelo id
-
-        botao_modal.style.display = "block";
 
         var faturamento = 0;
         var custos = 0;
@@ -275,8 +275,10 @@
 
 
             div_resultado.innerHTML = texto;
+
+            botao_modal.style.display = "block";
         } else {
-            div_resultado.innerHTML = `Por favor, insira um valor <b style="color:green;">válido</b>`
+            div_resultado.innerHTML = `<span>Por favor, insira um valor <b style="color:green;">válido</b></span>`
         }
 
 
@@ -286,6 +288,6 @@
     }
     function voltar() {
         modal_calculadora1.style.display = 'none'
-        
+
     }
 </script>

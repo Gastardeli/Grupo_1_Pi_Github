@@ -26,17 +26,17 @@
 
 
 
-  <main class="login-container">
+    <main class="login-container">
         <div class="background-overlay"></div>
 
         <div class="form-wrapper">
             <form id="loginForm">
                 <h2>LOGIN</h2>
-                
+
                 <label for="email">EMAIL</label>
                 <div class="input-group">
                     <input type="email" id="email" placeholder="Insira seu e-mail" required>
-                    <span class="icon-clear" id="iconClear">x</span> 
+                    <span class="icon-clear" id="iconClear">x</span>
                 </div>
 
                 <label for="password">Senha</label>
@@ -52,7 +52,8 @@
                 <p class="signup-prompt">
                     Não possui uma conta?
                 </p>
-                <a href="cadastro.html" class="register-link"><button type="button" class="register-button">CADASTRE-SE</button></a>
+                <a href="cadastro.html" class="register-link"><button type="button"
+                        class="register-button">CADASTRE-SE</button></a>
             </form>
         </div>
     </main>
@@ -80,6 +81,14 @@
     </div>
 
     <script src="script/scriptLogin.js"></script>
+
+    <div id="modalAviso" class="modal">
+        <div class="modal-texto">
+            <h3>Aviso</h3>
+            <p id="textoAviso"></p>
+            <button class="btn-fechar" onclick="fecharAviso()">OK</button>
+        </div>
+    </div>
 </body>
 
 </html>
