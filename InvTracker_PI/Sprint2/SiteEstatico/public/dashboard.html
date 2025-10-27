@@ -156,356 +156,356 @@
 
   new Chart(dashboardLote1, {
     type: 'bar',
-      type: 'bar',
-      data: {
-        labels: ['5:00', '5:10', '5:20', '5:30', '5:40', '5:50', '6:00', '6:10', '6:20', '6:30', '6:40', '6:50', '7:00', '7:10', '7:20', '7:30', '7:40', '7:50', '8:00', '8:10', '8:20', '8:30', '8:40', '8:50', '9:00', '9:10', '9:20', '9:30', '9:40', '9:50', '10:00'],
-        datasets: [{
-          label: 'Ocupação (em porcentagem)',
-          backgroundColor: 'orange',
-          borderColor: 'orange',
-          data: [5, 5, 5, 5, 10, 15, 15, 15, 30, 45, 45, 45, 60, 60, 60, 75, 30, 15, 5, 5, 5, 5, 100, 100, 100, 100, 100, 100, 60, 60, 60],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        plugins: {
-          title: {
-            display: true,
-            text: 'Lote 1',
-            font: {
-              size: 20,
-              weight: 'bold'
+    type: 'bar',
+    data: {
+      labels: ['5:00', '5:10', '5:20', '5:30', '5:40', '5:50', '6:00', '6:10', '6:20', '6:30', '6:40', '6:50', '7:00', '7:10', '7:20', '7:30', '7:40', '7:50', '8:00', '8:10', '8:20', '8:30', '8:40', '8:50', '9:00', '9:10', '9:20', '9:30', '9:40', '9:50', '10:00'],
+      datasets: [{
+        label: 'Ocupação (em porcentagem)',
+        backgroundColor: 'orange',
+        borderColor: 'orange',
+        data: [5, 5, 5, 5, 10, 15, 15, 15, 30, 45, 45, 45, 60, 60, 60, 75, 30, 15, 5, 5, 5, 5, 100, 100, 100, 100, 100, 100, 60, 60, 60],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      plugins: {
+        title: {
+          display: true,
+          text: 'Lote 1',
+          font: {
+            size: 20,
+            weight: 'bold'
+          },
+          color: '#000'
+        },
+        legend: {
+          display: true,
+          position: 'bottom'
+        },
+        annotation: {
+          annotations: {
+            linhaHorizontal: {
+              type: 'line',
+              yMin: 20,
+              yMax: 20,
+              borderColor: 'red',
+              borderWidth: 2,
+              borderDash: [5, 5],
+              label: {
+                display: true,
+                content: 'ZONA DE RISCO',
+                position: 'start'
+              }
             },
-            color: '#000'
-          },
-          legend: {
-            display: true,
-            position: 'bottom'
-          },
-          annotation: {
-            annotations: {
-              linhaHorizontal: {
-                type: 'line',
-                yMin: 20,
-                yMax: 20,
-                borderColor: 'red',
-                borderWidth: 2,
-                borderDash: [5, 5],
-                label: {
-                  display: true,
-                  content: 'ZONA DE RISCO',
-                  position: 'start'
-                }
-              },
-              linhaHorizonta2: {
-                type: 'line',
-                yMin: 99,
-                yMax: 99,
-                borderColor: 'green',
-                borderWidth: 2,
-                borderDash: [5, 5],
-                label: {
-                  display: true,
-                  content: 'LOTE CHEIO',
-                  position: 'start'
-                }
+            linhaHorizonta2: {
+              type: 'line',
+              yMin: 99,
+              yMax: 99,
+              borderColor: 'green',
+              borderWidth: 2,
+              borderDash: [5, 5],
+              label: {
+                display: true,
+                content: 'LOTE CHEIO',
+                position: 'start'
               }
             }
           }
+        }
+      },
+      scales: {
+        x: {
+          title: {
+            display: true,
+            text: 'Horário',
+            font: {
+              size: 12,
+              weight: 'bold'
+            },
+            color: '#000'
+          }
         },
-        scales: {
-          x: {
-            title: {
-              display: true,
-              text: 'Horário',
-              font: {
-                size: 12,
-                weight: 'bold'
-              },
-              color: '#000'
-            }
-          },
-          y: {
-            beginAtZero: true,
-            title: {
-              display: true,
-              text: 'Ocupação (%)',
-              font: {
-                size: 12,
-                weight: 'bold'
-              },
-              color: '#000'
-            }
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Ocupação (%)',
+            font: {
+              size: 12,
+              weight: 'bold'
+            },
+            color: '#000'
           }
         }
       }
-    });
+    }
+  });
 
   new Chart(dashboardLote2, {
     type: 'bar',
-      type: 'bar',
-      data: {
-        labels: ['5:00', '5:10', '5:20', '5:30', '5:40', '5:50', '6:00', '6:10', '6:20', '6:30', '6:40', '6:50', '7:00', '7:10', '7:20', '7:30', '7:40', '7:50', '8:00', '8:10', '8:20', '8:30', '8:40', '8:50', '9:00', '9:10', '9:20', '9:30', '9:40', '9:50', '10:00'],
-        datasets: [{
-          label: 'Ocupação (em porcentagem)',
-          backgroundColor: 'orange',
-          borderColor: 'orange',
-          data: [ 50, 60, 90, 5, 9, 16, 14, 15, 32, 43, 47, 10, 5, 20, 25, 73, 28, 16, 5, 4, 6, 5, 98, 102, 5, 1, 65, 103, 61, 58, 62 ],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        plugins: {
-          title: {
-            display: true,
-            text: 'Lote 2',
-            font: {
-              size: 20,
-              weight: 'bold'
+    type: 'bar',
+    data: {
+      labels: ['5:00', '5:10', '5:20', '5:30', '5:40', '5:50', '6:00', '6:10', '6:20', '6:30', '6:40', '6:50', '7:00', '7:10', '7:20', '7:30', '7:40', '7:50', '8:00', '8:10', '8:20', '8:30', '8:40', '8:50', '9:00', '9:10', '9:20', '9:30', '9:40', '9:50', '10:00'],
+      datasets: [{
+        label: 'Ocupação (em porcentagem)',
+        backgroundColor: 'orange',
+        borderColor: 'orange',
+        data: [50, 60, 90, 5, 9, 16, 14, 15, 32, 43, 47, 10, 5, 20, 25, 73, 28, 16, 5, 4, 6, 5, 98, 102, 5, 1, 65, 103, 61, 58, 62],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      plugins: {
+        title: {
+          display: true,
+          text: 'Lote 2',
+          font: {
+            size: 20,
+            weight: 'bold'
+          },
+          color: '#000'
+        },
+        legend: {
+          display: true,
+          position: 'bottom'
+        },
+        annotation: {
+          annotations: {
+            linhaHorizontal: {
+              type: 'line',
+              yMin: 20,
+              yMax: 20,
+              borderColor: 'red',
+              borderWidth: 2,
+              borderDash: [5, 5],
+              label: {
+                display: true,
+                content: 'ZONA DE RISCO',
+                position: 'start'
+              }
             },
-            color: '#000'
-          },
-          legend: {
-            display: true,
-            position: 'bottom'
-          },
-          annotation: {
-            annotations: {
-              linhaHorizontal: {
-                type: 'line',
-                yMin: 20,
-                yMax: 20,
-                borderColor: 'red',
-                borderWidth: 2,
-                borderDash: [5, 5],
-                label: {
-                  display: true,
-                  content: 'ZONA DE RISCO',
-                  position: 'start'
-                }
-              },
-              linhaHorizonta2: {
-                type: 'line',
-                yMin: 99,
-                yMax: 99,
-                borderColor: 'green',
-                borderWidth: 2,
-                borderDash: [5, 5],
-                label: {
-                  display: true,
-                  content: 'LOTE CHEIO',
-                  position: 'start'
-                }
+            linhaHorizonta2: {
+              type: 'line',
+              yMin: 99,
+              yMax: 99,
+              borderColor: 'green',
+              borderWidth: 2,
+              borderDash: [5, 5],
+              label: {
+                display: true,
+                content: 'LOTE CHEIO',
+                position: 'start'
               }
             }
           }
+        }
+      },
+      scales: {
+        x: {
+          title: {
+            display: true,
+            text: 'Horário',
+            font: {
+              size: 12,
+              weight: 'bold'
+            },
+            color: '#000'
+          }
         },
-        scales: {
-          x: {
-            title: {
-              display: true,
-              text: 'Horário',
-              font: {
-                size: 12,
-                weight: 'bold'
-              },
-              color: '#000'
-            }
-          },
-          y: {
-            beginAtZero: true,
-            title: {
-              display: true,
-              text: 'Ocupação (%)',
-              font: {
-                size: 12,
-                weight: 'bold'
-              },
-              color: '#000'
-            }
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Ocupação (%)',
+            font: {
+              size: 12,
+              weight: 'bold'
+            },
+            color: '#000'
           }
         }
       }
-    });
+    }
+  });
 
   new Chart(dashboardLote3, {
     type: 'bar',
-      type: 'bar',
-      data: {
-        labels: ['5:00', '5:10', '5:20', '5:30', '5:40', '5:50', '6:00', '6:10', '6:20', '6:30', '6:40', '6:50', '7:00', '7:10', '7:20', '7:30', '7:40', '7:50', '8:00', '8:10', '8:20', '8:30', '8:40', '8:50', '9:00', '9:10', '9:20', '9:30', '9:40', '9:50', '10:00'],
-        datasets: [{
-          label: 'Ocupação (em porcentagem)',
-          backgroundColor: 'orange',
-          borderColor: 'orange',
-          data: [ 101, 99, 98, 100, 102, 98, 13, 16, 31, 44, 46, 43, 59, 61, 58, 74, 29, 15, 6, 5, 4, 6, 20, 35, 70, 42, 32, 98, 62, 59, 61 ],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        plugins: {
-          title: {
-            display: true,
-            text: 'Lote 3',
-            font: {
-              size: 20,
-              weight: 'bold'
+    type: 'bar',
+    data: {
+      labels: ['5:00', '5:10', '5:20', '5:30', '5:40', '5:50', '6:00', '6:10', '6:20', '6:30', '6:40', '6:50', '7:00', '7:10', '7:20', '7:30', '7:40', '7:50', '8:00', '8:10', '8:20', '8:30', '8:40', '8:50', '9:00', '9:10', '9:20', '9:30', '9:40', '9:50', '10:00'],
+      datasets: [{
+        label: 'Ocupação (em porcentagem)',
+        backgroundColor: 'orange',
+        borderColor: 'orange',
+        data: [101, 99, 98, 100, 102, 98, 13, 16, 31, 44, 46, 43, 59, 61, 58, 74, 29, 15, 6, 5, 4, 6, 20, 35, 70, 42, 32, 98, 62, 59, 61],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      plugins: {
+        title: {
+          display: true,
+          text: 'Lote 3',
+          font: {
+            size: 20,
+            weight: 'bold'
+          },
+          color: '#000'
+        },
+        legend: {
+          display: true,
+          position: 'bottom'
+        },
+        annotation: {
+          annotations: {
+            linhaHorizontal: {
+              type: 'line',
+              yMin: 20,
+              yMax: 20,
+              borderColor: 'red',
+              borderWidth: 2,
+              borderDash: [5, 5],
+              label: {
+                display: true,
+                content: 'ZONA DE RISCO',
+                position: 'start'
+              }
             },
-            color: '#000'
-          },
-          legend: {
-            display: true,
-            position: 'bottom'
-          },
-          annotation: {
-            annotations: {
-              linhaHorizontal: {
-                type: 'line',
-                yMin: 20,
-                yMax: 20,
-                borderColor: 'red',
-                borderWidth: 2,
-                borderDash: [5, 5],
-                label: {
-                  display: true,
-                  content: 'ZONA DE RISCO',
-                  position: 'start'
-                }
-              },
-              linhaHorizonta2: {
-                type: 'line',
-                yMin: 99,
-                yMax: 99,
-                borderColor: 'green',
-                borderWidth: 2,
-                borderDash: [5, 5],
-                label: {
-                  display: true,
-                  content: 'LOTE CHEIO',
-                  position: 'start'
-                }
+            linhaHorizonta2: {
+              type: 'line',
+              yMin: 99,
+              yMax: 99,
+              borderColor: 'green',
+              borderWidth: 2,
+              borderDash: [5, 5],
+              label: {
+                display: true,
+                content: 'LOTE CHEIO',
+                position: 'start'
               }
             }
           }
+        }
+      },
+      scales: {
+        x: {
+          title: {
+            display: true,
+            text: 'Horário',
+            font: {
+              size: 12,
+              weight: 'bold'
+            },
+            color: '#000'
+          }
         },
-        scales: {
-          x: {
-            title: {
-              display: true,
-              text: 'Horário',
-              font: {
-                size: 12,
-                weight: 'bold'
-              },
-              color: '#000'
-            }
-          },
-          y: {
-            beginAtZero: true,
-            title: {
-              display: true,
-              text: 'Ocupação (%)',
-              font: {
-                size: 12,
-                weight: 'bold'
-              },
-              color: '#000'
-            }
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Ocupação (%)',
+            font: {
+              size: 12,
+              weight: 'bold'
+            },
+            color: '#000'
           }
         }
       }
-    });
-  
+    }
+  });
+
   new Chart(dashboardLote4, {
     type: 'bar',
-      type: 'bar',
-      data: {
-        labels: ['5:00', '5:10', '5:20', '5:30', '5:40', '5:50', '6:00', '6:10', '6:20', '6:30', '6:40', '6:50', '7:00', '7:10', '7:20', '7:30', '7:40', '7:50', '8:00', '8:10', '8:20', '8:30', '8:40', '8:50', '9:00', '9:10', '9:20', '9:30', '9:40', '9:50', '10:00'],
-        datasets: [{
-          label: 'Ocupação (em porcentagem)',
-          backgroundColor: 'orange',
-          borderColor: 'orange',
-          data: [5, 10, 30, 50, 70, 75, 90, 15, 30, 45, 45, 45, 60, 60, 60, 75, 30, 15, 5, 5, 5, 5, 20, 50, 80, 100, 100, 10, 60, 60, 60],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        plugins: {
-          title: {
-            display: true,
-            text: 'Lote 4',
-            font: {
-              size: 20,
-              weight: 'bold'
+    type: 'bar',
+    data: {
+      labels: ['5:00', '5:10', '5:20', '5:30', '5:40', '5:50', '6:00', '6:10', '6:20', '6:30', '6:40', '6:50', '7:00', '7:10', '7:20', '7:30', '7:40', '7:50', '8:00', '8:10', '8:20', '8:30', '8:40', '8:50', '9:00', '9:10', '9:20', '9:30', '9:40', '9:50', '10:00'],
+      datasets: [{
+        label: 'Ocupação (em porcentagem)',
+        backgroundColor: 'orange',
+        borderColor: 'orange',
+        data: [5, 10, 30, 50, 70, 75, 90, 15, 30, 45, 45, 45, 60, 60, 60, 75, 30, 15, 5, 5, 5, 5, 20, 50, 80, 100, 100, 10, 60, 60, 60],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      plugins: {
+        title: {
+          display: true,
+          text: 'Lote 4',
+          font: {
+            size: 20,
+            weight: 'bold'
+          },
+          color: '#000'
+        },
+        legend: {
+          display: true,
+          position: 'bottom'
+        },
+        annotation: {
+          annotations: {
+            linhaHorizontal: {
+              type: 'line',
+              yMin: 20,
+              yMax: 20,
+              borderColor: 'red',
+              borderWidth: 2,
+              borderDash: [5, 5],
+              label: {
+                display: true,
+                content: 'ZONA DE RISCO',
+                position: 'start'
+              }
             },
-            color: '#000'
-          },
-          legend: {
-            display: true,
-            position: 'bottom'
-          },
-          annotation: {
-            annotations: {
-              linhaHorizontal: {
-                type: 'line',
-                yMin: 20,
-                yMax: 20,
-                borderColor: 'red',
-                borderWidth: 2,
-                borderDash: [5, 5],
-                label: {
-                  display: true,
-                  content: 'ZONA DE RISCO',
-                  position: 'start'
-                }
-              },
-              linhaHorizonta2: {
-                type: 'line',
-                yMin: 99,
-                yMax: 99,
-                borderColor: 'green',
-                borderWidth: 2,
-                borderDash: [5, 5],
-                label: {
-                  display: true,
-                  content: 'LOTE CHEIO',
-                  position: 'start'
-                }
+            linhaHorizonta2: {
+              type: 'line',
+              yMin: 99,
+              yMax: 99,
+              borderColor: 'green',
+              borderWidth: 2,
+              borderDash: [5, 5],
+              label: {
+                display: true,
+                content: 'LOTE CHEIO',
+                position: 'start'
               }
             }
           }
+        }
+      },
+      scales: {
+        x: {
+          title: {
+            display: true,
+            text: 'Horário',
+            font: {
+              size: 12,
+              weight: 'bold'
+            },
+            color: '#000'
+          }
         },
-        scales: {
-          x: {
-            title: {
-              display: true,
-              text: 'Horário',
-              font: {
-                size: 12,
-                weight: 'bold'
-              },
-              color: '#000'
-            }
-          },
-          y: {
-            beginAtZero: true,
-            title: {
-              display: true,
-              text: 'Ocupação (%)',
-              font: {
-                size: 12,
-                weight: 'bold'
-              },
-              color: '#000'
-            }
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Ocupação (%)',
+            font: {
+              size: 12,
+              weight: 'bold'
+            },
+            color: '#000'
           }
         }
       }
-    });
+    }
+  });
 
   new Chart(dashboardEstoque, {
     type: 'bar',
     data: {
-      labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"
+      labels: ["1", "2", "3", "4"
       ],
       datasets: [{
         label: 'Lote',
@@ -524,11 +524,11 @@
         }
       },
 
-      datasets:[{
+      datasets: [{
         label: 'Ocupação (em porcentagem)',
         backgroundColor: 'orange',
         borderColor: 'orange',
-        data: [80, 60, 40, 90, 75, 64, 83, 73, 28, 69
+        data: [60, 62, 61, 60
         ],
         borderWidth: 1
       }]
@@ -536,18 +536,18 @@
     options: {
       plugins: {
         title: {
-        display: true,
-        text: 'Dados de cada lote',
-        font: {
-          size: 20,
-          weight: 'bold'
+          display: true,
+          text: 'Dados de cada lote',
+          font: {
+            size: 20,
+            weight: 'bold'
+          },
+          color: '#000'
         },
-        color: '#000'
-      },
-      legend: {
-        display: true,
-        position: 'bottom'
-      },
+        legend: {
+          display: true,
+          position: 'bottom'
+        },
         annotation: {
           annotations: {
             linhaHorizontal: {
@@ -580,30 +580,30 @@
         },
       },
       scales: {
-          x: {
-            title: {
-              display: true,
-              text: 'Lotes',
-              font: {
-                size: 12,
-                weight: 'bold'
-              },
-              color: '#000'
-            }
-          },
-          y: {
-            beginAtZero: true,
-            title: {
-              display: true,
-              text: 'Ocupação (%)',
-              font: {
-                size: 12,
-                weight: 'bold'
-              },
-              color: '#000'
-            }
+        x: {
+          title: {
+            display: true,
+            text: 'Lotes',
+            font: {
+              size: 12,
+              weight: 'bold'
+            },
+            color: '#000'
+          }
+        },
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Ocupação (%)',
+            font: {
+              size: 12,
+              weight: 'bold'
+            },
+            color: '#000'
           }
         }
+      }
     }
   });
 
