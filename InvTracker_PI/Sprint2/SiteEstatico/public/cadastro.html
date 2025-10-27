@@ -28,6 +28,17 @@
     <!--Pagina de cadastro (começo)!-->
     <div class="body-cadastrar">
         <div class="cad_pai">
+                <!-- Modal -->
+    <div class="container_modal_cadastro" style="display: none;" id="modal_cadastro_grande">
+        <div class="box_modal_cadastro">
+            <div class="modal_cadastro">
+                <h2>Aviso</h2>
+                <span id="modal_cadastro"></span>
+                <br> <br>
+                <button onclick="voltar1()">Voltar</button>
+            </div>
+        </div>
+    </div>
 
             <div class="cad_campos">
                 <div class="card-Cadastro">
@@ -118,14 +129,8 @@
     </div>
     <script src="script/scriptLogin.js"></script>
 
-    <!-- Modal -->
-    <div id="modalAviso" class="modal">
-        <div class="modal-texto">
-            <h3>Aviso</h3>
-            <p id="textoAviso"></p>
-            <button class="btn-fechar" onclick="fecharAviso()">OK</button>
-        </div>
-    </div>
+
+
 </body>
 
 </html>

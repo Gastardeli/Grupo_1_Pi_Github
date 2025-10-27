@@ -1,19 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const modal = document.getElementById("modalAviso");
-    const texto = document.getElementById("textoAviso");
-
-    function mostrarAviso(mensagem) {
-        texto.innerHTML = mensagem;
-        modal.style.display = "flex";
-    }
-
-    function fecharAviso() {
-        modal.style.display = "none";
-    }
-
-    window.mostrarAviso = mostrarAviso;
-    window.fecharAviso = fecharAviso;
-});
+chkLogin = false;
 
 function verificarlogin() {
     var login = "user@email.com";
@@ -25,17 +10,21 @@ function verificarlogin() {
 
 
     if (valorSenha1 == senha && valorEmail1 == login) {
-        window.location.href = "dashboard.html";
+        modal_login.innerHTML = `Bem vindo(a) <br> <span style="color:green">acesso liberado!</span>`
+        botaoLogin.innerHTML = `Entrar`;
+        chkLogin = true;
     } else {
         alerta += `As seguintes informações estão incorretas <br> <br>`
         if (senha != valorSenha1) {
             alerta += `<span style="color:red">Senha</span> <br>`
         } if (login != valorEmail1) {
             alerta += `<span style="color:red">Email</span> <br>`
-        } alerta += '<br> Por favor, confira as informações e tente novamente. <br> <br>'
+        } alerta += '<br> Por favor, confira as informações e tente novamente.'
 
-        mostrarAviso(alerta)
+        botaoLogin.innerHTML = `Voltar`;
+        modal_login.innerHTML = alerta;
     }
+    modal_login_grande.style.display = "block";
 }
 
 function cadastro() {
@@ -97,7 +86,7 @@ function cadastro() {
         }
 
         if (senhaForte > 3) {
-            mostrarAviso(`<span style="color:green">Informações Registradas com Sucesso!</span> <br> <br>`)
+             modal_cadastro.innerHTML = `<span style="color:green">Informações Registradas com Sucesso!</span>.`;
         } else {
             alerta += `Sua senha está fraca! Checar os seguintes parâmetros: <br> <br>`
 
@@ -113,11 +102,26 @@ function cadastro() {
                 alerta += `Necessario ter <span style="color:red">letras e números</span> <br>`
             }
 
-            alerta += `<br> Por favor, corrija esses requisitos para seguir em frente. <br> <br>`
+            alerta += `<br> Por favor, corrija esses requisitos para seguir em frente.`
 
-            mostrarAviso(alerta)
+            modal_cadastro.innerHTML = alerta;
         }
     } else {
-        mostrarAviso(`<span style="color:red">A senha não confirma!</span> <br> <br>`)
+         modal_cadastro.innerHTML = `<span style="color:red">A senha não confirma!</span>`;
+    }
+
+    modal_cadastro_grande.style.display = "block";
+}
+
+function voltar1() {
+    modal_cadastro_grande.style.display = "none";
+}
+
+function voltar2() {
+
+    if(chkLogin) {
+        window.location.href = "dashboard.html";
+    }else {
+modal_login_grande.style.display = "none";
     }
 }

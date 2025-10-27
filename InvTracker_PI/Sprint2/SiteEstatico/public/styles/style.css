@@ -138,6 +138,7 @@ body {
     justify-content: center;
     position: absolute;
     padding-top: 300px;
+    animation: aparecer 1s ease;
 }
 
 .box_modal_calculadora {
@@ -171,6 +172,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: aparecer 1s ease;
 }
 
 .container_filter button {
@@ -234,6 +236,7 @@ main .introducao .container .titulo {
     color: rgb(255, 255, 255);
     font-weight: 700;
     font-size: 40px;
+    animation: aparecer 1s ease;
 }
 
 main .introducao .container .texto {
@@ -241,6 +244,7 @@ main .introducao .container .texto {
     font-weight: 300;
     font-size: 20px;
     width: 70%;
+    animation: aparecer 1s ease;
 }
 
 /* Parte 2 */
@@ -445,18 +449,19 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
     position: relative;
     overflow: hidden;
     padding: 0 5%;
-}
-
-.background-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../assets/imgs/paginaFundoLogin&Cadastro.png');
+        background-image: url('../assets/imgs/paginaFundoLogin&Cadastro.png');
     /* imagem temporaria*/
     background-size: cover;
     background-position: center;
+}
+
+.background-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
     filter: brightness(0.6);
     z-index: 1;
 }
@@ -464,12 +469,13 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
 
 .form-wrapper {
     z-index: 5;
-    width: 90%;
+    width: 100%;
     max-width: 350px;
     padding: 30px;
     background-color: rgba(0, 0, 0, 0.85);
     border-radius: 8px;
     color: #ffffff;
+    animation: aparecer 1s ease;
 }
 
 #loginForm h2 {
@@ -549,6 +555,47 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
     border-radius: 5px;
 }
 
+.container_modal_login{
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    min-height: 1000px;
+    height: 1452px;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    position: absolute;
+    text-align: center;
+    padding-bottom: 180px;
+}
+
+.box_modal_login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40%;
+}
+
+.modal_login {
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    background-color: white;
+    border-radius: 10px;
+    border: orange 8px solid;
+}
+
+.modal_login button {
+    background-color: orange;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
 .signup-prompt {
     text-align: center;
     margin-top: 20px;
@@ -612,53 +659,6 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
     margin-bottom: 10px;
 }
 
-/* Kadooca 
-
-CALCULADORA
-
-.resultado button {
-    align-items: center;
-    justify-content: center;
-}
-
-.calc_html button {
-    height: 35px;
-    width: 100px;
-    border: 0px;
-    background-color: orange;
-    color: white;
-    border-radius: 5px;
-    font-weight: bolder;
-}
-
-.calc_html input {
-    height: 35px;
-    width: 200px;
-    border: 0px;
-    background-color: rgb(231, 231, 231);
-    border-radius: 5px;
-    text-align: center;
-}
-
-.calc_html input::placeholder {
-    text-align: center;
-    color: black
-}
-
-.resultado {
-    display: flex;
-    margin: 10px;
-    background-color: rgb(231, 231, 231);
-    border-radius: 10px;
-    flex-direction: column;
-    align-content: space-between;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-    padding: 20px;
-
-}
-*/
 
 
 /* CONTATO */
@@ -699,6 +699,45 @@ CALCULADORA
 /*Pagina de Cadastro*/
 /*Começo*/
 
+.container_modal_cadastro{
+    width: 100%;
+    min-height: 1000px;
+    height: 1452px;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+    padding-top: 300px;
+}
+
+.box_modal_cadastro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+}
+
+.modal_cadastro {
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    background-color: white;
+    border-radius: 10px;
+    border: orange 8px solid;
+}
+
+.modal_cadastro button {
+    background-color: orange;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
 
 
 
@@ -798,6 +837,7 @@ header .logo {
     color: white;
     justify-content: flex-end;
     margin-left: 10px;
+    animation: aparecer 1s ease;
 }
 
 .card-endereco input {
@@ -819,6 +859,7 @@ header .logo {
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
     margin-right: 10px;
+    animation: aparecer 1s ease;
 }
 
 .card-Cadastro p {
@@ -897,69 +938,7 @@ header .logo {
     align-items: center;
 }
 
-/*modal*/
 
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-texto {
-    background: #fff;
-    text-align: center;
-    padding: 20px 25px;
-    border-radius: 10px;
-    width: 450px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    animation: aparecer 0.3s ease;
-    border: 5px solid orange;
-}
-
-@keyframes aparecer {
-    from {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-.modal h3 {
-    margin-bottom: 0px;
-}
-
-.modal p {
-    margin-bottom: 0px;
-    color: #555;
-}
-
-.btn-fechar {
-    background-color: darkorange;
-    border: none;
-    padding: 8px 15px;
-    color: white;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 14px;
-
-    align-self: center;
-
-}
-
-.btn-fechar:hover {
-    background-color: darkorange;
-}
 
 /*Dashboard*/
 
@@ -1186,6 +1165,18 @@ header .logo {
 .container_main .container_dashboards {
     width: 75%;
     background-color: #1E0473;
+}
+
+@keyframes aparecer {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 
