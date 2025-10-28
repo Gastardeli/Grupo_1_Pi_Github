@@ -1,8 +1,8 @@
 -- Criar o Banco de Dados
-CREATE DATABASE grupo1;
+CREATE DATABASE invtracker;
 
 -- Utilizar o banco de dados
-USE grupo1;
+USE invtracker;
 
 -- Criar tabela cliente
 CREATE TABLE cliente (

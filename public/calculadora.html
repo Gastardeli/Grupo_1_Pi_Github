@@ -51,22 +51,26 @@
                         <h4>Economia Anual Estimada</h4>
                         <p>
                             Ao adotar o nosso sistema de monitoramento e controle, estima-se uma
-                            <b>redução de até 60%</b> nas perdas causadas por erros de inventário. <br><br>
+                            <b>redução de até 60%</b> nas perdas causadas por erros de inventário.
+                        </p>
+                        <h4>Possivel Lucratividade</h4>
+                        <p>
                             De acordo com o Diário do Comércio, ao reduzir as perdas pela metade, pode-se alcançar o
                             <b>triplo de lucro</b>, como indicado em nossa calculadora, através do informativo de
-                            "Possível lucratividade em vendas de estoques recuperados"
+                            "Possível lucratividade em vendas de estoques/lotes recuperados"
                         </p>
-                        <br> <br>
                         <button onclick="voltar()">Voltar</button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="container_filter">
-            <button onclick="calculos()" style="display: none; background-color: white; color: black; font-weight: bolder;" id="botao_modal">Saiba Mais</button> <br>
+            <button onclick="calculos()"
+                style="display: none; background-color: white; color: black; font-weight: bolder;"
+                id="botao_modal">Saiba Mais</button> <br>
             <div class="apagar" id="temporaria">
                 <Div class="margin" id="pagina1_html">
-                    <h2>Calculadora de Perdas por Erro de Inventário</h2>
+                    <h2>Simule Suas Perdas Gerais por Erros de Inventário</h2>
                     <b>Selecione a quantia de Unidades</b> <br> <br>
                     <select onchange="input_lojas()" id="select_numeroLojas">
                         <option value="1">1</option>
@@ -78,7 +82,7 @@
                     <div class="calc_html" id="calculadora_html"></div> <br> <br>
                 </Div>
                 <Div class="margin" id="pagina2_html">
-                    <h2>Calculadora Específica de Perdas por Erro de Inventário</h2>
+                    <h2>Simule Suas Perdas em Produtos por Erros de Inventário</h2>
                     <b>Insira os dados abaixo</b> <br> <br>
                     <div class="calc_html" id="calculadora_html1">
                         <p>Nome do produto específico</p>
@@ -94,7 +98,7 @@
                     </div> <br> <br>
                 </Div>
             </div>
-            
+
         </div>
     </div>
 
@@ -172,9 +176,9 @@
             texto += `<h3 style='color: green;'>Oportunidade para ${nome}</h3>`;
             texto += "<p>Com redução estimada de <b style='color: green;'>50% - 60% nos erros de inventário: </b></p>";
             texto += `<p>Economia anual: <b style='color: green;'>R$${economia_ano} - R$${economia_ano2}</b></p>`;
-            texto += `<p>Possível lucratividade em vendas de estoques recuperados: <b style='color: green;'>R$${(vendas_recuperadas).toFixed(2)}</b></p>`;
-            texto += `<p>Economia total: <b style='color: green;'>R$${(vendas_recuperadas + Number(economia_ano)).toFixed(2)} - R$${(vendas_recuperadas + Number(economia_ano2)).toFixed(2)}</b></p>`;
-
+            texto += `<p>Possível lucratividade em vendas de lotes recuperados: <b style='color: green;'>R$${(vendas_recuperadas).toFixed(2)}</b></p>`;
+            texto += `<p>Economia total: <b style='color: green;'>R$${(vendas_recuperadas + Number(economia_ano)).toFixed(2)} - R$${(vendas_recuperadas + Number(economia_ano2)).toFixed(2)}</b></p> <br>`;
+            texto += `Isso é apenas de um produto, um atacado tem mais de <b style="color:orange">5000 produtos diferentes!</b>`
             div_resultado1.innerHTML = texto;
 
             botao_modal.style.display = "block";

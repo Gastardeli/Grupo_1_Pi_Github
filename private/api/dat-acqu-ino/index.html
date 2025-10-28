@@ -10,16 +10,13 @@
 
     <h1 style="text-align: center;">Graphics</h1>
     <div style="display: flex; justify-content:center;">
-        <!-- <div style="width: 50%;">
-            <canvas id="sensorAnalogico"></canvas>
-        </div> -->
         <div style="width: 50%;">
             <canvas id="sensorDigital"></canvas>
         </div>
     </div>
 
     <script>
-       
+
         var sensorDigital = new Chart(document.getElementById('sensorDigital').getContext('2d'), {
             type: 'line',
             data: {
