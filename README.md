@@ -1,3 +1,2 @@
-# InvTracker_PI
-📦 InvTracker
-InvTracker é o projeto de um software para <b>monitoramento de estoques</b> desenvolvido para atacados, com o objetivo de <b>reduzir perdas de inventário e otimziar a reposição e controle de estoques.</b>
+429: Too Many Requests
+For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service).
