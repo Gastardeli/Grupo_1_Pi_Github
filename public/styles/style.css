@@ -138,7 +138,6 @@ body {
     justify-content: center;
     position: absolute;
     padding-top: 300px;
-    animation: aparecer 1s ease;
 }
 
 .box_modal_calculadora {
@@ -177,7 +176,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    animation: aparecer 1s ease;
 }
 
 .container_filter button {
@@ -477,13 +475,12 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
 .form-wrapper {
     z-index: 5;
     width: 100%;
-    height: 60%;
-    max-width: 350px;
+    height: 500px;
+    max-width: 450px;
     padding: 30px;
     background-color: rgba(0, 0, 0, 0.85);
     border-radius: 8px;
     color: #ffffff;
-    animation: aparecer 1s ease;
 }
 
 #loginForm h2 {
@@ -845,7 +842,6 @@ header .logo {
     color: white;
     justify-content: flex-end;
     margin-left: 10px;
-    animation: aparecer 1s ease;
 }
 
 .card-endereco input {
@@ -867,7 +863,6 @@ header .logo {
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
     margin-right: 10px;
-    animation: aparecer 1s ease;
 }
 
 .card-Cadastro p {
@@ -917,6 +912,7 @@ header .logo {
 
 .button_cadastrar {
     background-color: #DF8533;
+    font-size: 15px;
     color: white;
     border: none;
     cursor: pointer;
@@ -1101,19 +1097,6 @@ header .logo {
 }
 
 /*Fim da pagina cadastro*/
-
-@keyframes aparecer {
-    from {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
 
 /* Responsividade básica */
 @media screen and (max-width: 1000px) {
