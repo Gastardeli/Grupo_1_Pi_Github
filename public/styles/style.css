@@ -927,7 +927,7 @@ header .logo {
 }
 
 .button_cadastrar:hover {
-    background-color: darkorange;
+    background-color: #E67C1C;
 }
 
 .cad_campos {
@@ -1016,6 +1016,7 @@ header .logo {
     border: solid grey 2px;
     border-radius: 10px;
     margin: 5px;
+    align-items: center;
     background-color: white;
 }
 
@@ -1170,6 +1171,7 @@ header .logo {
     flex-direction: column;
     justify-content: space-between;
     min-height: 100vh;
+    border-right: 2px solid black;
 }
 
 .container_main aside header {
@@ -1181,7 +1183,7 @@ header .logo {
 
 .container_main aside header .nome_user {
     font-size: 30px;
-    color: white;
+    color: #000;
 }
 
 .container_main aside header img {
@@ -1196,17 +1198,18 @@ header .logo {
 }
 
 .container_main aside .body p {
-    font-size: 30px;
+    font-size: 21px;
     cursor: pointer;
+    text-decoration: none;
+    color: #000;
 }
 
 .container_main aside .body a {
     text-decoration: none;
-    color: white;
 }
 
 .container_main aside .body p:hover {
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #000;
 }
 
 .container_main aside .body a .container_main aside .footer {
@@ -1216,22 +1219,41 @@ header .logo {
     padding-right: 50px;
 }
 
+.container_main aside .footer {
+    border-top: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+.container_main aside .footer img {
+    width: 45x;
+    height: 45px;
+}
+
 .container_main aside .footer .logout button {
-    background-color: red;
+    background-color: #E67C1C;
     border-radius: 10px;
     width: 50px;
     cursor: pointer;
-    color: white;
+    color: #fff;
     border: 0;
     padding: 5px 10px;
+
+    border: 1.5px solid black;
+    color: #000;
 }
 
-.container_main .container_direita {
-    width: 75%;
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
+.container_main aside .footer .logout button:hover {
+    background-color: #df86339f;
 }
+
+.container_main aside .footer .logout button a {
+    text-decoration: none;
+    color: #000;
+}
+
 
 .container_main .container_direita .kpi_dash1 {
     display: flex;
@@ -1304,6 +1326,7 @@ header .logo {
 .container_main .container_direita2 {
     width: 75%;
     display: flex;
+
 }
 
 .container_main .container_direita2 #dashboard_estoque {
@@ -1312,6 +1335,7 @@ header .logo {
     padding: 20px;
     display: flex;
     justify-content: space-evenly;
+
 }
 
 .container_main .container_direita2 #dashboard_estoque .dash_direita {
@@ -1345,4 +1369,141 @@ header .logo {
 
 .container_main .container_direita2 #dashboard_estoque .select_esquerda .titulo {
     padding-top: 40px;
+}
+
+/*STYLE CSS CADASTRO */
+.container_cadDash {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width:75%;
+    background-image: url(../assets/imgs/cadastroProduto_Background.jpg);
+    background-size: cover;
+    background-position: center;
+
+}
+
+.boxes_cadDash {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 80%;
+    width: 80%;
+    
+}
+
+.box_cadDash {
+    display: flex;
+    height: 60%;
+    width: 50%;
+    border: solid black 2px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    align-self: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid orange;
+
+}
+
+.box_cadDash h1 {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: 10%;
+    color: white;
+}
+
+.box_cadDash input {
+    border-radius: 10px;
+    width: 50%;
+    height: 4%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #E67C1C;
+    background-color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.box_cadDash select {
+    border-radius: 10px;
+    width: 30%;
+    height: 4%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #E67C1C;
+    background-color: white;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+.box_cadDash b {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-weight: bolder;
+    font-size: 16px;
+    color: white;
+}
+
+.box_cadDash button {
+    background-color: #E67C1C;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.container_modal_cadProd {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding-top: 300px;
+}
+
+.box_modal_cadProd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+}
+
+.modal_cadProd {
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    background-color: white;
+    border-radius: 10px;
+    border: orange 8px solid;
+}
+
+.modal_cadProd p {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.modal_cadProd button {
+    background-color: orange;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
 }

@@ -120,7 +120,7 @@ function voltar1() {
 function voltar2() {
 
     if(chkLogin) {
-        window.location.href = "dashboard.html";
+        window.location.href = "dashboardDiaria.html";
     }else {
 modal_login_grande.style.display = "none";
     }

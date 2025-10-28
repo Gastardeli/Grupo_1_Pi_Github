@@ -86,13 +86,13 @@
                     <b>Insira os dados abaixo</b> <br> <br>
                     <div class="calc_html" id="calculadora_html1">
                         <p>Nome do produto específico</p>
-                        <input type="text" id="input_nome" placeholder="ex. Lay's" type="text"><br>
+                        <input type="text" id="input_nome" value="Raffalo" type="text"><br>
                         <p>Valor de compra do produto (unitário)</p>
-                        <input type="number" id="input_valor_compra" placeholder="ex. R$2.00"> <br>
+                        <input type="number" id="input_valor_compra" value=15> <br>
                         <p>Valor de venda do produto (unitário)</p>
-                        <input type="number" id="input_valor_venda" placeholder="ex. R$5.60"> <br>
+                        <input type="number" id="input_valor_venda" value="35"> <br>
                         <p>Quantidade média do produto no estoque (unidades)</p>
-                        <input type="number" id="input_quantidade" placeholder="ex. 10000"> <br><br>
+                        <input type="number" id="input_quantidade" value=5000> <br><br>
                         <button onclick="input_calculo_especifico()">Calcular</button> <br><br>
                         <div id="div_resultado1" class="resultado" placeholder="ex. Lay's"> </div>
                     </div> <br> <br>
@@ -131,7 +131,7 @@
 <script>
     var pagina1 = "";
     var faturamento = 0;
-    var input = `<input type="number" id="input_faturamento" placeholder="Unidade 01: ex.R$1.000.000">
+    var input = `<input type="number" id="input_faturamento" value=205000000>
     <br> `;
     var input1 = `<br> <input type="number" id="input_faturamento1" placeholder="Unidade 02: Ex.R$3.500.000"> <br>`
     var input2 = `<br> <input type="number" id="input_faturamento2" placeholder="Unidade 03: Ex.R$2.300.000"> <br>`
