@@ -88,7 +88,7 @@
                         <p>Nome do produto específico</p>
                         <input type="text" id="input_nome" value="Raffalo" type="text"><br>
                         <p>Valor de compra do produto (unitário)</p>
-                        <input type="number" id="input_valor_compra" value=15> <br>
+                        <input type="number" id="input_valor_compra" value=10> <br>
                         <p>Valor de venda do produto (unitário)</p>
                         <input type="number" id="input_valor_venda" value="35"> <br>
                         <p>Quantidade média do produto no estoque (unidades)</p>
@@ -136,13 +136,9 @@
     var input1 = `<br> <input type="number" id="input_faturamento1" placeholder="Unidade 02: Ex.R$3.500.000"> <br>`
     var input2 = `<br> <input type="number" id="input_faturamento2" placeholder="Unidade 03: Ex.R$2.300.000"> <br>`
     var input_varias = `<br> <input type="number" id="input_faturamento" placeholder="Soma das unidades">
-    <br> `
-    var input_custos = `<br> <input type="number" id="input_custos" placeholder="Unidade 1">
-    <br> `
-    var input_custos1 = `<br> <input type="number" id="input_custos1" placeholder="Unidade 2"> <br> `
-    var input_custos2 = `<br> <input type="number" id="input_custos2" placeholder="Unidade 3"> <br> `
-    var input_custos_varios = `<br> <input type="number" id="input_custos2" placeholder="Soma das unidades"> <br> `
-        ;
+    <br> `;
+
+
 
     function input_calculo_especifico() {
         var nome = input_nome.value;
@@ -154,51 +150,36 @@
 
         if (nome != `` && compra != `` && venda != `` && quantidade != `` && isNaN(nome) == true) {
 
-            var perdas_inventario_ano = (faturamento * 0.0157 * 0.0946);
+            var perdas_inventario_ano = (faturamento * 0.0157 );
 
             var perdas_inventario_ano_format = perdas_inventario_ano.toLocaleString('pt-BR', {
             style: 'currency',
             currency: 'BRL'
             });
 
-            // REDUÇÃO DE 50% COM NOSSO SISTEMA
-            var reducao = 0.50; // 50% de redução
-
-            // REDUÇÃO DE 60% COM NOSSO SISTEMA
-            var reducao2 = 0.60; // 60% de redução
+            // REDUÇÃO DE 30% COM NOSSO SISTEMA
+            var reducao = 0.30; // 30% de redução
 
             //var economia_ano = (perdas_inventario_ano * reducao).toFixed(2);
-            var economia_ano = (faturamento * (reducao * 0.0157 * 0.0946));
+            var economia_ano = (faturamento * (reducao * 0.0157));
 
             var economia_ano_format = economia_ano.toLocaleString('pt-BR', {
             style: 'currency',
             currency: 'BRL'
             });
 
-            //var economia_ano = (perdas_inventario_ano * reducao).toFixed(2);
-            var economia_ano2 = (faturamento * (reducao2 * 0.0157 * 0.0946));
-
-            var economia_ano2_format = economia_ano2.toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL'
-            });
-
             // Quanto poderá ser comencializado a mais caso o estoque seja salvo com nosso sistema
-            var vendas_recuperadas = (economia_ano * lucro);
-            var vendas_recuperadas_format = vendas_recuperadas.toLocaleString('pt-BR', {
+
+            var produtos_recuperados = economia_ano / compra;
+            var lucro_prod_recuperado = produtos_recuperados * venda;
+            var lucro_prod_recuperado_format = lucro_prod_recuperado.toLocaleString('pt-BR', {
             style: 'currency',
             currency: 'BRL'
             });
 
             // Economias totais
-            var economia_total1 = (vendas_recuperadas + Number(economia_ano));
+            var economia_total1 = (lucro_prod_recuperado + Number(economia_ano));
             var economia_total1_format = (economia_total1).toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL'
-            });
-
-            var economia_total2 = (vendas_recuperadas + Number(economia_ano2));
-            var economia_total2_format = (economia_total2).toLocaleString('pt-BR', {
             style: 'currency',
             currency: 'BRL'
             });
@@ -212,10 +193,10 @@
             var texto = "<h3>Resultado:</h3>";
 
             texto += `<h3 style='color: green;'>Oportunidade para ${nome}</h3>`;
-            texto += "<p>Com redução estimada de <b style='color: green;'>50% - 60% nos erros de inventário: </b></p>";
-            texto += `<p>Economia anual: <b style='color: green;'>${economia_ano_format} - ${economia_ano2_format}</b></p>`;
-            texto += `<p>Possível lucratividade em vendas de lotes recuperados: <b style='color: green;'>${vendas_recuperadas_format}</b></p>`;
-            texto += `<p>Economia total: <b style='color: green;'>${economia_total1_format} - ${economia_total2_format}</b></p> <br>`;
+            texto += "<p>Com redução estimada de <b style='color: green;'>30% nos erros de inventário: </b></p>";
+            texto += `<p>Economia anual: <b style='color: green;'>${economia_ano_format}</b></p>`;
+            texto += `<p>Possível lucratividade em vendas de lotes recuperados: <b style='color: green;'>${lucro_prod_recuperado_format}</b></p>`;
+            texto += `<p>Economia total: <b style='color: green;'>${economia_total1_format}</b></p> <br>`;
             texto += `Isso é apenas de um produto, um atacado tem mais de <b style="color:orange">5000 produtos diferentes!</b>`
             div_resultado1.innerHTML = texto;
 
@@ -251,22 +232,19 @@
         calculadora_html.innerHTML += `<br> <button onclick="calcular()">Calcular</button> <br><br> <div id="div_resultado" class="resultado"></div>`
     }
 
+
     function calcular() {
 
         // Pega o valor do input diretamente pelo id
 
         var faturamento = 0;
-        var custos = 0;
 
         if (input_faturamento) {
             faturamento = faturamento + + Number(input_faturamento.value).toFixed(2);
-            custos = custos + + Number(input_custos.value).toFixed(2);
             if (typeof input_faturamento1 != 'undefined') {
                 faturamento = faturamento + + Number(input_faturamento1.value).toFixed(2)
-                custos = custos + + Number(input_custos1.value).toFixed(2);
                 if (typeof input_faturamento2 != 'undefined') {
                     faturamento = faturamento + + Number(input_faturamento2.value).toFixed(2)
-                    custos = custos + + Number(input_custos2.value).toFixed(2);
                 }
             }
         }
@@ -274,7 +252,7 @@
 
 
         // Dados baseados na pesquisa ABRAPPE  (9,46% por erros de inventário em cima de 1,57% perdas totais)
-        var perdas_inventario_ano = (faturamento * 0.0157 * 0.0946);
+        var perdas_inventario_ano = (faturamento * 0.0157);
         
         var perdas_inventario_ano_format = perdas_inventario_ano.toLocaleString('pt-BR', {
             style: 'currency',
@@ -297,14 +275,14 @@
             currency: 'BRL'
             });
 
-        // REDUÇÃO DE 50% COM NOSSO SISTEMA
-        var reducao = 0.50; // 50% de redução
+        // REDUÇÃO DE 30% COM NOSSO SISTEMA
+        var reducao = 0.30; // 30% de redução
 
         // REDUÇÃO DE 60% COM NOSSO SISTEMA
         var reducao2 = 0.60; // 60% de redução
 
         //var economia_ano = (perdas_inventario_ano * reducao);
-        var economia_ano = ((faturamento * (reducao * 0.0157 * 0.0946)));
+        var economia_ano = ((faturamento * (reducao * 0.0157)));
 
         var economia_ano_format = economia_ano.toLocaleString('pt-BR', {
             style: 'currency',
@@ -320,7 +298,7 @@
             });
 
         //var economia_ano = (perdas_inventario_ano * reducao);
-        var economia_ano2 = ((faturamento * (reducao2 * 0.0157 * 0.0946)));
+        var economia_ano2 = ((faturamento * (reducao2 * 0.0157)));
 
         var economia_ano2_format = economia_ano2.toLocaleString('pt-BR', {
             style: 'currency',
@@ -334,13 +312,6 @@
             currency: 'BRL'
             });
 
-        // Lucro anual
-        var lucro_anual = faturamento - custos;
-
-        var lucro_anual_format = lucro_anual.toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL'
-            });
 
         // Economias totais
         var economia_total1 = (vendas_recuperadas + Number(economia_ano));
@@ -370,9 +341,9 @@
             texto += "<p>Perdas anuais estimadas com base em erros de inventário: <b style='color: red;'> " + perdas_inventario_ano_format + "</b></p>";
             texto += "<p>Em 5 anos: <b style='color: red;'> " + perdas_5_anos_format + "</b> em perdas evitáveis</p>";
 
-            // SEÇÃO DA OPORTUNIDADE COM 50% - 60% DE REDUÇÃO
+            // SEÇÃO DA OPORTUNIDADE COM 30% DE REDUÇÃO
             texto += "<h3 style='color: green;'>Oportunidades com Nosso Sistema</h3>";
-            texto += "<p>Com redução estimada de <b style='color: green;'>50% - 60% nos erros de inventário: </b></p>";
+            texto += "<p>Com redução estimada de <b style='color: green;'>30% nos erros de inventário: </b></p>";
             texto += `<p>Economia anual: <b style='color: green;'>${economia_ano_format} - ${economia_ano2_format}</b></p>`;
             texto += `<p>Economia em 5 anos: <b style='color: green;'>${economia_5_anos_format} - ${economia_5_anos2_format}</b></p>`;
             texto += `<p>Possível lucratividade em vendas de estoques recuperados: <b style='color: green;'>${(vendas_recuperadas_format)}</b></p>`;
