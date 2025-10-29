@@ -79,8 +79,10 @@
                         <option value="4">Mais de três Lojas</option>
                         <option disabled selected value="">Selecione uma Opção</option>
                     </select> <br> <br>
-                    <div class="calc_html" id="calculadora_html"></div> <br> <br>
-                </Div>
+                    <div class="boxCalculadora">
+                        <div class="calc_html" id="calculadora_html"></div>
+                    </Div>
+                </div>
                 <Div class="margin" id="pagina2_html">
                     <h2>Simule Suas Perdas em Produtos por Erros de Inventário</h2>
                     <b>Insira os dados abaixo</b> <br> <br>
@@ -150,22 +152,24 @@
 
         if (nome != `` && compra != `` && venda != `` && quantidade != `` && isNaN(nome) == true) {
 
-            var perdas_inventario_ano = (faturamento * 0.0157 );
+            var perdas_inventario_ano = (faturamento * 0.0157);
 
             var perdas_inventario_ano_format = perdas_inventario_ano.toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL'
+                style: 'currency',
+                currency: 'BRL'
             });
 
             // REDUÇÃO DE 30% COM NOSSO SISTEMA
             var reducao = 0.30; // 30% de redução
 
+            // REDUÇÃO 
+
             //var economia_ano = (perdas_inventario_ano * reducao).toFixed(2);
             var economia_ano = (faturamento * (reducao * 0.0157));
 
             var economia_ano_format = economia_ano.toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL'
+                style: 'currency',
+                currency: 'BRL'
             });
 
             // Quanto poderá ser comencializado a mais caso o estoque seja salvo com nosso sistema
@@ -173,15 +177,15 @@
             var produtos_recuperados = economia_ano / compra;
             var lucro_prod_recuperado = produtos_recuperados * venda;
             var lucro_prod_recuperado_format = lucro_prod_recuperado.toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL'
+                style: 'currency',
+                currency: 'BRL'
             });
 
             // Economias totais
             var economia_total1 = (lucro_prod_recuperado + Number(economia_ano));
             var economia_total1_format = (economia_total1).toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL'
+                style: 'currency',
+                currency: 'BRL'
             });
 
             /*
@@ -197,7 +201,7 @@
             texto += `<p>Economia anual: <b style='color: green;'>${economia_ano_format}</b></p>`;
             texto += `<p>Possível lucratividade em vendas de lotes recuperados: <b style='color: green;'>${lucro_prod_recuperado_format}</b></p>`;
             texto += `<p>Economia total: <b style='color: green;'>${economia_total1_format}</b></p> <br>`;
-            texto += `Isso é apenas de um produto, um atacado tem mais de <b style="color:orange">5000 produtos diferentes!</b>`
+            texto += `Isso é apenas de um produto, um atacado tem mais de <b style="color:#ff8c00">5000 produtos diferentes!</b> <br>`
             div_resultado1.innerHTML = texto;
 
             botao_modal.style.display = "block";
@@ -253,19 +257,11 @@
 
         // Dados baseados na pesquisa ABRAPPE  (9,46% por erros de inventário em cima de 1,57% perdas totais)
         var perdas_inventario_ano = (faturamento * 0.0157);
-        
+
         var perdas_inventario_ano_format = perdas_inventario_ano.toLocaleString('pt-BR', {
             style: 'currency',
             currency: 'BRL'
-            });
-
-        // Projeção em 5 anos
-        var perdas_5_anos = (perdas_inventario_ano * 5);
-
-        var perdas_5_anos_format = perdas_5_anos.toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL'
-            });
+        });
 
         // Quanto precisa vender a mais para compensar (margem de 3%)
         var vendas_extras = (perdas_inventario_ano / 0.03);
@@ -273,13 +269,10 @@
         vendas_extras_format = vendas_extras.toLocaleString('pt-BR', {
             style: 'currency',
             currency: 'BRL'
-            });
+        });
 
         // REDUÇÃO DE 30% COM NOSSO SISTEMA
         var reducao = 0.30; // 30% de redução
-
-        // REDUÇÃO DE 60% COM NOSSO SISTEMA
-        var reducao2 = 0.60; // 60% de redução
 
         //var economia_ano = (perdas_inventario_ano * reducao);
         var economia_ano = ((faturamento * (reducao * 0.0157)));
@@ -287,44 +280,15 @@
         var economia_ano_format = economia_ano.toLocaleString('pt-BR', {
             style: 'currency',
             currency: 'BRL'
-            });
-
-
-        var economia_5_anos = (economia_ano * 5);
-
-        var economia_5_anos_format = economia_5_anos.toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL'
-            });
-
-        //var economia_ano = (perdas_inventario_ano * reducao);
-        var economia_ano2 = ((faturamento * (reducao2 * 0.0157)));
-
-        var economia_ano2_format = economia_ano2.toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL'
-            });
-
-        var economia_5_anos2 = (economia_ano2 * 5);
-
-        var economia_5_anos2_format = economia_5_anos2.toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL'
-            });
+        });
 
 
         // Economias totais
         var economia_total1 = (vendas_recuperadas + Number(economia_ano));
-            var economia_total1_format = (economia_total1).toLocaleString('pt-BR', {
+        var economia_total1_format = (economia_total1).toLocaleString('pt-BR', {
             style: 'currency',
             currency: 'BRL'
-            });
-
-            var economia_total2 = (vendas_recuperadas + Number(economia_ano2));
-            var economia_total2_format = (economia_total2).toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL'
-            });
+        });
 
         // Quanto poderá ser comencializado a mais caso o estoque seja salvo com nosso sistema
         var vendas_recuperadas = economia_ano * 3;
@@ -332,29 +296,27 @@
         var vendas_recuperadas_format = vendas_recuperadas.toLocaleString('pt-BR', {
             style: 'currency',
             currency: 'BRL'
-            });
+        });
 
         div_resultado.innerHTML = ``;
         if (faturamento != '') {
             // Monta o resultado
             var texto = "<h3>Resultado:</h3>";
             texto += "<p>Perdas anuais estimadas com base em erros de inventário: <b style='color: red;'> " + perdas_inventario_ano_format + "</b></p>";
-            texto += "<p>Em 5 anos: <b style='color: red;'> " + perdas_5_anos_format + "</b> em perdas evitáveis</p>";
 
             // SEÇÃO DA OPORTUNIDADE COM 30% DE REDUÇÃO
             texto += "<h3 style='color: green;'>Oportunidades com Nosso Sistema</h3>";
             texto += "<p>Com redução estimada de <b style='color: green;'>30% nos erros de inventário: </b></p>";
-            texto += `<p>Economia anual: <b style='color: green;'>${economia_ano_format} - ${economia_ano2_format}</b></p>`;
-            texto += `<p>Economia em 5 anos: <b style='color: green;'>${economia_5_anos_format} - ${economia_5_anos2_format}</b></p>`;
-            texto += `<p>Possível lucratividade em vendas de estoques recuperados: <b style='color: green;'>${(vendas_recuperadas_format)}</b></p>`;
-            texto += `<p>Economia total: <b style='color: green;'>${vendas_recuperadas_format} - ${vendas_recuperadas_format}</b></p>`;
+            texto += `<p>Economia anual: <b style='color: green;'>${economia_ano_format}</p>`
+            texto += `<p> Possível lucratividade em vendas de estoques recuperados: <b style='color: green;'>${(vendas_recuperadas_format)}</b></p> `;
+            texto += `<p> Economia total: <b style='color: green;'>${vendas_recuperadas_format}</b></p> `;
 
 
             div_resultado.innerHTML = texto;
 
             botao_modal.style.display = "block";
         } else {
-            div_resultado.innerHTML = `<span>Por favor, insira um valor <b style="color:green;">válido</b></span>`
+            div_resultado.innerHTML = `< span > Por favor, insira um valor < b style = "color:green;" > válido</b ></span >`
         }
 
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InvTracker | Página Inicial</title>
+    <title>InvTracker | Dashboard Estoque</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="icon" href="assets/icon/icon.png" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
@@ -19,7 +19,7 @@
             <header>
                 <img src="assets/imgs/logo.png" alt="" class="user">
                 <div class="nome_user">
-                    <p>User dos Santos</p>
+                    <p>InvTracker</p>
                 </div>
             </header>
             <div class="body">
@@ -35,28 +35,32 @@
             </div>
             <div class="footer">
                 <img src="assets/icon/iconUser.png" alt="">
+                <div class="footerTexto"> Olá! User</div>
                 <div class="logout">
-                   <a href="index.html"><button>Sair</button></a>
+                    <a href="index.html"><button>Sair</button></a>
                 </div>
             </div>
         </aside>
         <div class="container_direita2">
             <div id="dashboard_estoque">
                 <div class="select_esquerda">
-                    <div class="titulo">
-                        <p>Selecione seu estoque</p>
+                    <div class="kpi">
+                        <div class="titulo">
+                            <p>Selecione seu estoque</p>
+                            <select>
+                                <option value="estoque1">Estoque 1</option>
+                                <option value="#" disabled>Selecione uma Opção</option>
+                            </select>
+                        </div>
                     </div>
-                    <select name="" id="">
-                        <option value="estoque1">Estoque 1</option>
-                    </select>
                     <div class="kpi">
                         <p class="titulo">Lote com maior necessidade de reposição
-                        <p style="color: red">Lote 05 - Lay's</p>
+                            <span style="color: red">Lote 05 - Lay's</span>
                         </p>
                     </div>
                     <div class="kpi">
                         <p class="titulo">Lote mais movimentado
-                        <p style="color: red">Lote 10 - Traquinas</p>
+                            <span style="color: red">Lote 10 - Traquinas</span>
                         </p>
                     </div>
                 </div>
@@ -90,9 +94,9 @@
             labels: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13'],
             datasets: [{
                 label: 'Ocupação (em porcentagem)',
-                backgroundColor: 'orange',
-                borderColor: 'orange',
-                data: [5, 75 , 68, 75, 10, 89, 75, 60, 87, 10, 60, 12, 60],
+                backgroundColor: '#ff8c00',
+                borderColor: '#ff8c00',
+                data: [5, 75, 68, 75, 10, 89, 75, 60, 87, 10, 60, 12, 60],
                 borderWidth: 1
             }]
         },
@@ -176,8 +180,8 @@
             labels: ['01', '05', '10', '12'],
             datasets: [{
                 label: 'Ocupação (em porcentagem)',
-                backgroundColor: 'orange',
-                borderColor: 'orange',
+                backgroundColor: '#ff8c00',
+                borderColor: '#ff8c00',
                 data: [5, 10, 10, 12],
                 borderWidth: 1
             }]

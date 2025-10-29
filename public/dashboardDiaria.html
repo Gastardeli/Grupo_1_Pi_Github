@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InvTracker | DashBoard</title>
+    <title>InvTracker | DashBoard Diária</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="icon" href="assets/icon/icon.png" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
@@ -19,7 +19,7 @@
             <header>
                 <img src="assets/imgs/logo.png" alt="" class="user">
                 <div class="nome_user">
-                    <p>User dos Santos</p>
+                    <p>InvTracker</p>
                 </div>
             </header>
             <div class="body">
@@ -35,8 +35,9 @@
             </div>
             <div class="footer">
                 <img src="assets/icon/iconUser.png" alt="">
+                <div class="footerTexto"> Olá! User</div>
                 <div class="logout">
-                 <a href="index.html"><button>Sair</button></a>
+                    <a href="index.html"><button>Sair</button></a>
                 </div>
             </div>
         </aside>
@@ -45,17 +46,21 @@
                 <div class="select_esquerda">
                     <div class="kpi">
                         <p class="titulo">Quantos lotes precisam de reabastecimento
-                        <p style="color: red">40</p>
+                            <span style="color: red">40
                         </p>
+                        </span>
                     </div>
                     <div class="kpi">
                         <p class="titulo">Estoque com maior necessidade de Reposição
-                        <p style="color: red">Estoque 2</p>
+                            <span style="color: red">Estoque 4
                         </p>
+                        </span>
                     </div>
                     <div class="kpi">
                         <p class="titulo">Lote mais próximo do vencimento
-                        <p style="color: red">Lote 30 do estoque 5</p>
+                            <span style="color: red">Lote 3 - Estoque 1 -
+                                (31/10/2025)
+                            </span>
                         </p>
                     </div>
                 </div>
@@ -88,8 +93,8 @@
             labels: ['01', '00', '02', '00', '03', '00', '04', '00', '05', '00', '06', '00', '07', '00', '08', '00', '09', '00', '10', '00', '11', '00', '12', '0', '13', '00', '14', '00', '15', '00', '16'],
             datasets: [{
                 label: 'Ocupação (em porcentagem)',
-                backgroundColor: 'orange',
-                borderColor: 'orange',
+                backgroundColor: '#ff8c00',
+                borderColor: '#ff8c00',
                 data: [100, 80, 30, 20, 10, 5, 6, 10, 5, 5, 5, 0, 0, 0, 0, 0, 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 10, 10, 10, 15, 15],
                 borderWidth: 1
             }]
@@ -98,7 +103,7 @@
             plugins: {
                 title: {
                     display: true,
-                    text: 'Estoque 2 está em estado crítico',
+                    text: 'Estoque 4 está em estado crítico',
                     font: {
                         size: 20,
                         weight: 'bold'
@@ -175,8 +180,8 @@
             labels: ['01', '02', '03', '04', '05', '06'],
             datasets: [{
                 label: 'Ocupação (em porcentagem)',
-                backgroundColor: 'orange',
-                borderColor: 'orange',
+                backgroundColor: '#ff8c00',
+                borderColor: '#ff8c00',
                 data: [50, 60, 90, 5, 9, 16],
                 borderWidth: 1
             }]

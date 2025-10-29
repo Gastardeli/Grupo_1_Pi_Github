@@ -9,7 +9,7 @@ body {
 }
 
 .header {
-    border-bottom: 8px solid orange;
+    border-bottom: 8px solid #E67C1C;
     background-color: #dcdcdc
 }
 
@@ -153,7 +153,7 @@ body {
     width: 70%;
     background-color: white;
     border-radius: 10px;
-    border: orange 8px solid;
+    border: #E67C1C 8px solid;
 }
 
 .modal_calculadora p {
@@ -162,7 +162,7 @@ body {
 }
 
 .modal_calculadora button {
-    background-color: orange;
+    background-color: #E67C1C;
     color: white;
     padding: 10px 25px;
     border: none;
@@ -181,7 +181,7 @@ body {
 .container_filter button {
     justify-content: center;
     align-items: center;
-    background-color: orange;
+    background-color: #E67C1C;
     color: white;
     padding: 10px 25px;
     border: none;
@@ -199,6 +199,7 @@ body {
 
     border: solid orange;
     width: 700px;
+    height: 105vh;
     padding: 10px;
     background-color: #bababa;
     border: none;
@@ -363,7 +364,7 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
 }
 
 .solucao .subtitulo {
-    color: orange;
+    color: #E67C1C;
     font-weight: bold;
     margin-bottom: 20px;
 }
@@ -376,7 +377,7 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
 }
 
 .solucao button {
-    background-color: orange;
+    background-color: #E67C1C;
     color: white;
     padding: 10px 25px;
     border: none;
@@ -429,12 +430,25 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
     flex-direction: column;
     width: 45%;
     gap: 10px;
+    justify-content: flex-end;
+    flex-direction: column;
+    border: 2px solid;
 }
 
 .calc-container .resultado {
     width: 45%;
-    align-items: flex-start;
+    align-items: flex-end;
     text-align: left;
+    justify-content: flex-end;
+    flex-direction: column;
+    height: 100%;
+}
+
+.boxCalculadora {
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 50%;
+    flex-direction: column;
 }
 
 /* INFORMAÇÕES EXTRAS */
@@ -587,11 +601,11 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
     width: 40%;
     background-color: white;
     border-radius: 10px;
-    border: orange 8px solid;
+    border: #E67C1C 8px solid;
 }
 
 .modal_login button {
-    background-color: orange;
+    background-color: #E67C1C;
     color: white;
     padding: 10px 25px;
     border: none;
@@ -627,7 +641,7 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
     height: 35px;
     width: 100px;
     border: 0px;
-    background-color: orange;
+    background-color: #E67C1C;
     color: white;
     border-radius: 5px;
     font-weight: bolder;
@@ -695,7 +709,7 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
     padding: 10px;
     border: 0;
     border-radius: 5px;
-    background-color: orange;
+    background-color: #E67C1C;
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -730,11 +744,11 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
     width: 40%;
     background-color: white;
     border-radius: 10px;
-    border: orange 8px solid;
+    border: #E67C1C 8px solid;
 }
 
 .modal_cadastro button {
-    background-color: orange;
+    background-color: #E67C1C;
     color: white;
     padding: 10px 25px;
     border: none;
@@ -766,7 +780,7 @@ header .container_header {
     justify-content: space-between;
     align-items: center;
     background-color: #fff;
-    border-bottom: 5px solid orange;
+    border-bottom: 5px solid #E67C1C;
     padding: 0 40px;
 }
 
@@ -795,7 +809,7 @@ header .container_header {
 
 header .login {
     /*classe do botão*/
-    background-color: orange;
+    background-color: #E67C1C;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -885,7 +899,7 @@ header .logo {
 
 .formulario h3 {
     text-align: center;
-    color: orange;
+    color: #E67C1C;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -1152,8 +1166,6 @@ header .logo {
         flex-direction: column;
     }
 
-
-
 }
 
 /*dasboard2*/
@@ -1182,6 +1194,9 @@ header .logo {
 }
 
 .container_main aside header .nome_user {
+    display: flex;
+    width: 100vh;
+    margin-right: 10px;
     font-size: 30px;
     color: #000;
 }
@@ -1230,6 +1245,15 @@ header .logo {
 .container_main aside .footer img {
     width: 45x;
     height: 45px;
+}
+
+.footerTexto {
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100vh;
+    margin-left: 10px;
 }
 
 .container_main aside .footer .logout button {
@@ -1340,43 +1364,70 @@ header .logo {
 
 .container_main .container_direita2 #dashboard_estoque .dash_direita {
     width: 100%;
-    height: 300px;
+    height: 40vh;
+    margin-top: 6vh;
     display: flex;
+    align-items: center;
     flex-direction: column;
     padding-left: 20px;
 }
 
 .container_main .container_direita2 #dashboard_estoque .select_esquerda {
     text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 70vh;
+    justify-content: center;
+    margin-left: 100px;
 }
 
 .container_main .container_direita2 #dashboard_estoque .select_esquerda .kpi {
     border: 2px solid;
+    display: flex;
     background-color: rgb(231, 231, 231);
     text-align: center;
     margin-top: 40px;
     border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 15vh;
+    width: 30vh;
 }
 
 .container_main .container_direita2 #dashboard_estoque .select_esquerda select {
     text-align: center;
+    align-items: center;
+    justify-content: center;
     height: 30px;
     width: 170px;
-    border: 0px;
-    background-color: rgb(231, 231, 231);
-    border-radius: 5px;
+    border: 2px solid #DF8533;
+    background-color: white;
+    border-radius: 10px;
+    font-weight: bold;
 }
 
 .container_main .container_direita2 #dashboard_estoque .select_esquerda .titulo {
-    padding-top: 40px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.container_main .container_direita2 #dashboard_estoque .select_esquerda span {
+    margin-top: 10px;
+    font-weight: bold;
 }
 
 /*STYLE CSS CADASTRO */
 .container_cadDash {
     display: flex;
     justify-content: center;
-    height: 100%;
-    width:75%;
+    align-items: center;
+    height: 100vh;
+    width: 75%;
     background-image: url(../assets/imgs/cadastroProduto_Background.jpg);
     background-size: cover;
     background-position: center;
@@ -1386,15 +1437,15 @@ header .logo {
 .boxes_cadDash {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    height: 80%;
+    align-items: center;
+    height: 85%;
     width: 80%;
-    
+
 }
 
 .box_cadDash {
     display: flex;
-    height: 60%;
+    height: 80%;
     width: 50%;
     border: solid black 2px;
     background-color: rgba(0, 0, 0, 0.8);
@@ -1402,7 +1453,7 @@ header .logo {
     align-self: center;
     align-items: center;
     flex-direction: column;
-    border: 2px solid orange;
+    border: 2px solid #E67C1C;
 
 }
 
@@ -1489,7 +1540,7 @@ header .logo {
     width: 30%;
     background-color: white;
     border-radius: 10px;
-    border: orange 8px solid;
+    border: #E67C1C 8px solid;
 }
 
 .modal_cadProd p {
@@ -1498,7 +1549,7 @@ header .logo {
 }
 
 .modal_cadProd button {
-    background-color: orange;
+    background-color: #E67C1C;
     color: white;
     padding: 10px 25px;
     border: none;
