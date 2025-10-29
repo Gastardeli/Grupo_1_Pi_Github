@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-
+letter-spacing: 1.2px;
 }
 
 body {
@@ -150,7 +150,8 @@ body {
 .modal_calculadora {
     align-items: center;
     justify-content: center;
-    width: 70%;
+    width: 80%;
+    font-size: 20px;
     background-color: white;
     border-radius: 10px;
     border: #E67C1C 8px solid;
@@ -170,6 +171,7 @@ body {
     margin-top: 20px;
     cursor: pointer;
     margin-bottom: 20px;
+    font-size: 20px;
 }
 
 .container_filter {
@@ -435,6 +437,7 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
     border: 2px solid;
 }
 
+
 .calc-container .resultado {
     width: 45%;
     align-items: flex-end;
@@ -489,8 +492,8 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
 .form-wrapper {
     z-index: 5;
     width: 100%;
-    height: 500px;
-    max-width: 450px;
+    height: 550px;
+    max-width: 600px;
     padding: 30px;
     background-color: rgba(0, 0, 0, 0.85);
     border-radius: 8px;
@@ -501,14 +504,14 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
     color: #ff8c00;
     text-align: center;
     margin-bottom: 25px;
-    font-size: 24px;
+    font-size: 30px;
 }
 
 #loginForm label {
     display: block;
     margin-top: 15px;
     margin-bottom: 5px;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -519,6 +522,7 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
     border-radius: 5px;
     overflow: hidden;
     margin-bottom: 10px;
+    font-size: 20px;
 }
 
 .input-group input {
@@ -528,6 +532,7 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
     outline: none;
     background: transparent;
     color: #333;
+    font-size: 24px;
 }
 
 .input-group span {
@@ -541,7 +546,7 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
     display: block;
     text-align: right;
     margin-top: 5px;
-    font-size: 12px;
+    font-size: 16px;
     color: #f7a738;
     text-decoration: none;
 }
@@ -555,9 +560,9 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
     padding: 12px;
     margin-top: 20px;
     cursor: pointer;
-    font-size: 16px;
     font-weight: bold;
     border-radius: 5px;
+    font-size: 20px;
 }
 
 
@@ -569,7 +574,7 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
     padding: 12px;
     margin-top: 10px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     border-radius: 5px;
 }
@@ -586,13 +591,15 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
     position: absolute;
     text-align: center;
     padding-bottom: 180px;
+    
 }
 
 .box_modal_login {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 40%;
+    height: 50%;
+    font-size: 25px;
 }
 
 .modal_login {
@@ -613,12 +620,17 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
     margin-top: 5px;
     cursor: pointer;
     margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.margemCalculadoraResultado {
+    height: 545px;
 }
 
 .signup-prompt {
     text-align: center;
     margin-top: 20px;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 
@@ -635,30 +647,38 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
 .resultado button {
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .calc_html button {
     height: 35px;
     width: 100px;
     border: 0px;
+    align-items: center;
     background-color: #E67C1C;
     color: white;
-    border-radius: 5px;
+    border-radius: 10px;
     font-weight: bolder;
 }
 
 .calc_html input {
     height: 35px;
-    width: 200px;
+    width: 300px;
     border: 0px;
     background-color: rgb(231, 231, 231);
     border-radius: 5px;
     text-align: center;
+
+}
+
+.apagar select {
+    height: 35px;
+    width: 300px;
 }
 
 .calc_html input::placeholder {
     text-align: center;
-    color: black
+    color: black;
 }
 
 .resultado {
@@ -667,7 +687,7 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
     flex-direction: column;
-    align-content: space-between;
+    align-content: center;
     justify-content: center;
     align-items: center;
     align-self: center;
@@ -771,6 +791,7 @@ main .sobre .container .porcentagens .todasaspercs .perc .texto {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    font-size: 20px
 }
 
 /* Cabeçalho */
@@ -847,12 +868,12 @@ header .logo {
 
 /* Formulário */
 .card-endereco {
-    width: 500px;
+    width: 550px;
     padding: 10px;
     background-color: #bababa;
     border: none;
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
     justify-content: flex-end;
     margin-left: 10px;
@@ -860,23 +881,26 @@ header .logo {
 
 .card-endereco input {
     margin-top: 10px;
+    font-size: 15px;
 }
 
 .card-endereco p {
     margin: 0;
     padding: 0;
     margin-top: 10px;
+    font-size: 22px;
 }
 
 
 .card-Cadastro {
-    width: 500px;
+    width: 550px;
     padding: 10px;
     color: white;
     justify-content: flex-start;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
     margin-right: 10px;
+    font-size: 22px;
 }
 
 .card-Cadastro p {
@@ -886,6 +910,8 @@ header .logo {
 
 .card-Cadastro input {
     margin-top: 10px;
+    font-size: 15px;
+    
 }
 
 .cad_pai {
@@ -938,6 +964,7 @@ header .logo {
     padding: 14px;
     text-align: center;
     margin-top: 30px;
+    font-size: 18px;
 }
 
 .button_cadastrar:hover {
@@ -1213,7 +1240,7 @@ header .logo {
 }
 
 .container_main aside .body p {
-    font-size: 21px;
+    font-size: 30px;
     cursor: pointer;
     text-decoration: none;
     color: #000;
@@ -1243,8 +1270,7 @@ header .logo {
 }
 
 .container_main aside .footer img {
-    width: 45x;
-    height: 45px;
+    height: 60px;
 }
 
 .footerTexto {
@@ -1259,12 +1285,12 @@ header .logo {
 .container_main aside .footer .logout button {
     background-color: #E67C1C;
     border-radius: 10px;
-    width: 50px;
+    width: 100px;
     cursor: pointer;
     color: #fff;
     border: 0;
     padding: 5px 10px;
-
+    font-size: 25px;
     border: 1.5px solid black;
     color: #000;
 }
@@ -1285,6 +1311,7 @@ header .logo {
     height: 300px;
     padding: 20px;
     justify-content: space-between;
+   
 }
 
 .container_main .container_direita .kpi_dash1 .box_kpi {
@@ -1294,6 +1321,7 @@ header .logo {
     justify-content: center;
     align-items: center;
     text-align: center;
+    
 }
 
 .container_main .container_direita .kpi_dash1 .box_kpi .kpi1 {
@@ -1414,6 +1442,7 @@ header .logo {
     justify-content: center;
     display: flex;
     flex-direction: column;
+     font-size: 20px;
 }
 
 .container_main .container_direita2 #dashboard_estoque .select_esquerda span {
@@ -1443,9 +1472,10 @@ header .logo {
 
 }
 
+
 .box_cadDash {
     display: flex;
-    height: 80%;
+    height: 85%;
     width: 50%;
     border: solid black 2px;
     background-color: rgba(0, 0, 0, 0.8);
@@ -1464,9 +1494,26 @@ header .logo {
     width: 100%;
     height: 10%;
     color: white;
+    font-size: 25px;
 }
 
 .box_cadDash input {
+    border-radius: 10px;
+    width: 60%;
+    height: 7%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #E67C1C;
+    background-color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 15px;
+    
+}
+
+.box_cadDash select {
     border-radius: 10px;
     width: 50%;
     height: 4%;
@@ -1476,29 +1523,16 @@ header .logo {
     justify-content: center;
     border: 2px solid #E67C1C;
     background-color: white;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.box_cadDash select {
-    border-radius: 10px;
-    width: 30%;
-    height: 4%;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid #E67C1C;
-    background-color: white;
     margin-top: 7px;
     margin-bottom: 7px;
+    font-size: 20px;
 }
 
 .box_cadDash b {
     margin-bottom: 5px;
     margin-top: 5px;
     font-weight: bolder;
-    font-size: 16px;
+    font-size: 21px;
     color: white;
 }
 
@@ -1511,6 +1545,7 @@ header .logo {
     margin-top: 20px;
     cursor: pointer;
     margin-bottom: 20px;
+   
 }
 
 .container_modal_cadProd {
@@ -1537,7 +1572,7 @@ header .logo {
 .modal_cadProd {
     align-items: center;
     justify-content: center;
-    width: 30%;
+    width: 45%;
     background-color: white;
     border-radius: 10px;
     border: #E67C1C 8px solid;
@@ -1557,4 +1592,5 @@ header .logo {
     margin-top: 20px;
     cursor: pointer;
     margin-bottom: 20px;
+    font-size: 15px;
 }

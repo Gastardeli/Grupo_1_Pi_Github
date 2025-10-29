@@ -181,3 +181,11 @@ CREATE TABLE registro (
     dtRegistro DATETIME DEFAULT current_timestamp
 );
 
+select idRegistro as 'Registro', 
+	idSensor as 'Sensor', 
+		distancia as 'Medida (cm)', 
+			dtRegistro as 'Data de Registro' 
+				from registro 
+					join sensor 
+						on fkRegistroSensor = idSensor;
+

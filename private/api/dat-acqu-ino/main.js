@@ -63,7 +63,7 @@ const serial = async (
 
             // este insert irá inserir os dados na tabela "registro"
             await poolBancoDados.execute(
-                'INSERT INTO registro (distancia) VALUES (?)',
+                'INSERT INTO registro (fkRegistroSensor, distancia) VALUES (1, ?)',
                 [sensorDigital]
             );
             console.log("valores inseridos no banco: " + sensorDigital + "cm");
