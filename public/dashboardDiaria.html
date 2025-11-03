@@ -46,13 +46,13 @@
                 <div class="select_esquerda">
                     <div class="kpi">
                         <p class="titulo">Quantos lotes precisam de reabastecimento
-                            <span style="color: red">40
+                            <span style="color: red">9
                         </p>
                         </span>
                     </div>
                     <div class="kpi">
                         <p class="titulo">Estoque com maior necessidade de Reposição
-                            <span style="color: red">Estoque 4
+                            <span style="color: red">Estoque 3
                         </p>
                         </span>
                     </div>
@@ -65,8 +65,9 @@
                     </div>
                 </div>
                 <div class="dash_direita">
-                    <canvas id="dashboard1"></canvas>
                     <canvas id="dashboard2"></canvas>
+                    <canvas id="dashboard1"></canvas>
+                    
                 </div>
             </div>
         </div>
@@ -90,12 +91,12 @@
     new Chart(dashboardLote1, {
         type: 'line',
         data: {
-            labels: ['01', '00', '02', '00', '03', '00', '04', '00', '05', '00', '06', '00', '07', '00', '08', '00', '09', '00', '10', '00', '11', '00', '12', '0', '13', '00', '14', '00', '15', '00', '16'],
+            labels: ['E1 - L2', 'E1 - L5', 'E1 - L7', 'E2 - L4', 'E3 - L1', 'E3 - L4', 'E3 - L7', 'E3 - L9', 'E3 - L10'],
             datasets: [{
                 label: 'Ocupação (em porcentagem)',
                 backgroundColor: '#ff8c00',
                 borderColor: '#ff8c00',
-                data: [100, 80, 30, 20, 10, 5, 6, 10, 5, 5, 5, 0, 0, 0, 0, 0, 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 10, 10, 10, 15, 15],
+                data: [10, 5, 15, 10, 5, 6, 10, 5, 5, 5],
                 borderWidth: 1
             }]
         },
@@ -103,7 +104,7 @@
             plugins: {
                 title: {
                     display: true,
-                    text: 'Estoque 4 está em estado crítico',
+                    text: 'Lotes em estado crítico',
                     font: {
                         size: 20,
                         weight: 'bold'
@@ -149,9 +150,9 @@
                 x: {
                     title: {
                         display: true,
-                        text: 'Lotes do Estoque 4',
+                        text: 'Estoque e Lote',
                         font: {
-                            size: 12,
+                            size: 14,
                             weight: 'bold'
                         },
                         color: '#000'
@@ -177,12 +178,12 @@
         type: 'bar',
         type: 'bar',
         data: {
-            labels: ['01', '02', '03', '04', '05', '06'],
+            labels: ['01', '02', '03'],
             datasets: [{
                 label: 'Ocupação (em porcentagem)',
                 backgroundColor: '#ff8c00',
                 borderColor: '#ff8c00',
-                data: [50, 60, 90, 5, 9, 16],
+                data: [50, 60, 10],
                 borderWidth: 1
             }]
         },
@@ -238,7 +239,7 @@
                         display: true,
                         text: 'Unidade do estoque',
                         font: {
-                            size: 12,
+                            size: 14,
                             weight: 'bold'
                         },
                         color: '#000'
