@@ -1,0 +1,247 @@
+/*Pagina de Cadastro*/
+/*Começo*/
+
+.container_modal_cadastro {
+    width: 100%;
+    min-height: 1000px;
+    height: 1452px;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+    padding-top: 300px;
+}
+
+.box_modal_cadastro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+}
+
+.modal_cadastro {
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    background-color: white;
+    border-radius: 10px;
+    border: #E67C1C 8px solid;
+}
+
+.modal_cadastro button {
+    background-color: #E67C1C;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+
+
+.body-cadastrar {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    background-image: url(../assets/imgs/paginaFundoLogin&Cadastro.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-size: 20px
+}
+
+/* Cabeçalho */
+header .container_header {
+    /*cabeçalho inteiro*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 5px solid #E67C1C;
+    padding: 0 40px;
+}
+
+.nav {
+    /*classe da lista ul */
+    color: black;
+    font-weight: bold;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+}
+
+
+.nav a {
+    /*classe da letra dentro da lista */
+    color: black;
+    outline: none;
+    text-decoration: none;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+
+
+header .login {
+    /*classe do botão*/
+    background-color: #E67C1C;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    width: 100px;
+    cursor: pointer;
+}
+
+
+
+header .logo_container {
+    /*div que tem dentro a classe logo img*/
+    justify-items: flex-start;
+    justify-content: flex-start;
+}
+
+header .logo {
+    /*logo da empresa DENTRO DA CLASSE DIV-LOGO_CONTAINER*/
+    display: flex;
+    padding: 5px 10px;
+    width: 200px;
+}
+
+.container_header .login {
+    width: 150px;
+    padding: 15px;
+    background-color: #E67C1C;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 18px;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: large;
+}
+
+/* Formulário */
+.card-endereco {
+    width: 550px;
+    padding: 10px;
+    background-color: #bababa;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    justify-content: flex-end;
+    margin-left: 10px;
+}
+
+.card-endereco input {
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.card-endereco p {
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    font-size: 22px;
+}
+
+
+.card-Cadastro {
+    width: 550px;
+    padding: 10px;
+    color: white;
+    justify-content: flex-start;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    margin-right: 10px;
+    font-size: 22px;
+}
+
+.card-Cadastro p {
+    margin: 10px 0 0 0;
+
+}
+
+.card-Cadastro input {
+    margin-top: 10px;
+    font-size: 15px;
+    
+}
+
+.cad_pai {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 20px auto;
+    flex-direction: column;
+}
+
+.formulario h3 {
+    text-align: center;
+    color: #E67C1C;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cad-input-cadastro {
+    width: 95%;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    background-color: #bababa;
+}
+
+
+.cad-input-endereco {
+    width: 95%;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    background-color: #bababa;
+}
+
+
+
+.button_cadastrar {
+    background-color: #DF8533;
+    font-size: 15px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: bold;
+    height: 50px;
+    align-items: center;
+    width: 200px;
+    padding: 14px;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+.button_cadastrar:hover {
+    background-color: #E67C1C;
+}
+
+.cad_campos {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.campoEndereco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

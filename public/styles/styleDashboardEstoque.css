@@ -1,0 +1,250 @@
+.container_main {
+    width: 100%;
+    display: flex;
+}
+
+.container_main aside {
+    background-color: #E67C1C;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    border-right: 2px solid black;
+}
+
+.container_main aside header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+.container_main aside header .nome_user {
+    display: flex;
+    width: 100vh;
+    margin-right: 10px;
+    font-size: 30px;
+    color: #000;
+}
+
+.container_main aside header img {
+    width: 100px;
+}
+
+.container_main aside .body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container_main aside .body p {
+    font-size: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+}
+
+.container_main aside .body a {
+    text-decoration: none;
+}
+
+.container_main aside .body p:hover {
+    border-bottom: 2px solid #000;
+}
+
+.container_main aside .body a .container_main aside .footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 50px;
+}
+
+.container_main aside .footer {
+    border-top: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+.container_main aside .footer img {
+    height: 60px;
+}
+
+.footerTexto {
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100vh;
+    margin-left: 10px;
+}
+
+.container_main aside .footer .logout button {
+    background-color: #E67C1C;
+    border-radius: 10px;
+    width: 100px;
+    cursor: pointer;
+    color: #fff;
+    border: 0;
+    padding: 5px 10px;
+    font-size: 25px;
+    border: 1.5px solid black;
+    color: #000;
+}
+
+.container_main aside .footer .logout button:hover {
+    background-color: #df86339f;
+}
+
+.container_main aside .footer .logout button a {
+    text-decoration: none;
+    color: #000;
+}
+
+
+.container_main .container_direita .kpi_dash1 {
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    padding: 20px;
+    justify-content: space-between;
+
+}
+
+.container_main .container_direita .kpi_dash1 .box_kpi {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.container_main .container_direita .kpi_dash1 .box_kpi .kpi1 {
+    background-color: rgb(231, 231, 231);
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.container_main .container_direita .kpi_dash1 .box_kpi .kpi2 {
+    width: 100%;
+    background-color: rgb(231, 231, 231);
+    border-radius: 10px;
+}
+
+.container_main .container_direita .kpi_dash1 .dash1 {
+    width: 100%;
+    height: 350px;
+    display: flex;
+}
+
+.dash2_inferior {
+    margin-top: 80px;
+    height: 58%;
+    margin-left: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+}
+
+.dash2_inferior .dashboard2 {
+    padding-top: 50px;
+    display: flex;
+    width: 100px;
+}
+
+.container_direita #dashboard_estoque {
+    width: 100%;
+    display: flex;
+
+}
+
+.container_direita #dashboard_estoque .select_esquerda {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.container_direita #dashboard_estoque .select_direita {
+    display: flex;
+    flex-direction: column;
+}
+
+.container_main .container_direita2 {
+    width: 75%;
+    display: flex;
+
+}
+
+.container_main .container_direita2 #dashboard_estoque {
+    width: 100%;
+    height: 300px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.container_main .container_direita2 #dashboard_estoque .dash_direita {
+    width: 100%;
+    height: 40vh;
+    margin-top: 6vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.container_main .container_direita2 #dashboard_estoque .select_esquerda {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 70vh;
+    justify-content: center;
+    margin-left: 100px;
+}
+
+.container_main .container_direita2 #dashboard_estoque .select_esquerda .kpi {
+    border: 2px solid;
+    display: flex;
+    background-color: rgb(231, 231, 231);
+    text-align: center;
+    margin-top: 40px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 15vh;
+    width: 30vh;
+}
+
+.container_main .container_direita2 #dashboard_estoque .select_esquerda select {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 170px;
+    border: 2px solid #DF8533;
+    background-color: white;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.container_main .container_direita2 #dashboard_estoque .select_esquerda .titulo {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.container_main .container_direita2 #dashboard_estoque .select_esquerda span {
+    margin-top: 10px;
+    font-weight: bold;
+}

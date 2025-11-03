@@ -1,0 +1,158 @@
+/*login*/
+.login-container {
+    height: 90vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 0 5%;
+    background-image: url('../assets/imgs/paginaFundoLogin&Cadastro.png');
+    /* imagem temporaria*/
+    background-size: cover;
+    background-position: center;
+}
+
+.background-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+
+.form-wrapper {
+    z-index: 5;
+    width: 100%;
+    height: 550px;
+    max-width: 600px;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.85);
+    border-radius: 8px;
+    color: #ffffff;
+}
+
+#loginForm h2 {
+    color: #ff8c00;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+
+#loginForm label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.input-group input {
+    flex-grow: 1;
+    border: none;
+    padding: 10px;
+    outline: none;
+    background: transparent;
+    color: #333;
+    font-size: 24px;
+}
+
+.input-group span {
+    padding: 0 10px;
+    color: #666;
+    cursor: pointer;
+    user-select: none;
+}
+
+.forgot-password {
+    display: block;
+    text-align: right;
+    margin-top: 5px;
+    font-size: 16px;
+    color: #f7a738;
+    text-decoration: none;
+}
+
+
+.login-button {
+    width: 100%;
+    background: linear-gradient(to right, #ff8c00, #f7a738);
+    color: white;
+    border: none;
+    padding: 12px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+
+.register-button {
+    width: 100%;
+    background-color: transparent;
+    color: #ff8c00;
+    border: 1px solid #ff8c00;
+    padding: 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.container_modal_login {
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    min-height: 1000px;
+    height: 1452px;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    position: absolute;
+    text-align: center;
+    padding-bottom: 180px;
+    
+}
+
+.box_modal_login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    font-size: 25px;
+}
+
+.modal_login {
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    background-color: white;
+    border-radius: 10px;
+    border: #E67C1C 8px solid;
+}
+
+.modal_login button {
+    background-color: #E67C1C;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
