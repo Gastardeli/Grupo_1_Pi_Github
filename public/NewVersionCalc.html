@@ -6,61 +6,66 @@
     <title>InvTracker | Aplicações</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="icon" href="assets/icon/icon.png" /> 
-    <link rel="stylesheet" href="../novoModeloCalculadora/NewVersionCal_gu.css">
+    <link rel="stylesheet" href="styles/styleCalculadora.css">
 </head>
  
 </head>
 
   <body>
- 
-  <h1>InvTracker - Calculadora de Oportunidades</h1>
 
-  <div class="calc-container">
-    <div class="calc-section">
-      <h2>Simule Suas Perdas Gerais por Erros de Inventário</h2>
-      <select id="select_numeroLojas" onchange="input_lojas()">
-        <option value="">Selecione o número de lojas</option>
-        <option value="1">1 Loja</option>
-        <option value="2">2 Lojas</option>
-        <option value="3">3 Lojas</option>
-        <option value="4">4+ Lojas</option>
-      </select>
-
-      <div id="calculadora_html"></div>
-
-      <div class="resultado" id="resultadoCalculadora_html">
-        <p>Perdas estimadas: <span class="valor-negativo">R$ 0,00</span></p>
-        <p>Economia potencial: <span class="valor-positivo">R$ 0,00</span></p>
+    <div class="calc-container">
+      <div class="cal-titulo">
+        <h1>InvTracker - Calculadora de Oportunidades</h1>    
       </div>
+      <div class="calc-content">
+      <div class="calc-section">
+        <h2>Simule Suas Perdas Gerais por Erros de Inventário</h2>
+        <select id="select_numeroLojas" onchange="input_lojas()">
+          <option value="">Selecione o número de lojas</option>
+          <option value="1">1 Loja</option>
+          <option value="2">2 Lojas</option>
+          <option value="3">3 Lojas</option>
+          <option value="4">4+ Lojas</option>
+        </select>
 
-      <button class="detalhes-btn" onclick="modalEmpresa()">Mais detalhes</button>
-    </div>
+        <div id="calculadora_html"></div>
 
-    
-    <div class="calc-section">
-      <h2>Simule Suas Perdas em Produtos por Erros de Inventário</h2>
+        <div class="resultado" style="display: none;" id="resultadoCalculadora_html">
+          <p>Perdas estimadas: <span class="valor-negativo">R$ 0,00</span></p>
+          <p>Economia potencial: <span class="valor-positivo">R$ 0,00</span></p>
+        </div>
 
-      <label>Nome do produto:</label>
-      <input id="input_nome" type="text" placeholder="Ex: Coca-Cola 2L">
+          <button class="detalhes-btn" id="btn_mais-detalhes" style="display: none;" onclick="modalEmpresa()">Mais detalhes</button>
+        </div>
 
-      <label>Valor de compra (R$):</label>
-      <input id="input_valor_compra" type="number" placeholder="Ex: 10">
+      
+      <div class="calc-section">
+        <h2>Simule Suas Perdas em Produtos por Erros de Inventário</h2>
 
-      <label>Valor de venda (R$):</label>
-      <input id="input_valor_venda" type="number" placeholder="Ex: 35">
+        <label>Nome do produto:</label>
+        <input id="input_nome" type="text" placeholder="Ex: Coca-Cola 2L">
 
-      <label>Quantidade média em estoque:</label>
-      <input id="input_quantidade" type="number" placeholder="Ex: 10000">
+        <label>Valor de compra (R$):</label>
+        <input id="input_valor_compra" type="number" placeholder="Ex: 10">
 
-      <button onclick="input_calculo_especifico()">Calcular</button>
+        <label>Valor de venda (R$):</label>
+        <input id="input_valor_venda" type="number" placeholder="Ex: 35">
 
-      <div class="resultado" id="div_resultado1">
-        <p>Economia anual: <span class="valor-positivo">R$ 0,00</span></p>
-        <p>Lucro recuperado: <span class="valor-positivo">R$ 0,00</span></p>
+        <label>Quantidade média em estoque:</label>
+        <input id="input_quantidade" type="number" placeholder="Ex: 10000">
+
+        <div class="calc-button">
+          <button onclick="input_calculo_especifico()">Calcular</button>
+        </div>
+
+        <div class="resultado" style="display: none;" id="div_resultado1">
+          <p>Economia anual: <span class="valor-positivo">R$ 0,00</span></p>
+          <p>Lucro recuperado: <span class="valor-positivo">R$ 0,00</span></p>
+        </div>
+
+        <button class="detalhes-btn" id="botao_modal" style="display: none;" onclick= "modalProduto()">Mais detalhes</button>
       </div>
-
-      <button class="detalhes-btn" id="botao_modal" style="display:none;" onclick= "modalProduto()">Mais detalhes</button>
-    </div>
+  </div>
   </div>
   </div>
 
@@ -113,9 +118,10 @@
             var economia_total1_format = economia_total1.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
             // resumo curto
+            document.getElementById("div_resultado1").style.display='flex';
             div_resultado1.innerHTML = `
-              <p>Economia anual: <span class="valor-positivo">${economia_ano_format}</span></p>
-              <p>Lucro recuperado: <span class="valor-positivo">${lucro_prod_recuperado_format}</span></p>
+              <p>Economia anual: <br><span class="valor-positivo">${economia_ano_format}</span></p>
+              <p>Lucro recuperado: <br><span class="valor-positivo">${lucro_prod_recuperado_format}</span></p>
             `;
             botao_modal.style.display = "block";
 
@@ -148,7 +154,10 @@
             calculadora_html.innerHTML = `Digite o faturamento anual total de suas lojas <br><br>` + input_varias;
         }
 
-        calculadora_html.innerHTML += `<br><button onclick="calcular()">Calcular</button>`;
+        calculadora_html.innerHTML += `<br>
+        <div class="calc-button">
+          <button onclick="calcular()">Calcular</button>
+        </div>`;
     }
 
     function calcular() {
@@ -167,6 +176,7 @@
         var vendas_recuperadas = economia_ano * 3;
         var vendas_recuperadas_format = vendas_recuperadas.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
+        document.getElementById("resultadoCalculadora_html").style.display='flex';
         resultadoCalculadora_html.innerHTML = `
           <p>Perdas estimadas: <span class="valor-negativo">${perdas_inventario_ano_format}</span></p>
           <p>Economia potencial: <span class="valor-positivo">${economia_ano_format}</span></p>
@@ -179,6 +189,9 @@
           <p>Economia anual: <b style='color:green;'>${economia_ano_format}</b></p>
           <p>Possível lucratividade em estoques recuperados: <b style='color:green;'>${vendas_recuperadas_format}</b></p>
         `;
+        
+            // Aparecer o botão "mais detalhes"
+            document.getElementById("btn_mais-detalhes").style.display='block';
     }
 
     function calculos() { modal_calculadora1.style.display = 'block'; }
