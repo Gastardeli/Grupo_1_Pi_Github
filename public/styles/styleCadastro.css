@@ -156,25 +156,27 @@ header .logo {
 
 
 .card-Cadastro {
-    width: 550px;
-    padding: 10px;
+    width: 700px;
+
     color: white;
     justify-content: flex-start;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
     border-radius: 10px;
-    margin-right: 10px;
     font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .card-Cadastro p {
     margin: 10px 0 0 0;
-
 }
 
 .card-Cadastro input {
     margin-top: 10px;
     font-size: 15px;
-    
+    width: 80%;
+
 }
 
 .cad_pai {
@@ -198,8 +200,9 @@ header .logo {
     width: 95%;
     padding: 8px;
     border: none;
-    border-radius: 8px;
-    background-color: #bababa;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
 }
 
 
@@ -214,24 +217,18 @@ header .logo {
 
 
 .button_cadastrar {
-    background-color: #DF8533;
-    font-size: 15px;
+    background-color: #E67C1C;
+    border-radius: 20px;
     color: white;
+    margin: 20px 0px;
+    padding: 10px 20px;
     border: none;
     cursor: pointer;
-    border-radius: 3px;
-    font-weight: bold;
-    height: 50px;
-    align-items: center;
-    width: 200px;
-    padding: 14px;
-    text-align: center;
-    margin-top: 30px;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .button_cadastrar:hover {
-    background-color: #E67C1C;
+    background-color: #e67e1c8c;
 }
 
 .cad_campos {
