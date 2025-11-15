@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InvTracker | Cadastro</title>
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="icon" href="assets/icon/icon.png" /> 
+    <link rel="icon" href="assets/icon/icon.png" />
     <link rel="stylesheet" href="styles/styleCadastro.css">
 </head>
 
@@ -29,29 +29,36 @@
     <!--Pagina de cadastro (começo)!-->
     <div class="body-cadastrar">
         <div class="cad_pai">
-                <!-- Modal -->
-    <div class="container_modal_cadastro" style="display: none;" id="modal_cadastro_grande">
-        <div class="box_modal_cadastro">
-            <div class="modal_cadastro">
-                <h2>Aviso</h2>
-                <span id="modal_cadastro"></span>
-                <br> <br>
-                <button onclick="voltar1()">Voltar</button>
+            <!-- Modal -->
+            <div class="container_modal_cadastro" style="display: none;" id="modal_cadastro_grande">
+                <div class="box_modal_cadastro">
+                    <div class="modal_cadastro">
+                        <h2>Aviso</h2>
+                        <span id="modal_cadastro"></span>
+                        <br> <br>
+                        <button onclick="voltar1()">Voltar</button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
             <div class="cad_campos">
                 <div class="card-Cadastro">
                     <h3>Informações</h3>
 
-                    <p>Nome da Empresa:</p>
-                    <input value="Atacadão Feliz" class="cad-input-cadastro" type="text"
-                        placeholder="Insira o nome da empresa">
+                    <p>Nome Completo:</p>
+                    <input value="Atacadão Feliz" class="cad-input-cadastro" type="text" placeholder="Insira seu nome completo">
 
-                    <p>Email:</p>
-                    <input value="atacadofeliz@atacado.com" class="cad-input-cadastro" type="email" id="email"
-                        placeholder="Insira seu e-mail">
+                    <p>Data de nascimento:</p>
+                    <input value="27/09/2024" class="cad-input-cadastro" type="date" id="date" placeholder="Insira sua data de nascimento">
+
+                    <p>CPF:</p>
+                    <input value="435.345.345.32" class="cad-input-cadastro" type="text" placeholder="Insira seu cpf">
+
+                    <p>CEP:</p>
+                    <input value="876523-58" class="cad-input-cadastro" type="text" placeholder="(11) 99999-9999">
+
+                    <p>Codigo de ativação:</p>
+                    <input value="CD45Y" class="cad-input-cadastro" type="text" placeholder="insira o codigo de ativação da sua empresa">
 
                     <p>Senha:</p>
                     <input class="cad-input-cadastro" type="password" id="password" placeholder="Insira sua senha">
@@ -59,52 +66,16 @@
                     <p>Confirme sua Senha:</p>
                     <input class="cad-input-cadastro" type="password" id="passCheck" placeholder="Confirme sua senha">
 
-                    <p>CNPJ:</p>
-                    <input value="83.903.30600/01-85" class="cad-input-cadastro" type="text"
-                        placeholder="Insira o CNPJ">
-
-                    <p>Telefone:</p>
-                    <input value="(11) 3769-3535" class="cad-input-cadastro" type="text" placeholder="(11) 99999-9999">
-                </div>
-                <div class="campoEndereco">
-                    <div class="card-endereco">
-                        <!-- Endereço -->
-                        <h3>Endereço</h3>
-
-                        <p>CEP:</p>
-                        <input value="04945-130" class="cad-input-endereco" type="text" placeholder="00000-000">
-
-                        <p>Estado:</p>
-                        <input value="SP" class="cad-input-endereco" type="text" placeholder="SP">
-
-                        <p>Rua:</p>
-                        <input value="Rua Coronel Floriano Álvaro" class="cad-input-endereco" type="text"
-                            placeholder="Nome da rua">
-
-                        <p>Número:</p>
-                        <input value="300" class="cad-input-endereco" type="text" placeholder="000">
-
-                        <p>Complemento:</p>
-                        <input value="Bloco A" class="cad-input-endereco" type="text" placeholder="Apto, Bloco">
-
-                        <p>Bairro:</p>
-                        <input value="Parque do Lago" class="cad-input-endereco" type="text"
-                            placeholder="Nome do bairro">
-
-                        <p>Cidade:</p>
-                        <input value="São Paulo" class="cad-input-endereco" type="text" placeholder="São Paulo">
-
-                        <!-- Botão -->
-
+                    <div class="buttonCadastrar">
+                        <button onclick="cadastro()" class="button_cadastrar">Cadastrar-se</button>
                     </div>
-
                 </div>
-            </div>
-            <div class="buttonCadastrar">
-                <button onclick="cadastro()" class="button_cadastrar">Cadastrar-se</button>
             </div>
 
         </div>
+    </div>
+
+    </div>
     </div>
 
 
