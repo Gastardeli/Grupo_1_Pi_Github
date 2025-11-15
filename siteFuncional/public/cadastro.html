@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>InvTracker | Cadastro</title>
+
+  <script src="./js/sessao.js"></script>
+
+  <link rel="stylesheet" href="./css/styleCadastro.css" />
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" href="./assets/icon/icon.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+</head>
+
+<body onload="listar()">
+  <div class="header">
+    <div class="container">
+      <img src="assets/imgs/logo.png">
+      <h1 class="title">InvTracker</h1>
+      <div class="navbar">
+        <a href="index.html">Inicio </a>
+        <a href="calculadora.html">Aplicações </a>
+        <a href="login.html">Login </a>
+        <a class="now" href="#">Cadastro </a>
+        <a href="dashboard.html" style="display: none;" id="dashHeader">Dashboard</a>
+      </div>
+    </div>
+  </div>
+
+  <!--Pagina de cadastro (começo)!-->
+  <div class="body-cadastrar">
+    <div class="cad_pai">
+      <!-- Modal -->
+      <div class="container_modal_cadastro" style="display: none;" id="modal_cadastro_grande">
+        <div class="box_modal_cadastro">
+          <div class="modal_cadastro">
+            <h2>Aviso</h2>
+            <span id="modal_cadastro"></span>
+            <br> <br> <br>
+            <div id="div_aguardar" class="loading-div">
+              <img src="./assets/imgs/orange_circles.gif" id="loadingif" />
+            </div> <br>
+          </div>
+        </div>
+      </div>
+
+      <div class="cad_campos">
+        <div class="alerta_erro">
+        </div>
+        <div class="card-Cadastro">
+
+          <h3>Informações:</h3>
+
+          <p>Nome Completo:</p>
+          <input id="nome_input" class="cad-input-cadastro" type="text" placeholder="Insira seu nome completo">
+
+          <p>Email:</p>
+          <input id="email_input" class="cad-input-cadastro" type="text" placeholder="Insira seu email">
+
+          <p>Data de nascimento:</p>
+          <input id="data_nasc_input" class="cad-input-cadastro" type="date"
+            placeholder="Insira sua data de nascimento">
+
+          <p>CPF:</p>
+          <input id="cpf_input" class="cad-input-cadastro" type="text" placeholder="69765379021">
+
+          <p>CEP:</p>
+          <input id="cep_input" class="cad-input-cadastro" type="text" placeholder="70254520">
+
+          <p>Codigo de ativação:</p>
+          <input id="codigo_input" class="cad-input-cadastro" type="text"
+            placeholder="insira o codigo de ativação da sua empresa">
+
+          <p>Senha:</p>
+          <input class="cad-input-cadastro" type="password" id="senha_input" placeholder="Insira sua senha">
+
+          <p>Confirme sua Senha:</p>
+          <input class="cad-input-cadastro" type="password" id="confirmacao_senha_input"
+            placeholder="Confirme sua senha">
+          <div class="buttonCadastrar">
+            <button onclick="cadastrar()" class="button_cadastrar">Cadastrar-se</button>
+          </div>
+          <div id="div_erros_login"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  </div>
+  </div>
+
+
+
+  <div class="footer">
+    <div class="container">
+      <div class="boxes">
+        <div class="box">
+          <img src="assets/imgs/logo.png">
+          <h4>InvTracker</h4>
+          <span>Todos os direitos reservados a InvTracker 2025</span>
+        </div>
+        <div class="box">
+          <h4>Recursos</h4>
+          <span>Soluções IoT, dashboard web, relátorios de desempenho</span>
+        </div>
+        <div class="box">
+          <h4>Dev´s</h4>
+          <span>Equipe dedicada em engenharia de software e banco de dados.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Array para armazenar empresas cadastradas para validação de código de ativação
+    let listaEmpresasCadastradas = [];
+
+    function cadastrar() {
+      var nomeVar = nome_input.value;
+      var emailVar = email_input.value;
+      var senhaVar = senha_input.value;
+      var confirmacaoSenhaVar = confirmacao_senha_input.value;
+      var cpfVar = cpf_input.value;
+      var cepVar = cep_input.value;
+      var dtNascVar = data_nasc_input.value;
+      var codigoVar = codigo_input.value;
+      var idEmpresaVincular;
+      var SenhaMin = senhaVar.toLowerCase();
+      var length = senhaVar.length;
+      var senhaFraca = 0;
+      var senhaForte = 0;
+      var caracterEsp = '!@#$%¨&*()'
+      var n = '01234567890';
+      var abc = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+      var cEspecial = 0;
+      var Repeticao = 0;
+      var Tamanho = 0;
+      var Masc = 0;
+      var LetraN = 0;
+      var alerta = '';
+      var temNumero = 0;
+      var temLetra = 0;
+      i = 0;
+      // aguardar();
+
+      //Recupere o valor da nova input pelo nome do id
+      // Agora vá para o método fetch logo abaixo
+
+
+      // Verificando se há algum campo em branco
+      if (
+        nomeVar == "" ||
+        emailVar == "" ||
+        senhaVar == "" ||
+        confirmacaoSenhaVar == "" ||
+        codigoVar == "" ||
+        cpfVar == "" ||
+        cepVar == "" ||
+        dtNascVar == ""
+      ) {
+        modal_cadastro.innerHTML =
+          `<span style="color: red">Campos em branco, favor preencher.</span>`;
+        modal_cadastro_grande.style.display = 'block';
+        setInterval(sumirMensagem, 5000);
+
+        return false;
+      } else {
+        setInterval(sumirMensagem, 5000);
+      }
+
+      // Verificando se o código de ativação é de alguma empresa cadastrada
+      for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
+        if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
+          idEmpresaVincular = listaEmpresasCadastradas[i].id;
+          console.log("Código de ativação válido.");
+          break;
+        } else {
+          modal_cadastro.innerHTML = "Código de empresa inválido";
+          modal_cadastro_grande.style.display = 'block';
+
+        }
+      }
+
+      if (senhaVar == confirmacaoSenhaVar) {
+        while (i < length) {
+
+
+          if (senhaVar[i] == senhaVar[i + 1]) {
+            senhaFraca++;
+            Repeticao--;
+          }
+          if (caracterEsp.includes(senhaVar[i])) {
+            senhaForte++;
+            cEspecial++;
+
+          } if (n.includes(senhaVar[i])) {
+            temNumero++;
+          } if (abc.includes(senhaVar[i])) {
+            temLetra++;
+          }
+          i++;
+        }
+
+        if (temNumero > 0 && temLetra > 0) {
+          senhaForte++;
+          LetraN++;
+        }
+
+        if (length < 8) {
+          senhaFraca++;
+        } else {
+          senhaForte++;
+          Tamanho++;
+        } if (SenhaMin != senhaVar) {
+          senhaForte++;
+          Masc++;
+        } else {
+          senhaFraca++;
+        }
+
+        if (senhaForte < 4) {
+          alerta += `Sua senha está fraca! Checar os seguintes parâmetros: <br> <br>`
+
+          if (Repeticao < 0) {
+            alerta += `Muitas letras <span style="color:red">seguidamente repetidas</span> <br>`
+          } if (cEspecial == 0) {
+            alerta += `Sem <span style="color:red">caracteres especiais</span> <br>`
+          } if (Tamanho == 0) {
+            alerta += `Menos de <span style="color:red">8 caracteres</span> <br>`
+          } if (Masc == 0) {
+            alerta += `Necessario letras <span style="color:red">maisculas e minusculas</span> <br>`
+          } if (LetraN == 0) {
+            alerta += `Necessario ter <span style="color:red">letras e números</span> <br>`
+          }
+
+          alerta += `<br> Por favor, corrija esses requisitos para seguir em frente.`
+
+          modal_cadastro.innerHTML = alerta;
+          modal_cadastro_grande.style.display = "block";
+          setInterval(sumirMensagem, 5000);
+        }
+      } else {
+        modal_cadastro.innerHTML = `<span style="color:red">A senha não confirma!</span>`;
+        modal_cadastro_grande.style.display = "block";
+        setInterval(sumirMensagem, 5000);
+      }
+
+      if (senhaForte > 3) {
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            // crie um atributo que recebe o valor recuperado aqui
+            // Agora vá para o arquivo routes/usuario.js
+            nomeServer: nomeVar,
+            emailServer: emailVar,
+            senhaServer: senhaVar,
+            idEmpresaVincularServer: idEmpresaVincular,
+            cpfServer: cpfVar,
+            cepServer: cepVar,
+            dataNascServer: dtNascVar
+          }),
+        })
+          .then(function (resposta) {
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok && senhaForte > 3) {
+              modal_cadastro.innerHTML = `<span style="color:green">Registrado com Sucesso!</span>`;
+              modal_cadastro_grande.style.display = "block";
+
+              setTimeout(() => {
+                window.location.href = "login.html";
+              }, "5000");
+
+              limparFormulario();
+
+            } else {
+              throw "Houve um erro ao tentar realizar o cadastro!";
+            }
+          })
+          .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+
+          });
+      } else {
+
+      }
+      return false;
+    }
+
+    // Listando empresas cadastradas
+    function listar() {
+      fetch("/empresas/listar", {
+        method: "GET",
+      })
+        .then(function (resposta) {
+          resposta.json().then((empresas) => {
+            empresas.forEach((empresa) => {
+              listaEmpresasCadastradas.push(empresa);
+
+              console.log("listaEmpresasCadastradas");
+              console.log(listaEmpresasCadastradas[0].codigo_ativacao);
+            });
+          });
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+        });
+    }
+
+    function sumirMensagem() {
+      modal_cadastro_grande.style.display = 'none';
+    }
+  </script>
+
+</html>

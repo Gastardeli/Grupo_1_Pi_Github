@@ -1,0 +1,140 @@
+.container_cadDash {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 75%;
+    background-image: url(../assets/imgs/cadastroProduto_Background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.boxes_cadDash {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85%;
+    width: 80%;
+}
+
+.box_cadDash {
+    display: flex;
+    height: 85%;
+    width: 50%;
+    border: solid black 2px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    align-self: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid #E67C1C;
+
+}
+
+.box_cadDash h1 {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: 10%;
+    color: white;
+    font-size: 25px;
+}
+
+.box_cadDash input {
+    border-radius: 10px;
+    width: 60%;
+    height: 7%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #E67C1C;
+    background-color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 15px;
+
+}
+
+.box_cadDash select {
+    border-radius: 10px;
+    width: 50%;
+    height: 4%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #E67C1C;
+    background-color: white;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    font-size: 20px;
+}
+
+.box_cadDash b {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-weight: bolder;
+    font-size: 21px;
+    color: white;
+}
+
+.box_cadDash button {
+    background-color: #E67C1C;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+
+}
+
+.container_modal_cadProd {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding-top: 300px;
+}
+
+.box_modal_cadProd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+}
+
+.modal_cadProd {
+    align-items: center;
+    justify-content: center;
+    width: 45%;
+    background-color: white;
+    border-radius: 10px;
+    border: #E67C1C 8px solid;
+}
+
+.modal_cadProd p {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.modal_cadProd button {
+    background-color: #E67C1C;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 15px;
+}

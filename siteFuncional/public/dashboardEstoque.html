@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvTracker | Dashboard Estoque</title>
+    <link rel="stylesheet" href="./css/styleDashboardEstoque.css" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="assets/icon/icon.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1"></script>
+</head>
+
+<body>
+
+
+    <div class="container_main">
+        <aside>
+            <header>
+                <img src="assets/imgs/logo.png" alt="" class="user">
+                <div class="nome_user">
+                    <p>InvTracker</p>
+                </div>
+            </header>
+            <div class="body">
+                <a href="dashboardDiaria.html">
+                    <p id="click">DashBoard Diária</p>
+                </a>
+                <a href="#">
+                    <p><b>DashBoard Estoque</b></p>
+                </a>
+                <a href="dashboardCadastro.html">
+                    <p>Cadastrar Estoque</p>
+                </a>
+            </div>
+            <div class="footer">
+                <img src="assets/icon/iconUser.png" alt="">
+                <div class="footerTexto"> Olá! User</div>
+                <div class="logout">
+                    <a href="index.html"><button>Sair</button></a>
+                </div>
+            </div>
+        </aside>
+        <div class="container_direita2">
+            <div id="dashboard_estoque">
+                <div class="select_esquerda">
+                    <div class="kpi">
+                        <div class="titulo">
+                            <p>Selecione seu estoque</p>
+                            <select>
+                                <option value="estoque1">Estoque 1</option>
+                                <option value="#" disabled>Selecione uma Opção</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="kpi">
+                        <p class="titulo">Lote com maior necessidade de reposição
+                            <span style="color: red">Lote 05</span>
+                        </p>
+                    </div>
+                    <div class="kpi">
+                        <p class="titulo">Quantos Lotes precisam de reabastecimento
+                            <span style="color: red">2</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="dash_direita">
+                    <canvas id="dashboard1"></canvas>
+                    <canvas id="dashboard2"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <script src="script/scriptDashboardEstoque.js"></script>
+</body>
+
+
+</html>
+
+<script>
+
+    const dashboardEstoque = document.getElementById('dashboardEstoque');
+
+    const dashboardLote1 = document.getElementById('dashboard1');
+
+    const dashboardLote2 = document.getElementById('dashboard2');
+
+    const dashboardLote3 = document.getElementById('dashboard3');
+
+    const dashboardLote4 = document.getElementById('dashboard4');
+
+    new Chart(dashboardLote1, {
+        type: 'bar',
+        data: {
+            labels: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10'],
+            datasets: [{
+                label: 'Ocupação (em porcentagem)',
+                backgroundColor: '#ff8c00',
+                borderColor: '#ff8c00',
+                data: [100, 10, 68, 75, 5, 89, 75, 60, 87, 70, 60, 80, 60],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Ocupação dos lotes',
+                    font: {
+                        size: 20,
+                        weight: 'bold'
+                    },
+                    color: '#000'
+                },
+                legend: {
+                    display: true,
+                    position: 'bottom'
+                },
+                annotation: {
+                    annotations: {
+                        linhaHorizontal: {
+                            type: 'line',
+                            yMin: 20,
+                            yMax: 20,
+                            borderColor: 'red',
+                            borderWidth: 2,
+                            borderDash: [5, 5],
+                            label: {
+                                display: true,
+                                content: 'ZONA DE RISCO',
+                                position: 'start'
+                            }
+                        },
+                        linhaHorizonta2: {
+                            type: 'line',
+                            yMin: 99,
+                            yMax: 99,
+                            borderColor: 'green',
+                            borderWidth: 2,
+                            borderDash: [5, 5],
+                            label: {
+                                display: true,
+                                content: 'LOTE CHEIO',
+                                position: 'start'
+                            }
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Unidade do lote',
+                        font: {
+                            size: 12,
+                            weight: 'bold'
+                        },
+                        color: '#000'
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Ocupação (%)',
+                        font: {
+                            size: 12,
+                            weight: 'bold'
+                        },
+                        color: '#000'
+                    }
+                }
+            }
+        }
+    });
+
+    new Chart(dashboardLote2, {
+        type: 'bar',
+        data: {
+            labels: ['02', '05'],
+            datasets: [{
+                label: 'Ocupação (em porcentagem)',
+                backgroundColor: '#ff8c00',
+                borderColor: '#ff8c00',
+                data: [10, 5],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Lotes em estado crítico',
+                    font: {
+                        size: 20,
+                        weight: 'bold'
+                    },
+                    color: '#000'
+                },
+                legend: {
+                    display: true,
+                    position: 'bottom'
+                },
+                annotation: {
+                    annotations: {
+                        linhaHorizontal: {
+                            type: 'line',
+                            yMin: 20,
+                            yMax: 20,
+                            borderColor: 'red',
+                            borderWidth: 2,
+                            borderDash: [5, 5],
+                            label: {
+                                display: true,
+                                content: 'ZONA DE RISCO',
+                                position: 'start'
+                            }
+                        },
+                        linhaHorizonta2: {
+                            type: 'line',
+                            yMin: 99,
+                            yMax: 99,
+                            borderColor: 'green',
+                            borderWidth: 2,
+                            borderDash: [5, 5],
+                            label: {
+                                display: true,
+                                content: 'LOTE CHEIO',
+                                position: 'start'
+                            }
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Unidade do lote',
+                        font: {
+                            size: 12,
+                            weight: 'bold'
+                        },
+                        color: '#000'
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Ocupação (%)',
+                        font: {
+                            size: 12,
+                            weight: 'bold'
+                        },
+                        color: '#000'
+                    }
+                }
+            }
+        }
+    });
+
+
+    function redirectEstoque() {
+        dashboard_diaria.style.display = "none";
+        dashboard_estoque.style.display = "block";
+    }
+
+    function redirectDiaria() {
+        dashboard_diaria.style.display = "block";
+        dashboard_estoque.style.display = "none";
+    }
+
+
+
+
+
+
+
+
+
+
+
+</script>

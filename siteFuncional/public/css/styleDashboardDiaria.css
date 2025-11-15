@@ -1,0 +1,150 @@
+.containerDashboard {
+    display: flex;
+    padding-top: 6%;
+    padding-bottom: 6%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7a8389d;
+}
+
+.containerDashboard b {
+    font-size: 25px;
+}
+
+.RandomBox {
+    display: flex;
+    height: 100px;
+    width: 500px;
+    flex-direction: column;
+    border: solid grey 2px;
+    border-radius: 10px;
+    margin: 5px;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.EstBox {
+    display: flex;
+    height: 50px;
+    width: 500px;
+    flex-direction: column;
+    border: solid grey 2px;
+    border-radius: 10px;
+    margin: 5px;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.lotenBox {
+    display: flex;
+    height: 50px;
+    width: 300px;
+    flex-direction: column;
+    border: solid grey 2px;
+    border-radius: 10px;
+    margin: 5px;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.kpiBoxes {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 5px;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.kpiBox {
+    display: flex;
+    height: 150px;
+    flex-direction: column;
+    border: solid grey 2px;
+    border-radius: 10px;
+    margin: 5px;
+    align-items: center;
+    background-color: white;
+}
+
+.kpiBoxes .kpiBox p {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.graficosDashboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.graficosDashboard .boxEstoque {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.graficosDashboard .boxLotes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.dashboardEstoque {
+    display: flex;
+}
+
+.conteinerBoxes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    height: 500px;
+    width: 1000px;
+    align-items: center;
+    justify-items: center;
+}
+
+.dashBox {
+    display: flex;
+    height: 270px;
+    width: 490px;
+    border: solid grey 2px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.dashboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.dashNav {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.header .container .dashNav .title a {
+    outline: none;
+    text-decoration: none;
+    color: black;
+    marker: none;
+}

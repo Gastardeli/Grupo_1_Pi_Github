@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InvTracker | Aplicações</title>
+  <link rel="stylesheet" href="./css/styleCalculadora.css" />
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" href="assets/icon/icon.png" />
+</head>
+
+</head>
+
+<body>
+
+  <div class="header">
+    <div class="container">
+      <img src="assets/imgs/logo.png">
+      <h1 class="title">InvTracker</h1>
+      <div class="navbar">
+        <a href="index.html">Inicio </a>
+        <a class="now" href="#">Aplicações </a>
+        <a href="login.html">Login </a>
+        <a href="cadastro.html">Cadastro </a>
+        <a href="dashboard.html" style="display: none;" id="dashHeader">Dashboard</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="main">
+
+    <div class="calc-container">
+      <div class="cal-titulo">
+        <h1>InvTracker - Calculadora de Oportunidades</h1>
+      </div>
+      <div class="calc-content">
+        <div class="calc-section">
+          <h2>Simule Suas Perdas Gerais por Erros de Inventário</h2>
+          <select id="select_numeroLojas" onchange="input_lojas()">
+            <option value="">Selecione o número de lojas</option>
+            <option value="1">1 Loja</option>
+            <option value="2">2 Lojas</option>
+            <option value="3">3 Lojas</option>
+            <option value="4">4+ Lojas</option>
+          </select>
+
+          <div id="calculadora_html"></div>
+
+          <div class="resultado" style="display: none;" id="resultadoCalculadora_html">
+            <p>Perdas estimadas: <span class="valor-negativo">R$ 0,00</span></p>
+            <p>Economia potencial: <span class="valor-positivo">R$ 0,00</span></p>
+          </div>
+
+          <button class="detalhes-btn" id="btn_mais-detalhes" style="display: none;" onclick="modalEmpresa()">Mais
+            detalhes</button>
+        </div>
+
+
+        <div class="calc-section">
+          <h2>Simule Suas Perdas em Produtos por Erros de Inventário</h2>
+
+          <label>Nome do produto:</label>
+          <input id="input_nome" type="text" placeholder="Ex: Coca-Cola 2L">
+
+          <label>Valor de compra (R$):</label>
+          <input id="input_valor_compra" type="number" placeholder="Ex: 10">
+
+          <label>Valor de venda (R$):</label>
+          <input id="input_valor_venda" type="number" placeholder="Ex: 35">
+
+          <label>Quantidade média em estoque:</label>
+          <input id="input_quantidade" type="number" placeholder="Ex: 10000">
+
+          <div class="calc-button">
+            <button onclick="input_calculo_especifico()">Calcular</button>
+          </div>
+
+          <div class="resultado" style="display: none;" id="div_resultado1">
+            <p>Economia anual: <span class="valor-positivo">R$ 0,00</span></p>
+            <p>Lucro recuperado: <span class="valor-positivo">R$ 0,00</span></p>
+          </div>
+
+          <button class="detalhes-btn" id="botao_modal" style="display: none;" onclick="modalProduto()">Mais
+            detalhes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL EMPRESA -->
+  <div id="modalEmpresa" class="modal">
+    <div class="modal-content">
+      <h2>Explicação Detalhada - Empresa</h2>
+      <div id="div_resultado"></div>
+      <button onclick="modalEmpresaFechar()">Fechar</button>
+    </div>
+  </div>
+
+  <!-- MODAL PRODUTO -->
+  <div id="modalProduto" class="modal">
+    <div class="modal-content">
+      <h2>Explicação Detalhada - Produto</h2>
+      <div id="div_resultado_produto"></div>
+      <button onclick="modalProdutoFechar()">Fechar</button>
+    </div>
+  </div>
+
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <div class="boxes">
+        <div class="box">
+          <img src="assets/imgs/logo.png">
+          <h4>InvTracker</h4>
+          <span>Todos os direitos reservados a InvTracker 2025</span>
+        </div>
+        <div class="box">
+          <h4>Recursos</h4>
+          <span>Soluções IoT, dashboard web, relatórios de desempenho</span>
+        </div>
+        <div class="box">
+          <h4>Dev´s</h4>
+          <span>Equipe dedicada em engenharia de software e banco de dados.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
+<script>
+  var pagina1 = "";
+  var faturamento = 0;
+  var input = `<p>Loja 1: </p><input class="inputCalculadora" type="number" id="input_faturamento" value=205000000><br>`;
+  var input1 = `<br><p>Loja 2: </p><input class="inputCalculadora" type="number" id="input_faturamento1" value="193000000" placeholder="Unidade 02: Ex.R$3.500.000"><br>`;
+  var input2 = `<br><p>Loja 3: </p><input class="inputCalculadora" type="number" id="input_faturamento2" value="214000000" placeholder="Unidade 03: Ex.R$2.300.000"><br>`;
+  var input_varias = `<p>Média: </p><input class="inputCalculadora" type="number" id="input_faturamento" value="720000000" placeholder="Soma das unidades"><br>`;
+
+  function input_calculo_especifico() {
+    var nome = input_nome.value;
+    var compra = Number(input_valor_compra.value);
+    var venda = Number(input_valor_venda.value);
+    var quantidade = Number(input_quantidade.value);
+    var lucro = venda - compra;
+    var faturamento = venda * quantidade;
+
+    if (nome && compra && venda && quantidade && isNaN(nome)) {
+      var perdas_inventario_ano = (faturamento * 0.00936);
+      var perdas_inventario_ano_format = perdas_inventario_ano.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+      var reducao = 0.30;
+      var economia_ano = (faturamento * (reducao * 0.00936));
+      var economia_ano_format = economia_ano.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+      var produtos_recuperados = economia_ano / compra;
+      var lucro_prod_recuperado = produtos_recuperados * venda;
+      var lucro_prod_recuperado_format = lucro_prod_recuperado.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+      var economia_total1 = (lucro_prod_recuperado + Number(economia_ano));
+      var economia_total1_format = economia_total1.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+      // resumo curto
+      document.getElementById("div_resultado1").style.display = 'flex';
+      div_resultado1.innerHTML = `
+              <p>Economia anual: <br><span class="valor-positivo">${economia_ano_format}</span></p>
+              <p>Lucro recuperado: <br><span class="valor-positivo">${lucro_prod_recuperado_format}</span></p>
+            `;
+      botao_modal.style.display = "block";
+
+      // detalhes completos no modal
+      document.getElementById("div_resultado_produto").innerHTML = `
+              <h3>Oportunidade para ${nome}</h3>
+              <p>Economia anual: <b style='color:green;'>${economia_ano_format}</b></p>
+              <p>Lucratividade nas vendas recuperadas: <b style='color:green;'>${lucro_prod_recuperado_format}</b></p>
+              <p>Economia total: <b style='color:green;'>${economia_total1_format}</b></p>
+              <p>Isso é apenas de um produto — um atacarejo tem mais de <b style="color:#ff8c00">5000 produtos diferentes!</b></p>
+            `;
+    } else {
+      div_resultado1.innerHTML = `<span>Por favor, insira valores válidos.</span>`;
+    }
+  }
+
+  function input_lojas() {
+    faturamento = 0;
+    var select_lojas = select_numeroLojas.value;
+
+    if (select_lojas == '') {
+      calculadora_html.innerHTML = ``;
+    } else if (select_lojas == 1) {
+      calculadora_html.innerHTML = `Digite o faturamento anual de sua loja <br><br>` + input;
+    } else if (select_lojas == 2) {
+      calculadora_html.innerHTML = `Digite o faturamento anual de suas lojas <br><br>` + input + input1;
+    } else if (select_lojas == 3) {
+      calculadora_html.innerHTML = `Digite o faturamento anual de suas lojas <br><br>` + input + input1 + input2;
+    } else if (select_lojas == 4) {
+      calculadora_html.innerHTML = `Digite o faturamento anual total de suas lojas <br><br>` + input_varias;
+    }
+
+    calculadora_html.innerHTML += `<br>
+        <div class="calc-button">
+          <button onclick="calcular()">Calcular</button>
+        </div>`;
+  }
+
+  function calcular() {
+    var faturamento = 0;
+    if (input_faturamento) {
+      faturamento += Number(input_faturamento.value);
+      if (typeof input_faturamento1 != 'undefined') faturamento += Number(input_faturamento1.value);
+      if (typeof input_faturamento2 != 'undefined') faturamento += Number(input_faturamento2.value);
+    }
+
+    var perdas_inventario_ano = (faturamento * 0.00936);
+    var perdas_inventario_ano_format = perdas_inventario_ano.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    var reducao = 0.30;
+    var economia_ano = (faturamento * (reducao * 0.00936));
+    var economia_ano_format = economia_ano.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    var vendas_recuperadas = economia_ano * 3;
+    var vendas_recuperadas_format = vendas_recuperadas.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+    document.getElementById("resultadoCalculadora_html").style.display = 'flex';
+    resultadoCalculadora_html.innerHTML = `
+          <p>Perdas estimadas: <span class="valor-negativo">${perdas_inventario_ano_format}</span></p>
+          <p>Economia potencial: <span class="valor-positivo">${economia_ano_format}</span></p>
+        `;
+
+    document.getElementById("div_resultado").innerHTML = `
+          <h3>Perdas Anuais Estimadas</h3>
+          <p><b>${perdas_inventario_ano_format}</b> em perdas devido a erros de inventário.</p>
+          <h3>Oportunidades com Redução de 30%</h3>
+          <p>Economia anual: <b style='color:green;'>${economia_ano_format}</b></p>
+          <p>Possível lucratividade em estoques recuperados: <b style='color:green;'>${vendas_recuperadas_format}</b></p>
+        `;
+
+    // Aparecer o botão "mais detalhes"
+    document.getElementById("btn_mais-detalhes").style.display = 'block';
+  }
+
+  function calculos() { modal_calculadora1.style.display = 'block'; }
+  function voltar() { modal_calculadora1.style.display = 'none'; }
+
+
+  function modalEmpresa() {
+    document.getElementById('modalEmpresa').style.display = 'block';
+  }
+  function modalProduto() {
+    document.getElementById('modalProduto').style.display = 'block';
+  }
+
+  function modalProdutoFechar() {
+    document.getElementById('modalProduto').style.display = 'none';
+  }
+
+  function modalEmpresaFechar() {
+    document.getElementById('modalEmpresa').style.display = 'none';
+  }
+
+
+</script>

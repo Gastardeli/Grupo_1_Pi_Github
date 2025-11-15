@@ -1,0 +1,280 @@
+
+/* Parte 1 */
+
+
+main {
+    width: 100%;
+}
+
+main .introducao {
+    width: 100%;
+    height: 100%;
+}
+
+main .introducao .container {
+   
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to right, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.3)),
+              url('../assets/imgs/funCaixaIndex.png') center/cover no-repeat;
+
+}
+
+main .introducao .container .titulo {
+    width: 700px;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    font-size: 45px;
+
+}
+
+main .introducao .container .div_opacidade {
+    width: 100%;
+    height: 100%;
+    background-color: #000000b6;
+    padding: 50px 100px;
+    flex-direction: row;
+    display: flex;
+  
+    
+    
+}
+.texto_subtitulo p{
+  font-family: "Poppins", "Inter", sans-serif;
+  font-size: 40px;
+  margin: 0;
+  color: white;
+  
+
+}
+.titulo_banner p {
+ font-family: "Poppins", "Inter", sans-serif;
+  font-size: 40px;
+  margin: 0;
+  color: white;
+
+
+}
+.img_banner{
+   width: 100px;
+   height: 100px;
+    margin-bottom: 10px;
+}
+
+
+main .introducao .container .texto {
+    color: rgb(255, 255, 255);
+    font-weight: 300;
+    font-size: 35px;
+    width: 70%;
+
+}
+
+/* Parte 2 */
+main .sobre {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    padding: 50px 100px;
+}
+
+main .sobre .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .sobre .container .parte1 {
+    display: flex;
+    flex-direction: column;
+}
+
+main .sobre .container .parte1 .titulo {
+    font-size: 50px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+main .sobre .container .parte1 .texto {
+    font-size: 30px;
+    text-align: justify;
+}
+
+main .sobre .container .box {
+    border-radius: 10px;
+    margin-top: 5%;
+    padding: 20px 60px;
+    text-align: justify;
+    display: flex;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.658);
+    color: #000;
+    align-items: flex-end;
+}
+
+main .sobre .container .box p {
+    font-size: 35px;
+}
+
+main .sobre .container .box button {
+    background-color: #E67C1C;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 0;
+    margin-right: 100px;
+}
+
+/* Parte 3 */
+main .sobre .container .porcentagens {
+    border-radius: 10px;
+    margin-top: 5%;
+    padding: 20px;
+    text-align: justify;
+    display: flex;
+    width: 80%;
+    background-color: #E67C1C;
+    color: #fff;
+    justify-content: space-around;
+    display: flex;
+}
+
+main .sobre .container .porcentagens .todasaspercs {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 25px;
+}
+
+main .sobre .container .porcentagens .todasaspercs .perc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .sobre .container .porcentagens .todasaspercs .perc .titulo {
+    font-size: 50px;
+    margin: 0;
+}
+
+main .sobre .container .porcentagens .todasaspercs .perc .texto {
+    width: 300px;
+    text-align: center;
+}
+
+
+/* SOLUÇÃO */
+.solucao {
+    background-color: #f9f9f9;
+    padding: 50px;
+    text-align: center;
+}
+
+.solucao h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.solucao .subtitulo {
+    color: #E67C1C;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+.solucao .conteudo {
+    max-width: 700px;
+    margin: auto;
+    font-size: 25px;
+    line-height: 1.6;
+}
+
+.solucao button {
+    background-color: #E67C1C;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+/* DIFERENCIAIS */
+.diferenciais {
+    padding: 50px;
+    text-align: center;
+}
+
+.diferenciais h2 {
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.diferenciais .cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-size: 25px;
+}
+
+.diferenciais .card {
+    width: 250px;
+    background: #e9e9e9;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 10px;
+}
+
+.diferenciais .card h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+/* INFORMAÇÕES EXTRAS */
+.info-extra {
+    text-align: center;
+    padding: 20px 50px;
+    font-size: 25px;
+    line-height: 1.5;
+}
+
+
+/* CONTATO */
+.contato-container {
+    width: 40%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #00004d;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contato-container h3 {
+    text-align: center;
+    font-size: 25px;
+}
+
+.contato-container input,
+.contato-container textarea {
+    padding: 10px;
+    border: 0;
+    border-radius: 5px;
+}
+
+.contato-container button {
+    padding: 10px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #E67C1C;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}

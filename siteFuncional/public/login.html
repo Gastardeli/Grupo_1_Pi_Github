@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvTracker | Login</title>
+    <link rel="stylesheet" href="./css/styleLogin.css" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="assets/icon/icon.png" />
+    <link rel="stylesheet" href="styles/styleLogin.css">
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <img src="assets/imgs/logo.png">
+            <h1 class="title">InvTracker</h1>
+            <div class="navbar">
+                <a href="index.html">Inicio </a>
+                <a href="calculadora.html">Aplicações </a>
+                <a class="now" href="#">Login </a>
+                <a href="cadastro.html">Cadastro </a>
+                <a href="dashboard.html" style="display: none;" id="dashHeader">Dashboard</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <main class="login-container">
+        <div class="container_modal_login" style="display: none;" id="modal_login_grande">
+            <div class="box_modal_login">
+                <div class="modal_login">
+                    <h2>Aviso</h2>
+                    <span id="modal_login"></span>
+                    <br> <br>
+                    <div id="div_aguardar" class="loading-div">
+                        <img src="./assets/imgs/orange_circles.gif" id="loadingif" />
+                    </div> <br>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="background-overlay">
+
+            <div class="form-wrapper">
+
+                <form id="loginForm">
+                    <h2>LOGIN</h2>
+
+                    <label for="email">EMAIL</label>
+                    <div class="input-group">
+                        <input type="email" id="email_input" placeholder="Insira seu e-mail" required>
+                        <span class="icon-clear" id="iconClear">x</span>
+                    </div>
+
+                    <label for="password">Senha</label>
+                    <div class="input-group">
+                        <input type="password" id="senha_input" placeholder="Insira sua senha" required>
+                    </div>
+
+                    <a href="#" class="forgot-password">Esqueci minha senha</a>
+                    <span id="mensagemErro" class="erro-mensagem"></span>
+
+                    <button type="button" class="login-button" id="btnLogin" onclick="entrar()">LOGIN</button>
+
+                    <p class="signup-prompt">
+                        Não possui uma conta?
+                    </p>
+                    <a href="cadastro.html" class="register-link"><button type="button"
+                            class="register-button">CADASTRE-SE</button></a>
+                </form>
+            </div>
+
+    </main>
+
+
+
+    <div class="footer">
+        <div class="container">
+            <div class="boxes">
+                <div class="box">
+                    <img src="assets/imgs/logo.png">
+                    <h4>InvTracker</h4>
+                    <span>Todos os direitos reservados a InvTracker 2025</span>
+                </div>
+                <div class="box">
+                    <h4>Recursos</h4>
+                    <span>Soluções IoT, dashboard web, relátorios de desempenho</span>
+                </div>
+                <div class="box">
+                    <h4>Devs</h4>
+                    <span>Equipe dedicada em engenharia de software e banco de dados.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function entrar() {
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+
+        if (emailVar == "" || senhaVar == "") {
+            modal_login_grande.style.display = "block";
+            modal_login.innerHTML =
+                `<span style="color: red">Campos em branco, favor preencher.</span>`
+            setInterval(sumirMensagem, 5000);
+            return false;
+        } else {
+            setInterval(sumirMensagem, 5000);
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+            }),
+        })
+            .then(function (resposta) {
+                console.log("ESTOU NO THEN DO entrar()!");
+
+                if (resposta.ok) {
+                    console.log(resposta);
+
+                    resposta.json().then((json) => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+                        sessionStorage.EMAIL_USUARIO = json.email;
+                        sessionStorage.NOME_USUARIO = json.nome;
+                        sessionStorage.ID_USUARIO = json.id;
+                        sessionStorage.AQUARIOS = JSON.stringify(json.aquarios);
+
+                        setTimeout(function () {
+                            modal_login.innerHTML =
+                                `<span style="color:#E67C1C">Bem vindo(a)!</span>`;
+                            modal_login_grande.style.display = "block";
+
+                            setTimeout(() => {
+                                window.location.href = "dashboardDiaria.html";
+                            }, "5000");
+                        }, 1000); // apenas para exibir o loading
+                    });
+                } else {
+                    console.log("Houve um erro ao tentar realizar o login!");
+                    modal_login_grande.style.display = "block";
+                    modal_login.innerHTML =
+                        "Email ou senha inválido!";
+
+                    resposta.text().then((texto) => {
+                        console.error(texto);
+                    });
+                }
+            })
+            .catch(function (erro) {
+                console.log(erro);
+            });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        modal_login_grande.style.display = "none";
+    }
+</script>
