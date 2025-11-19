@@ -12,7 +12,8 @@ body {
 
 .header {
     border-bottom: 8px solid #E67C1C;
-    background-color: #dcdcdc
+    background-color: #dcdcdc;
+    width: 100%;
 }
 
 .header .container {
