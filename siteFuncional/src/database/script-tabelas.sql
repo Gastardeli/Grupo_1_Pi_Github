@@ -1,15 +1,16 @@
 CREATE DATABASE invtracker;
 USE invtracker;
 
-CREATE TABLE Empresa(
-id INT PRIMARY KEY AUTO_INCREMENT,
-statusCliente VARCHAR(8),
-CONSTRAINT chkClienteEmpresa
-CHECK (statusCliente IN('Ativo', 'Inativo')),
-razao VARCHAR(45),
-cnpj VARCHAR(45),
-codigo_ativacao VARCHAR(50)
+CREATE TABLE empresa(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    statusCliente VARCHAR(8) DEFAULT 'Ativo',
+    razao VARCHAR(45),
+    cnpj VARCHAR(45),
+    codigo_ativacao VARCHAR(50),
+    CONSTRAINT chkClienteEmpresa
+        CHECK (statusCliente IN('Ativo', 'Inativo'))
 );
+
 
 insert into empresa(razao, cnpj, codigo_ativacao) values ('Atacadinho', '03.091.654/0001-66', 'ED145B');
 insert into empresa (razao,cnpj, codigo_ativacao) values ('Sorvete', '75.770.032/0001-75', 'A1B2C3');
