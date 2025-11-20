@@ -54,6 +54,12 @@
     border-bottom: 2px solid #000;
 }
 
+.icon_help{
+    width: 30px;
+    margin-top: 400px;
+    margin-left: 400px;
+}
+
 .container_main aside .body a .container_main aside .footer {
     display: flex;
     justify-content: flex-end;
