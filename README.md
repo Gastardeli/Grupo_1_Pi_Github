@@ -14,14 +14,11 @@ Principais objetivos:
 
 ## 🚀 Funcionalidades
 
-- ✔️ Cadastro de produtos  
-- ✔️ Dashboard com gráficos e métricas  
-- ✔️ Lançamento diário de movimentações  
-- ✔️ Controle de estoque em tempo real  
-- ✔️ Sistema de login e controle de sessão  
-- ✔️ Relatórios de divergências  
-- ✔️ Análises baseadas em indicadores  
-- ✔️ Interface responsiva
+- ✔️ Cadastro de produtos;
+- ✔️ Dashboard com gráficos e métricas;
+- ✔️ Controle de estoque em tempo real; 
+- ✔️ Análises baseadas em indicadores;
+- ✔️ Interface responsiva.
 
 # Tecnologias utilizadas
 
